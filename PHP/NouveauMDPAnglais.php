@@ -57,10 +57,10 @@ session_start();
     <!--Le bas de la page-->
 
     <footer>
-        <form method="post">
+        <form action="LoginAnglais.php" method="post">
             <input type="submit" value="Create an account">
         </form> <br>
-        <form action="Accueil.php" method="post">
+        <form action="AccueilAnglais.php" method="post">
             <input type="submit" value="login">
         </form> <br>
         <form action="BesoinAide.php" method="post">
