@@ -35,7 +35,7 @@ function reponse($bdd){
     }}
 
 /*Recupération des données des patients afin de l'afficher*/
-    $nomscena = $bdd->prepare("SELECT nom,prenom,age FROM patient where idpatient=?");
+    $nomscena = $bdd->prepare("SELECT nom,prenom,ddn FROM patient where idpatient=?");
     $nomscena->bindParam(1, $_SESSION['patient']);
     $nomscena->execute();
     $res = $nomscena->fetch();
@@ -49,7 +49,7 @@ reponse($bdd);
 <form action="ScenarioEtu.php" method="post">
     <button class="button-90" >Retour</button>
 </form>
-<h4>Réponse au Scénario : <?php echo $res[0]," ",$res[1]," ",$res[2]," ans" ?>  </h4>
+<h4>Réponse au Scénario : <?php echo $res[0]," ",$res[1]," né le ",$res[2] ?>  </h4>
 
 
 <form method="post">

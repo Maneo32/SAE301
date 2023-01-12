@@ -18,7 +18,7 @@ $_SESSION['IdChat']=1;
 <header>
     <div class="traduction">
         <form action="AccueilAnglais.php" method="post">
-            <input type="submit" value="Anglais">
+            <input type="submit" value="English">
         </form>
     </div>
     <a href="Accueil.php">

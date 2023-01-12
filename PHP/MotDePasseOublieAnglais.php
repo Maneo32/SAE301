@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 ?>
@@ -12,16 +13,17 @@ session_start();
 <body>
 <!--Le haut de la page avec l'image et le titre-->
 
+
 <header>
     <div class="traduction">
-        <form action="MotDePasseOublieAnglais.php" method="post">
-            <input type="submit" value="English">
+        <form action="MotDePasseOublie.php" method="post">
+            <input type="submit" value="Francais">
         </form>
     </div>
-    <a href="BesoinAide.php">
+    <a href="Accueil.php">
         <img src="image/logoIFSI.png" width=234 height=125 alt="" >
     </a>
-    <h1> Institut de Formation aux Soins Infirmiers (IFSI)</h1>
+    <h1>  Institute of Nursing Training</h1>
     <br><br>
 </header>
 
@@ -31,8 +33,8 @@ session_start();
 
 <!--box milieu-->
 
-<h3>    Entrez votre Email, <br>
-        vous allez recevoir un mail pour vérifier votre identitée
+<h3>    Enter your Email, <br>
+    you will receive an email to verify your identity
 </h3>
 <br>
 
@@ -43,14 +45,14 @@ session_start();
         <br>
         <label>Email :</label>
         <br><br>
-        <input type="email" name='mail' placeholder="Entrez votre Email" required>
+        <input type="email" name='mail' placeholder="Enter your email address" required>
         <br>
         <br>
-        <label>Confirmez votre email :</label>
+        <label>Confirm your email :</label>
         <br><br>
-        <input type="email" name='mailV2' placeholder="Confirmez votre Email" required>
+        <input type="email" name='mailV2' placeholder="Confirm your email" required>
         <br>
-        <p><input type="submit" value="Valider"></p>
+        <p><input type="submit" value="Validate"></p>
     </form>
 
 </div>
@@ -59,10 +61,10 @@ session_start();
 
 <footer>
     <form action="Login.php" method="post">
-        <input type="submit" value="Créer un compte">
+        <input type="submit" value="Create an account">
     </form> <br>
-    <form action="Accueil.php" method="post">
-        <input type="submit" value="Besoin d'aide ?">
+    <form action="BesoinAide.php" method="post">
+        <input type="submit" value="Need Help ?">
     </form>
 </footer>
 
