@@ -167,6 +167,18 @@ function AvoirLaNoteDunEtu($bdd, $mail){
 
 }
 
+function AvoirRepDunEtu ($bdd, $mail){
+    $sql = $bdd->prepare("Select  nom,prenom, texte from reponseetu join patient using(idpatient) where email=?");
+    $sql->bindParam(1,$mail);
+    $sql->execute();
+    $rep =$sql->fetchAll();
+    return $rep;
+
+
+
+
+}
+
 
 
 ?>

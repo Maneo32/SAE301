@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_COOKIE['fonction']=$_SESSION['fonction']
+$_COOKIE['fonction']=$_SESSION['fonction'];
 
 
 ?>
@@ -102,7 +102,7 @@ function affichage($bdd, $id)
 
         function change($i, $date, $do) {
             // demander à l'utilisateur quelle donnée il souhaite mettre
-            var fonction =recupererCookie('fonction')
+            var fonction = get
             if (fonction=='prof') {
                 var $a = prompt("Quelle donnée voulez vous mettre?")
                 var l = "";
