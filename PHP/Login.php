@@ -19,11 +19,11 @@ session_start();
 <header>
     <div class="traduction">
         <form action="LoginAnglais.php" method="post">
-            <input type="submit" value="Anglais">
+            <input type="submit" value="English">
         </form>
     </div>
     <a href="Accueil.php">
-        <img src="image/logoIFSI.png" width=150 height=150 alt="" >
+        <img src="image/logoIFSI.png" width=234 height=125 alt="" >
     </a>
     <h1> Institut de Formation aux Soins Infirmiers (IFSI)</h1>
     <br><br>

@@ -6,7 +6,7 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <title>Nouveau MDP</title>
+    <title>NouveauMDP</title>
     <link rel="stylesheet" href="SiteIFSI.css">
     <script src="LesFonctionsJS.js"></script>
 </head>
@@ -14,8 +14,13 @@ session_start();
 <!--Le haut de la page avec l'image et le titre-->
 
 <header>
+    <div class="traduction">
+        <form action="NouveauMDPAnglais.php" method="post">
+            <input type="submit" value="English">
+        </form>
+    </div>
     <a href="Accueil.php">
-        <img src="../PHP/image/logoIFSI.png" width=150 height=150 alt="">
+        <img src="image/logoIFSI.png" width=234 height=125 alt="" >
     </a>
     <h1> Institut de Formation aux Soins Infirmiers (IFSI)</h1>
     <br><br>
