@@ -91,7 +91,7 @@ function affichage($bdd){
             <form method="post">
                 <select name="note">
 
-                    <input type="number" name="note" placeholder="Entrez la note">
+                    <input type="number" max="20" name="note" placeholder="Entrez la note">
                 </select>
                 <input type="submit" value="Valider">
                 <input style="display: none" type="text" name="id" value="<?php echo $data[0]?>">
