@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_COOKIE['fonction']=$_SESSION['fonction'];
 
 
 ?>
@@ -11,6 +10,7 @@ $_COOKIE['fonction']=$_SESSION['fonction'];
 <head>
     <meta charset="UTF-8">
     <title>Scenario</title>
+
     <link rel="stylesheet" href="../../View/Style/PageProf.css">
     <script src="../../Modele/Fonction/LesFonctionsJS.js"></script>
 
@@ -19,7 +19,7 @@ $_COOKIE['fonction']=$_SESSION['fonction'];
 
 <body>  <!--Le haut de la page avec l'image et le titre-->
 <header>
-    <a href="../Accueil/Accueil.php">
+    <a href="../../Controleur/Accueil/Accueil.php">
         <img src="../../View/image/logoIFSI.png" width=234 height=125 alt="leLogo" >
     </a>
     <h1> Institut de Formation aux Soins Infirmiers (IFSI)</h1>
@@ -66,7 +66,7 @@ function affpatient($bdd, $id)
 }
 
 
-require("../Accueil/FonctionPhp.php");
+require('../Accueil/FonctionPhp.php');
 
 /**
  * @param $bdd
@@ -82,8 +82,10 @@ function affichage($bdd, $id)
 
         document.cookie = 'valid = '+""
         function recupererCookie(nom) {
+
             nom = nom + "=";
             var liste = document.cookie.split(';');
+            console.log(liste);
             for (var i = 0; i < liste.length; i++) {
                 var c = liste[i];
                 // ignorer les espaces en début de chaîne
@@ -102,9 +104,8 @@ function affichage($bdd, $id)
 
         function change($i, $date, $do) {
             // demander à l'utilisateur quelle donnée il souhaite mettre
-            var variableRecuperee = <?php echo json_encode($_SESSION['fonction']);?>
-            console.log(variableRecuperee);
-            if (variableRecuperee=='prof') {
+            var variableRecuperee = <?php echo json_encode($_SESSION['fonction']); ?>;
+            if (variableRecuperee==='prof') {
                 var $a = prompt("Quelle donnée voulez vous mettre?")
                 var l = "";
                 document.getElementsByTagName("td")[$i].innerHTML = $a;
