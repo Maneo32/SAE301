@@ -15,7 +15,7 @@ session_start();
 <?php
 include("../../View/HTML/BarreScenarioEtu.html");
 ?>
-Voici les réponses que vous avez déjà envoyées
+<h4>Scénario envoyé</h4>
 
 <?php
 
