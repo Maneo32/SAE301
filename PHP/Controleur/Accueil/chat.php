@@ -43,7 +43,7 @@ $_SESSION['PseudoChat']=$pseudo2;
     <br>
     <div class="btn-group">
     <form method="post" class="btn-group">
-        <button class="button-57" type="submit" name="verif" ><span class="text">Accueil</span><span>Accueil</span></button>
+        <button  class="button-57" type="submit" name="verif" ><span class="text">Accueil</span><span>Accueil</span></button>
 
     </form>
 

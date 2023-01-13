@@ -18,7 +18,7 @@ session_start();
             <input type="submit" value="English">
         </form>
     </div>
-    <a href="BesoinAide.php">
+    <a href="Accueil.php">
         <img src="../../View/image/logoIFSI.png" width=234 height=125 alt="" >
     </a>
     <h1> Institut de Formation aux Soins Infirmiers (IFSI)</h1>
@@ -61,7 +61,7 @@ session_start();
     <form action="Login.php" method="post">
         <input type="submit" value="Créer un compte">
     </form> <br>
-    <form action="Accueil.php" method="post">
+    <form action="BesoinAide.php" method="post">
         <input type="submit" value="Besoin d'aide ?">
     </form>
 </footer>
@@ -85,6 +85,8 @@ require("../../Modele/Fonction/email.php");
 require("../../Modele/Fonction/MotDePasse.php");
 require("../../Modele/Fonction/ConnectionBDD.php");
 require("../../Modele/Fonction/Connexion.php");
+require("../../Modele/Fonction/Premier.php");
+
 /* permet d'envoyer un mail a la perssonne qui a perdu son mot de passe*/
 /**
  * @return void

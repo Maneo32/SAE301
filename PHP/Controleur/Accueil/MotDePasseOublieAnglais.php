@@ -87,6 +87,8 @@ require("../../Modele/Fonction/email.php");
 require("../../Modele/Fonction/MotDePasse.php");
 require("../../Modele/Fonction/ConnectionBDD.php");
 require("../../Modele/Fonction/Connexion.php");
+require("../../Modele/Fonction/Premier.php");
+
 /* permet d'envoyer un mail a la perssonne qui a perdu son mot de passe*/
 /**
  * @return void

@@ -93,6 +93,8 @@ require("../../Modele/Fonction/email.php");
 require("../../Modele/Fonction/MotDePasse.php");
 require("../../Modele/Fonction/ConnectionBDD.php");
 require("../../Modele/Fonction/Connexion.php");
+require("../../Modele/Fonction/Premier.php");
+
 /* permet de créer le nouvel utilisateur(étudiant ou prof) si toutes les données sont valables*/
 /**
  * @param $mail
