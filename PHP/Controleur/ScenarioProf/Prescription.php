@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require('../ConnectionBDD.php');
+require('../../Modele/Fonction/ConnectionBDD.php');
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -23,7 +23,7 @@ include("../../View/HTML/EnteteV2.html");
 <form action="Securite.php" method="post">
 
     Medicament :
-    <button onclick="afficher()">ajouter médicament</button>
+    <button type="button" onclick="afficher()">ajouter médicament</button>
     <br><br>
     <div class="button_Suivant">
         <input type="submit" name="Valider" value="Suivant">

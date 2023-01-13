@@ -9,4 +9,4 @@ $bdd = $pdo::getpdo();
 $_SESSION['Date']=date("Y-m-d H:m:s", strtotime($_POST["date"]));
 
 @ajoutDeDonneeSansLesBooleans($bdd,$_POST['categorie'],$_POST['type'],$_POST['donnee']);
-header('Location:CreateScenario.php');
+header('Location:afficherScenario2.php');

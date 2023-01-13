@@ -49,7 +49,7 @@ include("../../View/HTML/EnteteV2.html");
     <input type="radio" name="pansements" value="non" checked="checked" required>non
     <br><br>
     Surveillance Glycémique (en g/l) :
-    <input type="text" name="glycemique" value="oui" required>
+    <input type="text" name="glycemique" required>
     <br>
     <br>
     Le patient a-t-il des bas de contentions ? :

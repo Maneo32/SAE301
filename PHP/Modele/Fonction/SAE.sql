@@ -274,6 +274,7 @@ Create table GroupeEtudiant(
 
         Create table GroupeScenario(
         idGroupe int references GroupeClasse,
+        idPatient int references Patient on delete cascade,
         primary key (idGroupe,idPatient)
 
 );
@@ -288,10 +289,11 @@ CREATE table BesoinDaide
 Create table ReponseEtu(
     idRep serial primary key ,
     email text references Etudiant,
-    idPatient int references Patient,
+    idPatient int references Patient on delete cascade ,
     texte text not null
 
 );
 
 SELECT nom,prenom,DDN from groupescenario join groupeetudiant g on groupescenario.idgroupe = g.idgroupe join patient p on groupescenario.idpatient = p.idpatient  where email='mdangreaux11@gmail.com';
 
+DROP TABLE GroupeScenario;
