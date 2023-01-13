@@ -17,7 +17,7 @@ $pdo = $conn::getpdo();
 </head>
 <body>
 <?php
-include("../../View/HTML/BarreScenarioEtu.html");
+include("../../View/HTML/BarreScenarioEtu.php");
 ?>
 
 <br>

@@ -31,7 +31,7 @@ if (isset($_POST['Valider'])) {
 </head>
 <body>
 <?php
-include("../../View/HTML/BarreScenario.html");
+include("../../View/HTML/BarreScenario.php");
 include("../../View/HTML/EnteteV2.html");
 ?>
 

@@ -13,7 +13,7 @@ session_start();
 </head>
 <body>
 <?php
-include("../../View/HTML/BarreScenario.html");
+include("../../View/HTML/BarreScenario.php");
 
 require("../../Modele/Fonction/ConnectionBDD.php");
 $pdo = ConnectionBDD::getInstance();

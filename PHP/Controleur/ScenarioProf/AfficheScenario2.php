@@ -102,8 +102,9 @@ function affichage($bdd, $id)
 
         function change($i, $date, $do) {
             // demander à l'utilisateur quelle donnée il souhaite mettre
-            var fonction = get
-            if (fonction=='prof') {
+            var variableRecuperee = <?php echo json_encode($_SESSION['fonction']);?>
+            console.log(variableRecuperee);
+            if (variableRecuperee=='prof') {
                 var $a = prompt("Quelle donnée voulez vous mettre?")
                 var l = "";
                 document.getElementsByTagName("td")[$i].innerHTML = $a;

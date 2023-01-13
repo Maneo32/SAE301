@@ -21,7 +21,7 @@ require('FonctionScenario.php');
 
 <body>
 <?php
-include("../../View/HTML/BarreScenario.html");
+include("../../View/HTML/BarreScenario.php");
 ?>
 <h2>Groupe : <?php echo nomgrp($bdd) ?></h2>
 

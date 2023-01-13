@@ -4,6 +4,9 @@
   <meta title="BarreScenarioEtu" charset="UTF-8">
 </head>
 <body>
+<?php
+require('../../Controleur/ScenarioProf/checkSessionScenarioProf.php');
+?>
 <!--Le haut de la page avec l'image et le titre-->
 <header>
   <a href="../../Controleur/Accueil/Accueil.php">
@@ -14,7 +17,7 @@
 </header>
 <div class="font">
   <div class="deconexion">
-    <a href="../../Controleur/Accueil/Accueil.php"> <img src="../../View/image/Deconnexion.png" class="icone" width=50 height=50 alt="leRetour"> </a>
+    <a href="../../Controleur/Accueil/Disconnect.php"> <img src="../../View/image/Deconnexion.png" class="icone" width=50 height=50 alt="leRetour"> </a>
   </div>
 
     <button class="button-57" onclick="document.location='../Accueil/PageEtu.php'"><span class="text">Accueil</span><span>Accueil</span></button>

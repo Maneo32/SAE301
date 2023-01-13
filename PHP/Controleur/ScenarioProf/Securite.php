@@ -18,7 +18,7 @@ session_start();
 <body>
 <!--Le haut de la page avec l'image et le titre-->
 <?php
-include("../../View/HTML/BarreScenario.html");
+include("../../View/HTML/BarreScenario.php");
 include("../../View/HTML/EnteteV2.html");
 ?>
 <h2> Information sur la sécurité </h2>
