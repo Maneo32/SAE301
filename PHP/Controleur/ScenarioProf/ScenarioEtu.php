@@ -20,7 +20,7 @@ $bdd = $pdo::getpdo();
 
 require('FonctionScenario.php');
 
-$scena = $bdd->prepare("SELECT  nom,prenom,DDN, p.idpatient from groupescenario join groupeetudiant g on groupescenario.idgroupe = g.idgroupe join patient p on groupescenario.idpatient = p.idpatient  where email=?" );
+$scena = $bdd->prepare("SELECT DISTINCT  nom,prenom,DDN, p.idpatient from groupescenario join groupeetudiant g on groupescenario.idgroupe = g.idgroupe join patient p on groupescenario.idpatient = p.idpatient  where email=?" );
 $scena->bindParam(1,$_SESSION['email']);
 $scena->execute();
 
