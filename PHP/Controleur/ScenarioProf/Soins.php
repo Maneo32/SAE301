@@ -43,14 +43,14 @@ include("../../View/HTML/EnteteV2.html");
     <br><br>
     Le patient est-il passé par l'accueil:
     <input type="radio" name="accueil" value="oui" required>oui
-    <input type="radio" name="accueil" value="non" checked="checked" required>non
+    <input type="radio" name="accueil" value="non" checked="checked" >non
     <br><br>
     Le patient a-t-il eu un entretien avec un infirmier?:
-    <input type="radio" name="entretien" value="oui" required>oui
+    <input type="radio" name="entretien" value="oui" >oui
     <input type="radio" name="entretien" value="non" checked="checked" required>non
     <br><br>
     Le patient a-t-il eu un toucher ou un massage :
-    <input type="radio" name="massage" value="oui" required>oui
+    <input type="radio" name="massage" value="oui" >oui
     <input type="radio" name="massage" value="non" checked="checked" required>non
     <br>
     <br>

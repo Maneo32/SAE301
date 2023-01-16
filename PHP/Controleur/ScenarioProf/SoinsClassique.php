@@ -49,7 +49,7 @@ include("../../View/HTML/EnteteV2.html");
     <input type="radio" name="pansements" value="non" checked="checked" required>non
     <br><br>
     Surveillance Glycémique (en g/l) :
-    <input type="text" name="glycemique" required>
+    <input type="text" name="glycemique" >
     <br>
     <br>
     Le patient a-t-il des bas de contentions ? :
@@ -57,13 +57,13 @@ include("../../View/HTML/EnteteV2.html");
     <input type="radio" name="contentions" value="non" checked="checked" required>non
     <br><br>
     Cathéter veineux périphérique ? :
-    <input type="text" name="Catheter" required>
+    <input type="text" name="Catheter" >
     <br><br>
     Sondage urinaire ? :
-    <input type="text" name="sondageurinaire" required>
+    <input type="text" name="sondageurinaire" >
     <br><br>
     Autre ? :
-    <input type="text" name="autre" required>
+    <input type="text" name="autre" >
     <br><br>
     <div class="button_Suivant">
         <input type="submit" value="Valider" name="Valider">

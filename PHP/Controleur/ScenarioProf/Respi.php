@@ -23,7 +23,7 @@ include("../../View/HTML/EnteteV2.html");
     Date :
     <input type="datetime-local" name="date" id="date" required>
     <br><br>
-    SaO2 : <input type="text" name="Sa02" required>
+    SaO2 : <input type="text" name="Sa02" >
     <br><br>
     FR : <input type="text" name="FR">
     <br><br>
