@@ -199,7 +199,7 @@ function affichage($bdd, $id)
             ?>
         </tr>
         <tr>
-            <th> Dose </th>
+            <th> Dose (en mg) </th>
             <?php
             @$Presc=affpresc($bdd, $id);
             for ($i=0; $i<count($laListeDesDates); $i++){
