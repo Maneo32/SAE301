@@ -43,7 +43,7 @@ $_SESSION['IdChat']=1;
     <br><br><br>
     <a href="Login.php">create an account</a><br><br>
     <a href="MotDePasseOublie.php">forgot password</a><br><br>
-    <a href="https://cas.uphf.fr/login-help/">need help</a>
+    <a href="BesoinAide.php"">need help</a>
 </div>
 <!--Le bas de l'image avec le carré rouge-->
 <footer>
