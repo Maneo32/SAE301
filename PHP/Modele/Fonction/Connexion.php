@@ -15,12 +15,11 @@ class Connexion
     function connexionEtu ($bdd, $mail, $mdp ){
 
 
-        $sql="Select * From etudiant WHERE email = '$mail' ";
+        $sql=$bdd->prepare("Select * From etudiant WHERE email = ? ");
+        $sql->BindParam(1,$mail);
+        $sql->execute();
 
-        $reponse = $bdd->prepare($sql);
-        $reponse->execute();
-
-        $row = $reponse->fetch(PDO::FETCH_ASSOC);
+        $row = $sql->fetch(PDO::FETCH_ASSOC);
         if(password_verify($mdp, $row['mdp']) and $row['email']==$mail){
 
             return true;}
@@ -38,12 +37,12 @@ class Connexion
     function connexionProf ($bdd, $mail, $mdp ){
 
 
-        $sql="Select * From prof WHERE email = '$mail' ";
+        $sql=$bdd->prepare("Select * From prof WHERE email = ? ");
+        $sql->BindParam(1,$mail);
+        $sql->execute();
 
-        $reponse = $bdd->prepare($sql);
-        $reponse->execute();
 
-        $row = $reponse->fetch(PDO::FETCH_ASSOC);
+        $row = $sql->fetch(PDO::FETCH_ASSOC);
         if(password_verify($mdp, $row['mdp']) and $row['email']==$mail){
 
             return true;}
@@ -60,13 +59,11 @@ class Connexion
     function TrouveProf ($bdd, $mail ){
 
 
-        $sql="Select * From prof WHERE email = '$mail' ";
+        $sql=$bdd->prepare("Select * From prof WHERE email = ? ");
+        $sql->BindParam(1,$mail);
+        $sql->execute();
 
-        $reponse = $bdd->prepare($sql);
-        $reponse->execute();
-
-
-        if($reponse->rowCount()>0){
+        if($sql->rowCount()>0){
 
             return true;}
         else
@@ -81,14 +78,11 @@ class Connexion
      */
     function TrouveETu ($bdd, $mail ){
 
+        $sql=$bdd->prepare("Select * From etudiant WHERE email = ? ");
+        $sql->BindParam(1,$mail);
+        $sql->execute();
 
-        $sql="Select * From etudiant WHERE email = '$mail' ";
-
-        $reponse = $bdd->prepare($sql);
-        $reponse->execute();
-
-
-        if($reponse->rowCount()>0){
+        if($sql->rowCount()>0){
 
             return true;}
         else
