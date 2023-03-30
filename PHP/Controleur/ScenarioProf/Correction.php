@@ -78,23 +78,23 @@ function affichage($bdd){
         // On récupère les informations de l'élève ayant répondu
         $sql = $bdd->prepare("select * from reponseetu where idpatient=?");
         $sql->execute(array($_SESSION['patient']));
-        ?>
-
-        <?php
         while ($data = $sql->fetch()) {
             $sql2 = $bdd->prepare("select * from etudiant where email=?");
             $sql2->execute(array($data[1]));
             $data2 = $sql2->fetch();
+            $sql3 = $bdd->prepare("select * from note where idreponse=?");
+            $sql3->execute(array($data[0]));
+            $data3 = $sql3->fetch();
             // On affiche le nom, le prénom et la réponse de l'élève
             echo $data2[2] . " " . $data2[3] . " : " . $data[3];
             ?>
             <form method="post">
                 <select name="note">
 
-                    <input type="number" max="20" name="note" placeholder="Entrez la note">
+                    <input type="number" max="20" name="note" value="<?php echo $data3[2]?>" placeholder="Entrez la note">
                 </select>
                 <input type="submit" value="Valider">
-                <input style="display: none" type="text" name="id" value="<?php echo $data[0]?>">
+                <input style="display: none" type="text" value="<?php echo $data[0] ?>" name="id">
             </form>
             <br>
             <?php
@@ -102,11 +102,20 @@ function affichage($bdd){
     }
 }
 function noter($bdd){
-    if (isset($_POST['note'])){
-        $sql = $bdd->prepare("insert into note values (?, ?, ?, ?)");
-        $sql ->execute(array($_SESSION['eleve'], $_SESSION['patient'], $_POST['note'], $_POST['id']));
+    if (isset($_POST['note']) && isset($_POST['id'])) {
+        $sql2 = $bdd->prepare("select * from note where idreponse=?");
+        $sql2->execute(array($_POST['id']));
+        $data = $sql2->fetch();
+        if ($data) {
+            $sql = $bdd->prepare("update note set note=? where idreponse=?");
+            $sql->execute(array($_POST['note'], $_POST['id']));
+        } else {
+            $sql = $bdd->prepare("insert into note values (?, ?, ?, ?)");
+            $sql->execute(array($_SESSION['eleve'], $_SESSION['patient'], $_POST['note'], $_POST['id']));
+        }
     }
 }
+
 ?>
 <br>
 <?php

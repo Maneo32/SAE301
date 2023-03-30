@@ -7,7 +7,7 @@ $bdd=$conn::getpdo();
 $tous = $bdd->query("SELECT idba FROM besoindaide");
 $idchat = $_SESSION['IdChat'];
 $recupMsg= $bdd->prepare("SELECT * FROM messageAide WHERE idgroupe=? and email=? order by id desc");
-$recupMsg->execute(array($_SESSION['IdChat'], $_SESSION['Pseudo']));
+@$recupMsg->execute(array($_SESSION['IdChat'], $_SESSION['Pseudo']));
 while($message= $recupMsg->fetch()){
     ?>
     <div class="message">

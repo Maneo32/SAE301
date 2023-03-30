@@ -59,5 +59,12 @@ $arrayRslt= fetchNote($pdo,$mail);
     ?>
     </tbody>
 </table>
+
+<div class="footer-CreateScenario">
+    <br>
+    <form action="../Accueil/BesoinAide.php" method="post">
+        <button class="button-28" type="submit">Besoin d'aide</button>
+    </form>
+</div>
 </body>
 </html>

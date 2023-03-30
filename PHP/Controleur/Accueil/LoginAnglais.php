@@ -22,7 +22,7 @@ session_start();
                 <input type="submit" value="Francais">
             </form>
         </div>
-        <a href="Accueil.php">
+        <a href="AccueilAnglais.php">
             <img src="../../View/image/logoIFSI.png" width=234 height=125 alt="" >
         </a>
         <h1>  Institute of Nursing Training</h1>

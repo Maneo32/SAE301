@@ -410,30 +410,24 @@ function modifdonnees($bdd, $id){
             $actio->execute();
             $_SESSION['coo'] = "";
         } elseif ($mots[2] < 12+sizeof($datespres)) {
-            echo '1';
             $action = $presc[0];
             $date = $datespres[$mots[2] - 12];
         } elseif ($mots[2] < 12 + 2 * sizeof($datespres)) {
-            echo '2';
             $action = $presc[1];
             $date = $datespres[$mots[2] - 12 - sizeof($datespres)];
         } elseif ($mots[2] < 12 + 3 * sizeof($datespres)) {
-            echo '3';
             $action = $presc[2];
             $date = $datespres[$mots[2] - 12 - 2 * sizeof($datespres)];
         }
         elseif ($mots[2]<12+3 * sizeof($datespres)+sizeof($datesdiag)){
-            echo '4';
             $action = $diag[0];
             $date = $datesdiag[$mots[2] - 12 - 3*sizeof($datespres)];
         }
         elseif ($mots[2]<12+(3 * sizeof($datespres))+(2*sizeof($datesdiag))){
-            echo '5';
             $action = $diag[1];
             $date = $datesdiag[$mots[2] - 12 - 3*sizeof($datespres)-sizeof($datesdiag)];
         }
         elseif ($mots[2]<12+(3 * sizeof($datespres))+(3*sizeof($datesdiag))){
-            echo '6';
             $action = $diag[2];
             $date = $datesdiag[$mots[2] - 12 - 3*sizeof($datespres)-(2*sizeof($datesdiag))];
         }

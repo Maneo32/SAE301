@@ -40,12 +40,12 @@ session_start();
 
 <div class ="inscription">
 
-    <form action="MotDePasseOublie.php" method="post">
+    <form action="MotDePasseOublieAnglais.php" method="post">
 
         <br>
         <label>Email :</label>
         <br><br>
-        <input type="email" name='mail' placeholder="Enter your email address" required>
+        <input type="email" name='mail' placeholder="Enter your email" required>
         <br>
         <br>
         <label>Confirm your email :</label>
@@ -60,7 +60,7 @@ session_start();
 <!--Le bas de la page-->
 
 <footer>
-    <form action="Login.php" method="post">
+    <form action="LoginAnglais.php" method="post">
         <input type="submit" value="Create an account">
     </form> <br>
     <form action="BesoinAide.php" method="post">

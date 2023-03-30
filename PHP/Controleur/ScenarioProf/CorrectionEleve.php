@@ -50,4 +50,11 @@ foreach ($rep as $reponse){
 
 ?>
 </body>
+
+<div class="footer-CreateScenario">
+    <br>
+    <form action="../Accueil/BesoinAide.php" method="post">
+        <button class="button-28" type="submit">Besoin d'aide</button>
+    </form>
+</div>
 </html>

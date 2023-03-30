@@ -22,7 +22,7 @@ $_SESSION['IdChat']=1;
             <input type="submit" value="Francais">
         </form>
     </div>
-    <a href="Accueil.php">
+    <a href="AccueilAnglais.php">
         <img src="../../View/image/logoIFSI.png" width=234 height=125 alt="" >
     </a>
     <h1> Institute of Nursing Training </h1>
@@ -41,9 +41,9 @@ $_SESSION['IdChat']=1;
 
 <div class="href">
     <br><br><br>
-    <a href="Login.php">create an account</a><br><br>
-    <a href="MotDePasseOublie.php">forgot password</a><br><br>
-    <a href="BesoinAide.php"">need help</a>
+    <a href="LoginAnglais.php">create an account</a><br><br>
+    <a href="MotDePasseOublieAnglais.php">forgot password</a><br><br>
+    <a href="BesoinAide.php">need help</a>
 </div>
 <!--Le bas de l'image avec le carré rouge-->
 <footer>
