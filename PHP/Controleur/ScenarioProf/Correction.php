@@ -135,5 +135,12 @@ if (@$_COOKIE['rl']==1){
 <form method="post">
     <button class="button-90" role="button" type="submit" name="destroy">Changer d'élève</button>
 </form>
+<div class="footer-CreateScenario">
+    <br>
+    <form action="../Accueil/BesoinAide.php" method="post">
+        <button class="button-28" type="submit">Besoin d'aide</button>
+    </form>
+</div>
+
 </body>
 </html>
