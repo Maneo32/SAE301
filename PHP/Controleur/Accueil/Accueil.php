@@ -1,6 +1,11 @@
 <?php
 session_start();
 $_SESSION['IdChat']=1;
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

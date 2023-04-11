@@ -95,11 +95,10 @@ Create table Prescription (
     medecin text not null
 );
 
-
 Create table Radio (
     idRadio serial Primary Key,
-     image text not null,
-     idPatient int references Patient on delete cascade
+    image bytea not null,
+    idPatient int references Patient on delete cascade
 );
 Create TABLE Neuro (
     date timestamp not null ,
