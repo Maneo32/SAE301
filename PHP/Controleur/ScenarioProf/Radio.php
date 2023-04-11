@@ -40,8 +40,11 @@ include("../../View/HTML/EnteteV2.html");
     <input type="file" name="image">
     <input type="submit" name="submit" value="Ajouter">
 </form>
-<form>
-
+<br>
+<form action="Diagnostic.php">
+    <div class="button_Suivant">
+        <input type="submit" name="Valider" value="Suivant">
+    </div>
 </form>
 
 <div class="footer-CreateScenario">
@@ -78,7 +81,7 @@ if(isset($_POST['submit'])) {
         $stmt ->bindParam(2, $_SESSION['patient']);
         $stmt->execute();
 
-        echo "L'image a été ajoutée à la base de données.";
+        echo 'alert("image a été ajoutée à la base de données.")';
     } else {
         echo "Veuillez sélectionner une image à ajouter.";
     }
