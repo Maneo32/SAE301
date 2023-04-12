@@ -97,7 +97,9 @@ Create table Prescription (
 
 Create table Radio (
     idRadio serial Primary Key,
-    image bytea not null,
+    name text not null,
+    type text not null,
+    content bytea not null,
     idPatient int references Patient on delete cascade
 );
 Create TABLE Neuro (

@@ -37,14 +37,13 @@ include("../../View/HTML/EnteteV2.html");
 
     <h2>Radio</h2>
 <form method="POST" enctype="multipart/form-data">
-    <input type="file" name="image">
+    <label for="image">Choisir une radio :</label>
+    <input type="file" name="image" id="image">
     <input type="submit" name="submit" value="Ajouter">
 </form>
 <br>
 <form action="Diagnostic.php">
-    <div class="button_Suivant">
-        <input type="submit" name="Valider" value="Suivant">
-    </div>
+        <input type="button" name="Valider" value="Suivant">
 </form>
 
 <div class="footer-CreateScenario">
@@ -64,27 +63,28 @@ $bdd = $pdo::getpdo();
 
 
 if(isset($_POST['submit'])) {
+    // Récupérer les informations du fichier envoyé
+    $file = $_FILES['image'];
+    $fileName = $file['name'];
+    $fileType = $file['type'];
+    $fileContent = file_get_contents($file['tmp_name']);
 
-// Vérifie si l'utilisateur a sélectionné un fichier
-    if(!empty($_FILES['image'])) {
-
-// le contenu du fichier
-        $image_name = $_FILES['image'];
 
 // Connexion à la base de données
         $pdo = ConnectionBDD::getInstance();
         $bdd = $pdo::getpdo();
 
 // Prépare et exécute la requête SQL pour insérer l'image dans la base de données
-        $stmt = $bdd->prepare('INSERT INTO Radio (image, idpatient) VALUES (?, ?)');
-        @$stmt->bindParam(1, $image_name);
-        $stmt ->bindParam(2, $_SESSION['patient']);
+        $stmt = $bdd->prepare('INSERT INTO Radio (name,type,content, idpatient) VALUES (?, ?,?,?)');
+        $stmt->bindParam(1, $fileName);
+        $stmt->bindParam(2, $fileType);
+        $stmt->bindParam(3, $fileContent, PDO::PARAM_LOB);
+        $stmt->bindParam(4, $_SESSION['patient']);
         $stmt->execute();
 
-        echo 'alert("image a été ajoutée à la base de données.")';
-    } else {
-        echo "Veuillez sélectionner une image à ajouter.";
-    }
+        echo "<script>alert('Cette image a été ajoutée à la base de données.');</script>";
+
+
 }
 
 

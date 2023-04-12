@@ -34,9 +34,13 @@ include('../../Modele/Fonction/ConnectionBDD.php');
 ?>
 <h2>Le Scénario</h2>
 <button class="button-90" onclick="window.history.back()">Retour</button>
-
+<form action="AfficheRadio.php">
+    <button type="submit" class="button-90" >Radio</button>
+</form>
 <br><br>
 <?php
+
+echo $_SESSION['scenario'];
 $id = $_SESSION['scenario'];
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
@@ -78,6 +82,7 @@ function affichage($bdd, $id)
     ?>
 
     <script>
+
 
 
         document.cookie = 'valid = '+""
