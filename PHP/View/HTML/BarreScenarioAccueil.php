@@ -16,7 +16,7 @@ require('../../Controleur/ScenarioProf/checkSession.php');
 </header>
 
 <div class="font">
-  <div class="deconexion">
+  <div class="deconexilion">
     <a href="../../Controleur/Accueil/Disconnect.php"> <img src="../../View/image/Deconnexion.png" class="icone" width=50 height=50 alt="leRetour" > </a>
   </div>
     <button class="button-57" onclick="document.location='PageProf.php'"><span class="text">Accueil</span><span>Accueil</span></button>

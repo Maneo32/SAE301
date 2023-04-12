@@ -32,6 +32,16 @@ function contrainte()
     }
 }
 
+function evenement ()
+{
+    if (isset($_POST['patient']) && $_POST['patient'] != 2) {
+        if (isset($_POST['Evenement'])) {
+            $_SESSION['patient'] = $_POST['patient'];
+            header('Location: evenement.php');
+        }
+    }
+}
+
 /* permet d'appuyer sur le bouton afficher scénario si et seulement si un patient est séléctionné*/
 /**
  * @return void
