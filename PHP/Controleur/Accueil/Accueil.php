@@ -2,7 +2,6 @@
 session_start();
 $_SESSION['IdChat']=1;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +54,6 @@ $_SESSION['IdChat']=1;
 
 
 <?php
-
 require("../../Modele/Fonction/email.php");
 require("../../Modele/Fonction/MotDePasse.php");
 require("../../Modele/Fonction/ConnectionBDD.php");
