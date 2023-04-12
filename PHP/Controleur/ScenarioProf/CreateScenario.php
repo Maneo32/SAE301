@@ -52,7 +52,9 @@ include("../../View/HTML/BarreScenario.php");
 
 
     }
+    // ses fonctions sont pour les formulaires d'apres
     affichersce();
+    evenement();
     contrainte();
     creerGroupe($bdd);
     ajoutEtu($bdd);
@@ -103,6 +105,7 @@ include("../../View/HTML/BarreScenario.php");
             ?>
     </select>
         <button class="button-90" type="submit" name="Contrainte">Ajouter une contrainte</button>
+        <button class="button-90" type="submit" name="Evenement">Ajouter une évènement</button>
         <button class="button-90" type="submit" name="affiche">Afficher le scénario</button>
         <button class="button-90" type="submit" name="Supprimer">Supprimer le patient</button>
 
