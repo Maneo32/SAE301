@@ -723,7 +723,7 @@ COPY public.respi (date, sao2, fr, o2, idpatient) FROM stdin;
 -- Data for Name: scenario; Type: TABLE DATA; Schema: public; Owner: iutinfo134
 --
 
-COPY public.scenario (idscenario, email, idpatient) FROM stdin;
+COPY public.scenario (idscenario, Ordre, idpatient) FROM stdin;
 \.
 
 

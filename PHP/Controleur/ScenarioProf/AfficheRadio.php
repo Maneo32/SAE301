@@ -1,4 +1,4 @@
-<?php
+ç<?php
 session_start();
 $id = $_SESSION['scenario'];
 
