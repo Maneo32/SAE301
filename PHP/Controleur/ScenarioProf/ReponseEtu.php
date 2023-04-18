@@ -40,8 +40,12 @@ function reponse($bdd){
     $nomscena->execute();
     $res = $nomscena->fetch();
 
+/*Recupération le nombre d'evenement par scenario*/
 
-
+    $nbEvenement = $bdd->prepare("SELECT count(idscenario) FROM scenario where idpatient=? ");
+    $nbEvenement->bindParam(1,$_SESSION['patient']);
+    $nbEvenement->execute();
+    $res2 = $nbEvenement->fetch();
 
 reponse($bdd);
 ?>
@@ -50,11 +54,25 @@ reponse($bdd);
     <button class="button-90" >Retour</button>
 </form>
 <h4>Réponse au Scénario : <?php echo $res[0]," ",$res[1]," né le ",$res[2] ?>  </h4>
-
+<?php echo($res2[0]);
+ ?>
 
 <form method="post">
     <div class="Diagnostic">
     <textarea name="textereponse" id="textereponse" rows="20" cols="80" required> </textarea></div> <br>
     <input type="submit" name="Valider" value="Envoyer">
 </form>
+
+</body>
+</html>
+<?php
+
+function evenement($bdd){
+
+
+
+
+}
+
+?>
 
