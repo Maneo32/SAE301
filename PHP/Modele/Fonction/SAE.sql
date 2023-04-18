@@ -70,7 +70,8 @@ Create Table Patient(
 
 Create table Scenario (
     idScenario serial primary key,
-    email text references Prof on delete cascade,
+    ordre int ,
+    texte text,
     idPatient int references Patient on delete cascade
 );
 

@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta title="BarreScenarioAccueil" charset="UTF-8">
+
+
 </head>
 <body>
 <?php

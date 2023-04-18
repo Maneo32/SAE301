@@ -11,7 +11,8 @@ $id = $_SESSION['patient'];
     <title>Evenement dynamique </title>
     <link rel="stylesheet" href="../../View/Style/PageProf.css" >
     <script src="../../Modele/Fonction/LesFonctionsJS.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -33,7 +34,7 @@ $res=$sql->fetchAll();
 echo'
 <div class="container">
 	<h2>Ajouter des événements</h2>
-	<form action="ajouter_elements.php" method="POST">
+	<form method="post" action="../../Modele/addEvent.php">
 		<div class="form-group">
 			<label for="texte">Texte :</label>
 			<input type="text" class="form-control" id="texte" name="texte" required>
@@ -42,10 +43,13 @@ echo'
 			<label for="ordre">Ordre d\'apparition :</label>
 			<input type="number" class="form-control" id="ordre" name="ordre" min="1" required>
 		</div>
-		<button type="submit" class="btn btn-primary">Ajouter</button>
+		<button type="submit"   class="btn btn-primary">Ajouter</button>
 	</form>
-</div> ';
-
+</div> 
+</body>';
 
 
 ?>
+
+
+
