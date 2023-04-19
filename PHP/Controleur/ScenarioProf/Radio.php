@@ -38,8 +38,8 @@ include("../../View/HTML/EnteteV2.html");
     <h2>Radio</h2>
 <form method="POST" enctype="multipart/form-data">
     <label for="image">Choisir une radio :</label>
-    <input type="file" name="image" id="image">
-    <input type="submit" name="submit" value="Ajouter">
+    <input type="file" name="userfile">
+    <input type="submit" name="submit" value="Send File">
 </form>
 <br>
 <form action="Diagnostic.php">
@@ -61,34 +61,30 @@ require("../../Modele/Fonction/ConnectionBDD.php");
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 
-
-if(isset($_POST['submit'])) {
-    // Récupérer les informations du fichier envoyé
-    $file = $_FILES['image'];
-    $fileName = $file['name'];
-    $fileType = $file['type'];
-    $fileContent = file_get_contents($file['tmp_name']);
+function uploadimg($bdd)
+{
 
 
-// Connexion à la base de données
-        $pdo = ConnectionBDD::getInstance();
-        $bdd = $pdo::getpdo();
+    $uploaddirname= $_FILES['userfile']['name'];
+    $uploaddir = "C:/Users/coren/PhpstormProjects/SAE301/PHP/imgRadio/";
+    $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
-// Prépare et exécute la requête SQL pour insérer l'image dans la base de données
-        $stmt = $bdd->prepare('INSERT INTO Radio (name,type,content, idpatient) VALUES (?, ?,?,?)');
-        $stmt->bindParam(1, $fileName);
-        $stmt->bindParam(2, $fileType);
-    $pg_escape_bytea = pg_escape_bytea($fileContent);
-    $stmt->bindParam(3, $pg_escape_bytea), PDO::PARAM_LOB);
-        $stmt->bindParam(4, $_SESSION['patient']);
-        $stmt->execute();
+    echo '<pre>';
+    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
+        $insertImg= $bdd->prepare('INSERT INTO radio(name, idpatient) VALUES(?,?)');
+        $insertImg->execute(array($uploaddirname,$_SESSION['patient']));
+        echo "File is valid, and was successfully uploaded.\n";
+    } else {
+        echo "Possible file upload attack!\n";
+    }
 
-        echo "<script>alert('Cette image a été ajoutée à la base de données.');</script>";
+    echo 'Here is some more debugging info:';
+    print_r($_FILES);
 
-
+    print "</pre>";
+}
+if(isset($_FILES['userfile'])){
+    uploadimg($bdd);
 }
 
-
 ?>
-
-

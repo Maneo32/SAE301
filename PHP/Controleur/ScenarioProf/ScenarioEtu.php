@@ -61,6 +61,7 @@ if (isset($_POST['patient']) && $_POST['patient'] != 2) {
 
 
 </form>
+<br>
 <div class="footer-CreateScenario">
     <form action="../Accueil/BesoinAide.php" method="post">
         <button class="button-28" type="submit">Besoin d'aide</button>
