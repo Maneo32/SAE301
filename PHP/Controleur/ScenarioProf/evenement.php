@@ -95,30 +95,7 @@ $sql->execute();
 
 
 @$_SESSION['coo'] = $_COOKIE['valid'];
-// faire l'affichage des anciens événement
-?><table>
-    <thead>
-    <tr>
-        <th>Evènement</th>
-        <th>Ordre</th>
-    </tr>
-    </thead>
-    <tbody>
-    <?php
-    $i=0;
-
-
-    while ($res = $sql->fetch()) {
-        echo "<tr>";
-        echo "<td onclick='change($i, $res[0], 0)'>" . $res[2] . "</td>";
-        $i = $i+1;
-        echo "<td onclick='change($i, $res[0], 0)'>".$res[1] .'</td>';
-        $i = $i+1;
-        echo "</tr>";
-    }
-    ?>
-    </tbody>
-</table>
+?>
 <?php
 
 function modifdonnee($bdd, $id){
@@ -151,14 +128,46 @@ modifdonnee($bdd, $id);
 			<label for="texte">Texte :</label>
 			<input type="text" class="form-control" id="texte" name="texte" required>
 		</div>
+        <br>
 		<div class="form-group">
-			<label for="ordre">Ordre d\'apparition :</label>
+			<label for="ordre">Ordre d'apparition :</label>
 			<input type="number" class="form-control" id="ordre" name="ordre" min="1" required>
 		</div>
+        <br>
 		<button type="submit"   class="btn btn-primary">Ajouter</button>
 	</form>
-</div> 
+</div>
+<br>
+<h4>Les événements</h4>
+
+<div style="text-align: center;">
+    <table>
+        <thead>
+    <tr>
+        <th>Evénement</th>
+        <th>Ordre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    $i=0;
+
+    // faire l'affichage des anciens événement
+
+    while ($res = $sql->fetch()) {
+        echo "<tr>";
+        echo "<td onclick='change($i, $res[0], 0)'>" . $res[2] . "</td>";
+        $i = $i+1;
+        echo "<td onclick='change($i, $res[0], 0)'>".$res[1] .'</td>';
+        $i = $i+1;
+        echo "</tr>";
+    }
+    ?>
+    </tbody>
+</table>
+</div>
 </body>
+</html>
 
 
 

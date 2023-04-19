@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <title>ConnexionProfesseur</title>
     <link rel="stylesheet" href="../../View/Style/PageProf.css" >
-    <script src="LesFonctionsJS.js"></script>
+    <script src="../../Modele/Fonction/LesFonctionsJS.js"></script>
 
 </head>
 <body>
