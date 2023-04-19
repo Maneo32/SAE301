@@ -12,5 +12,6 @@ $stmt->bindParam(1,$id);
 $stmt->bindParam(2,$texte);
 $stmt->bindParam(3,$number);
 $stmt->execute();
+header('../Controleur/ScenarioProf/evenement.php');
 
 
