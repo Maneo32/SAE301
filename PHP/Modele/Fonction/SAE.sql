@@ -68,11 +68,18 @@ Create Table Patient(
     emailprof text references Prof
 );
 
+Create table Evenement(
+    idScenario int references Scenario on DELETE CASCADE primary key ,
+    idEvt int references Scenario on DELETE CASCADE primary key ,
+    evenement text not null
+);
+
 Create table Scenario (
     idScenario serial primary key,
     ordre int ,
     texte text,
-    idPatient int references Patient on delete cascade
+    idPatient int references Patient on delete cascade,
+    idEvt int references Evenement on delete cascade
 );
 
 Create Table Note (
@@ -95,12 +102,10 @@ Create table Prescription (
     idPatient int references Patient on delete cascade,
     medecin text not null
 );
-
+drop table if exists Radio;
 Create table Radio (
     idRadio serial Primary Key,
     name text not null,
-    type text not null,
-    content bytea not null,
     idPatient int references Patient on delete cascade
 );
 Create TABLE Neuro (
@@ -295,6 +300,7 @@ Create table ReponseEtu(
     texte text not null
 
 );
+
 
 SELECT nom,prenom,DDN from groupescenario join groupeetudiant g on groupescenario.idgroupe = g.idgroupe join patient p on groupescenario.idpatient = p.idpatient  where email='mdangreaux11@gmail.com';
 
