@@ -78,7 +78,8 @@ if(isset($_POST['submit'])) {
         $stmt = $bdd->prepare('INSERT INTO Radio (name,type,content, idpatient) VALUES (?, ?,?,?)');
         $stmt->bindParam(1, $fileName);
         $stmt->bindParam(2, $fileType);
-        $stmt->bindParam(3, $fileContent, PDO::PARAM_LOB);
+    $pg_escape_bytea = pg_escape_bytea($fileContent);
+    $stmt->bindParam(3, $pg_escape_bytea), PDO::PARAM_LOB);
         $stmt->bindParam(4, $_SESSION['patient']);
         $stmt->execute();
 

@@ -26,6 +26,7 @@ function afficherImagesRadio($bdd, $idpatient)
         echo "Image Radio<br>";
         $imgData = base64_encode($resultat['content']);
         $src = 'data:'.$resultat['type'].';base64,'.$imgData;
+        echo $src;
         echo "<img src='$src'>";
     }
 }
