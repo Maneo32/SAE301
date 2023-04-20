@@ -40,7 +40,27 @@ $bdd = $pdo::getpdo();
     $nbEvenement->execute();
     $res2 = $nbEvenement->fetchAll();
 
-#reponse($bdd);
+    $nbRep = $bdd->prepare("Select * from reponseetu where idpatient=? and email=?");
+    $nbRep->bindParam(1,$_SESSION['patient']);
+    $nbRep->bindParam(2,$_SESSION['email']);
+    $nbRep->execute();
+    $dejaRep=$nbRep->fetchAll();
+
+    /* le if est else sont présent pouyr attendre le clique de l'étudiant avant de changer la page*/
+    if(count($dejaRep)>0){
+        echo '<script> if (window.confirm("Vous avez déja répondu pour ce patient ?")) {
+    
+    window.location.href = "ScenarioEtu.php";}
+    else{
+      window.location.href = "ScenarioEtu.php";  
+    }
+    </script>';
+
+
+
+    }
+
+
 ?>
 <br>
 <form action="ScenarioEtu.php" method="post">
