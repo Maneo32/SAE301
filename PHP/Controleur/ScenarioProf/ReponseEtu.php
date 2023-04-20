@@ -13,7 +13,7 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
-<body>
+<body style="background-color: lightblue">
 <?php
 include("../../View/HTML/BarreScenarioEtu.php");
 
@@ -69,17 +69,21 @@ $bdd = $pdo::getpdo();
 <h4>Réponse au Scénario : <?php echo $res[0]," ",$res[1]," né le ",$res[2] ?>  </h4>
 
 
-
+<div class="mx-auto" style="width: 750px;" >
 <textarea name="textereponse0" id="textereponse0" ordre="0" rows="20" cols="80" required> </textarea> <br>
-<input type="submit" name="Valider" onclick="ajoutNouvelEvenement(0)" value="Envoyer">
+</div>
 
+<input type="submit" name="Valider" onclick="ajoutNouvelEvenement(0)" value="Envoyer">
 
 <?php
 for ($i=1;$i<count($res2)+1;$i++){
     echo '
-    <div class="d-none" id="div'.$i.'"> 
-        <span> '.$res2[$i-1]["texte"].'</span>
-        <textarea name="textereponse'.$i.'" id="textereponse'.$i.'" ordre="'.$res2[$i-1]["ordre"].'" rows="20" cols="80" required> </textarea> <br>
+    <div class="d-none" id="div'.$i.'" > 
+        <div class="mx-auto" style="width: 750px;" >
+            <h4> Evenement : '.$res2[$i-1]["texte"].'</h4>
+            <textarea name="textereponse'.$i.'" id="textereponse'.$i.'" ordre="'.$res2[$i-1]["ordre"].'" rows="20" cols="80" required> </textarea> <br>
+        </div>
+
         <input id="rep'.$i.'" type="submit" name="Valider" onclick="ajoutNouvelEvenement('.$i.')" value="Envoyer">
         
 

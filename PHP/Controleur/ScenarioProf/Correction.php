@@ -23,6 +23,7 @@ $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 ?>
 <h4>Correction Scénario</h4>
+
 <?php
 if (!isset($_POST['patient'])){
     // On affiche un formulaire permettant de sélectionner un patient
@@ -87,18 +88,20 @@ function affichage($bdd){
             $data3 = $sql3->fetch();
             // On affiche le nom, le prénom et la réponse de l'élève
             echo $data2[2] . " " . $data2[3] . " : " . $data[3];
+            echo '<br>';}
             ?>
-            <form method="post">
-                <select name="note">
-
-                    <input type="number" max="20" name="note" value="<?php echo $data3[2]?>" placeholder="Entrez la note">
-                </select>
-                <input type="submit" value="Valider">
-                <input style="display: none" type="text" value="<?php echo $data[0] ?>" name="id">
+        <form method="post">
+            <input type="number" max="20" name="note" value="<?php echo $data3[2]?>" placeholder="Entrez la note">
+            <input type="submit" value="Valider">
+                <input style="display: none" type="text" value="<?php
+                $sql = $bdd->prepare("select * from reponseetu where idpatient=?");
+                $sql->execute(array($_SESSION['patient']));
+                $datatest = $sql->fetch();
+                echo $datatest[0] ?>" name="id">
             </form>
             <br>
             <?php
-        }
+
     }
 }
 function noter($bdd){

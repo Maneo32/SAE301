@@ -131,7 +131,8 @@ modifdonnee($bdd, $id);
         <br>
 		<div class="form-group">
 			<label for="ordre">Ordre d'apparition :</label>
-			<input type="number" class="form-control" id="ordre" name="ordre" min="1" required>
+			<input type="number" class="form-control" id="ordre" name="ordre" min="1" value="1" required>
+            <h6>Il ne faut pas mettre deux fois le même ordre </h6>
 		</div>
         <br>
 		<button type="submit"   class="btn btn-primary">Ajouter</button>
@@ -165,6 +166,12 @@ modifdonnee($bdd, $id);
     ?>
     </tbody>
 </table>
+</div>
+<div class="footer-CreateScenario">
+    <br>
+    <form action="../Accueil/BesoinAide.php" method="post">
+        <button class="button-28" type="submit">Besoin d'aide</button>
+    </form>
 </div>
 </body>
 </html>
