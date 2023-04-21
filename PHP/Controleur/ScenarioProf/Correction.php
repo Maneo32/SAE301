@@ -22,7 +22,7 @@ require("../../Modele/Fonction/ConnectionBDD.php");
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 ?>
-<h4>Correction Scénario</h4>
+<h2>Correction Scénario</h2>
 
 <?php
 if (!isset($_POST['patient'])){
@@ -117,7 +117,9 @@ function affichage($bdd){
 
             // On affiche le nom, le prénom et la réponse de l'élève
 
-
+            $sql3 = $bdd->prepare("select * from note where idreponse=?");
+            $sql3->execute(array($data[0]));
+            $data3 = $sql3->fetch();
 
 
 
