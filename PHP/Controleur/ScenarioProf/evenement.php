@@ -124,9 +124,10 @@ modifdonnee($bdd, $id);
 <div class="container">
 	<h2>Ajouter des événements</h2>
 	<form method="post" action="../../Modele/addEvent.php">
-		<div class="form-group">
-			<label for="texte">Texte :</label>
-			<input type="text" class="form-control" id="texte" name="texte" required>
+        <label for="texte">Texte :</label>
+
+        <div class="form-group">
+            <textarea type="text" rows="5" cols="30" class="form-control" id="texte" name="texte" required></textarea>
 		</div>
         <br>
 		<div class="form-group">

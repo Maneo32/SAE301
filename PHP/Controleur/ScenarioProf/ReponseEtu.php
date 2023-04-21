@@ -101,7 +101,7 @@ for ($i=1;$i<count($res2)+1;$i++){
 
 <script>
 function ajoutNouvelEvenement(i){
-    $("#rep"+i).addClass("disabled");
+    $("#rep"+(i+1)).addClass("disabled");
     $("#div"+(i+1)).removeClass("d-none");
     var reponse = document.getElementById("textereponse"+i).value;
     var ordre = document.getElementById("textereponse"+i).getAttribute('ordre');

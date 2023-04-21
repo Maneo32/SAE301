@@ -44,9 +44,9 @@ $_SESSION['IdChat']=1;
 
 <div class="href">
     <br><br><br>
-    <a href="Login.php">créer un compte</a><br><br>
-    <a href="MotDePasseOublie.php">Mot de passe oublié</a><br><br>
-    <a href="BesoinAide.php">Besoin d'aide</a><br><br>
+    <a class="button-28" href="Login.php">Créer un compte</a><br><br>
+    <a class="button-28"href="MotDePasseOublie.php">Mot de passe oublié</a><br><br>
+    <a class="button-28" href="BesoinAide.php">Besoin d'aide</a><br><br>
 </div>
 <!--Le bas de l'image avec le carré rouge-->
     <div class="securite">

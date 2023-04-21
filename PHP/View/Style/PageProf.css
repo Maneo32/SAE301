@@ -316,7 +316,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: dodgerblue;
+    background-color: #0c76d9;
 
 }
 
@@ -337,7 +337,7 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #0c76d9;
+    background-color: dodgerblue;
 }
 
 h6{
