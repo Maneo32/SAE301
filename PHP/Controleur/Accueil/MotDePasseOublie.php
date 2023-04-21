@@ -52,6 +52,7 @@ session_start();
         <br>
         <p><input type="submit" value="Valider"></p>
     </form>
+    <br>
 
 </div>
 

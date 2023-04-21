@@ -74,12 +74,14 @@ session_start();
             <br>
 
             <input type="submit" value="Validate" >
-        </form>
+        </form>    <br>
+
+
     </div>
 
 <br>
     <form action="BesoinAide.php" method="post">
-        <button class="button-28" type="submit">Need Help</button>
+        <button style="margin-left: 39%" class="button-28" type="submit">Need Help</button>
     </form>
     </body>
     </html>

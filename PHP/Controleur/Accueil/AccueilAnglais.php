@@ -32,7 +32,7 @@ $_SESSION['IdChat']=1;
 <div class="Connexion">
     <h3>Enter your login and password</h3> <br>
     <form method="post">
-        <input type="email" name="id" id="id" placeholder="login" required><br><br>
+        <input  type="email" name="id" id="id" placeholder="login" required><br><br>
         <input type="password" name="mdp" id="mdp" placeholder="password"><button type="button" onclick="changer('mdp')">O</button><br><br>
         <input type="submit" value="submit">
     </form>
@@ -41,9 +41,9 @@ $_SESSION['IdChat']=1;
 
 <div class="href">
     <br><br><br>
-    <a href="LoginAnglais.php">create an account</a><br><br>
-    <a href="MotDePasseOublieAnglais.php">forgot password</a><br><br>
-    <a href="BesoinAide.php">need help</a>
+    <a class="button-28" href="LoginAnglais.php">create an account</a><br><br>
+    <a class="button-28" href="MotDePasseOublieAnglais.php">forgot password</a><br><br>
+    <a class="button-28" href="BesoinAide.php">need help</a>
 </div>
 <!--Le bas de l'image avec le carré rouge-->
 <footer>

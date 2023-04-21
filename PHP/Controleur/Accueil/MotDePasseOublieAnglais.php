@@ -54,6 +54,7 @@ session_start();
         <br>
         <p><input type="submit" value="Validate"></p>
     </form>
+    <br>
 
 </div>
 

@@ -75,11 +75,13 @@ session_start();
 
             <input type="submit" value="Valider" >
         </form>
+    <br>
+
 </div>
 
 <br>
 <form action="BesoinAide.php" method="post">
-    <button class="button-28"  type="submit">Besoin d'aide</button>
+    <button style="margin-left: 39%" class="button-28"  type="submit">Besoin d'aide</button>
 </form>
 
 </body>

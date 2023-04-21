@@ -36,7 +36,7 @@ $_SESSION['IdChat']=1;
     <h3>Entrez votre identifiant et votre mot de passe</h3> <br>
     <form method="post">
         <input type="email" name="id" id="id" placeholder="Identifiant" required><br><br>
-        <input type="password" name="mdp" id="mdp" placeholder="Mot de passe"><button type="button" onclick="changer('mdp')">O</button><br><br>
+        <input type="password" name="mdp" id="mdp" placeholder="Mot de passe"><button type="button" class="button-29" onclick="changer('mdp')">O</button><br><br>
         <input type="submit" value="Confirmer">
     </form>
 </div>
