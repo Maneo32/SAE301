@@ -3,48 +3,46 @@
 /**
  *
  */
-class ConnectionBDD
-{
-    /* permet grâce a un singleton de créer une seule connection a la base de donnée sur toutes les pages*/
-    /**
-     * @var null
-     */
-    private static $_instance = null;
-    /**
-     * @var PDO
-     */
+class ConnectionBDD {
+    private static $instance;
     private static $pdo;
 
-    /**
-     *
-     */
-    private function __construct()
-    {
-        self::$pdo = new PDO(
-            'pgsql:host=iutinfo-sgbd.uphf.fr;dbname=iutinfo134', 'iutinfo134', 'NuVRPnlV');
-        self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    private function __construct() {
+        $config = parse_ini_file('config.ini', true)['database'];
+        $host = $config['host'];
+        $name = $config['name'];
+        $username = $config['username'];
+        $password = $this->getPassword();
+        try {
+            self::$pdo = new PDO("pgsql:host=$host;dbname=$name", $username, $password);
+            self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die("Connection failed: " . $e->getMessage());
+        }
     }
 
-    /**
-     * @return PDO
-     */
-    public static function getpdo(){
+    private function getPassword() {
+        $password_file = __DIR__.'./password.txt';
+        if (!file_exists($password_file)) {
+            die("Password file not found");
+        }
+        $password = file_get_contents($password_file);
+        if (!$password) {
+            die("Could not read password file");
+        }
+        return $password;
+    }
 
+    public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    public static function getpdo(){
         return self::$pdo;
     }
-
-    /**
-     * @return ConnectionBDD|null
-     */
-    public static function getInstance() {
-
-        if(is_null(self::$_instance)) {
-            self::$_instance = new ConnectionBDD();
-        }
-
-        return self::$_instance;
-    }
-
-
 }
 ?>

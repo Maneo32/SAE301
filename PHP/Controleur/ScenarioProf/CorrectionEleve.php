@@ -12,6 +12,8 @@ session_start();
 
 </head>
 <body>
+
+
 <?php
 include("../../View/HTML/BarreScenarioEtu.php");
 ?>
@@ -26,7 +28,31 @@ $bdd = $pdo::getpdo();
 require("FonctionScenario.php");
 $mail=$_SESSION['email'];
 
-$rep=AvoirRepDunEtu($bdd,$mail);
+$res = RepEleve($bdd, $mail);
+?>
+
+<form method="post" name="patient">
+    <select name="patient" onchange="this.form.submit()">
+        <option>Selectionnez un patient</option>
+        <?php
+
+
+        foreach ($res as $rep){
+            ?>
+            <option name="<?php echo $rep[0]?>" value="<?php echo $rep[2]?>"><?php echo $rep[0]." ".$rep[1]?></option>
+            <?php
+        }
+
+        ?>
+    </select>
+</form>
+
+
+
+
+<?php
+$id = $_POST['patient'];
+$rep=AvoirRepDunEtu($bdd,$mail, $id);
 echo "<br>";
 echo "<br>";
 
@@ -37,6 +63,9 @@ foreach ($rep as $reponse){
     echo ('Prenom du patient : ');
     echo $reponse[1];
     echo "<br>";
+    echo ('Ordre : ');
+    echo $reponse[3];
+    echo '<br>';
     echo ('Reponse : ');
     echo $reponse[2];
     echo "<br>";
