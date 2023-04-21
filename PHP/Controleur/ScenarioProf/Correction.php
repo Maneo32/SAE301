@@ -77,7 +77,7 @@ function affichage($bdd){
     if (isset($_POST['eleve'])) {
         $_SESSION['eleve'] = $_POST['eleve'];
         // On récupère les informations de l'élève ayant répondu
-        $sql = $bdd->prepare("select * from reponseetu where idpatient=?");
+        $sql = $bdd->prepare("select * from reponseetu where idpatient=? ORDER BY ordre");
         $sql->execute(array($_SESSION['patient']));
         while ($data = $sql->fetch()) {
             $sql2 = $bdd->prepare("select * from etudiant where email=?");
