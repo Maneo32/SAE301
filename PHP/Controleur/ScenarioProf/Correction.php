@@ -117,7 +117,9 @@ function affichage($bdd){
 
             // On affiche le nom, le prénom et la réponse de l'élève
 
-
+            $sql3 = $bdd->prepare("select * from note where idreponse=?");
+            $sql3->execute(array($data[0]));
+            $data3 = $sql3->fetch();
 
 
 
