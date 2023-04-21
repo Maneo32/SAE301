@@ -79,16 +79,49 @@ function affichage($bdd){
         // On récupère les informations de l'élève ayant répondu
         $sql = $bdd->prepare("select * from reponseetu where idpatient=? ORDER BY ordre");
         $sql->execute(array($_SESSION['patient']));
+        $data = $sql->fetch();
+        $sql2 = $bdd->prepare("select * from etudiant where email=?");
+        $sql2->execute(array($data[1]));
+        $data2 = $sql2->fetch();
+        $sql4 = $bdd->prepare("select * from patient where idpatient=?");
+        $sql4->execute(array($data[2]));
+        $data4 = $sql4->fetch();
+        echo $data2[2] . " " . $data2[3];
+        echo '<br>';
+        echo "Scenario : ".$data4[1]." ".$data4[2]." ".$data4[4];
+        echo '<br><br>';
+        $a = true;
+        $sql = $bdd->prepare("select * from reponseetu where idpatient=? ORDER BY ordre");
+        $sql->execute(array($_SESSION['patient']));
         while ($data = $sql->fetch()) {
-            $sql2 = $bdd->prepare("select * from etudiant where email=?");
-            $sql2->execute(array($data[1]));
-            $data2 = $sql2->fetch();
-            $sql3 = $bdd->prepare("select * from note where idreponse=?");
-            $sql3->execute(array($data[0]));
-            $data3 = $sql3->fetch();
+            if ($a && $data[4]==0){
+                echo $data[3];
+                echo '<br><br>';
+                $a=false;
+            }
+            else{
+                $sql2 = $bdd->prepare("select * from scenario where idpatient=?");
+                $sql2->execute(array($data[2]));
+                while ($data2 = $sql2->fetch()){
+                    if ($data2[1]==$data[4]){
+                        echo "-Evenement : ".$data2[2];
+                        echo '<br>';
+                        echo "Reponse : ".$data[3];
+                        echo '<br><br>';
+                    }
+                }
+
+
+            }
+
+
             // On affiche le nom, le prénom et la réponse de l'élève
-            echo $data2[2] . " " . $data2[3] . " : " . $data[3];
-            echo '<br>';}
+
+
+
+
+
+        }
             ?>
         <form method="post">
             <input type="number" max="20" name="note" value="<?php echo $data3[2]?>" placeholder="Entrez la note">
