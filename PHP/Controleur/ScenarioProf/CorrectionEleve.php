@@ -17,7 +17,7 @@ session_start();
 <?php
 include("../../View/HTML/BarreScenarioEtu.php");
 ?>
-<h4>Scénario envoyé</h4>
+<h2>Scénario envoyé</h2>
 
 <?php
 
@@ -51,7 +51,7 @@ $res = RepEleve($bdd, $mail);
 
 
 <?php
-$id = $_POST['patient'];
+@$id = $_POST['patient'];
 $rep=AvoirRepDunEtu($bdd,$mail, $id);
 echo "<br>";
 echo "<br>";

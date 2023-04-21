@@ -27,7 +27,7 @@ $patients = $bdd->prepare("SELECT * FROM patient where emailprof=?");
 $patients->bindParam(1,$_SESSION['email']);
 $patients->execute();
 ?>
-<h4>Notes des Scénarios</h4>
+<h2>Notes des Scénarios</h2>
 <form method="post" action="Note.php">
     <select name="patient">
         <option value="2">Sélectionnez un patient</option>

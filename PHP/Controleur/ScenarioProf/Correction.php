@@ -22,7 +22,7 @@ require("../../Modele/Fonction/ConnectionBDD.php");
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 ?>
-<h4>Correction Scénario</h4>
+<h2>Correction Scénario</h2>
 
 <?php
 if (!isset($_POST['patient'])){

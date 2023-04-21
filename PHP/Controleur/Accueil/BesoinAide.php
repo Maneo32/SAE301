@@ -30,13 +30,19 @@ if (isset($_POST['message'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-<header>
-    <a href="Accueil.php">
-        <img src="../../View/image/logoIFSI.png" width=234 height=125 alt="" >
-    </a>
-    <h1> Institut de Formation aux Soins Infirmiers (IFSI)</h1>
-    <br>
-</header>
+
+<div class="font">
+    <div class="header">
+        <a href="../../Controleur/Accueil/Accueil.php">
+            <img src="../../View/image/logoIFSI.png" width=120 height=80 alt="leLogo" >
+        </a>
+        <h1>Institut de Formation aux Soins Infirmiers (IFSI)</h1>
+        <div class="deconnexion">
+            <a href="../../Controleur/Accueil/Disconnect.php">
+                <img src="../../View/image/Deconnexion.png" class="icone" width="50" height="50" alt="Déconnexion">
+            </a>
+        </div>
+    </div>
 
 <div class="information">
     <h2>Besoin d'aide</h2>

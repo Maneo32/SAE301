@@ -28,19 +28,26 @@ $_SESSION['PseudoChat']=$pseudo2;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    <header>
-        <a href="Accueil.php">
-            <img src="../../View/image/logoIFSI.png" width=234 height=125 alt="" >
-        </a>
-        <h1> Institut de Formation aux Soins Infirmiers (IFSI)</h1>
-        <br>
-    </header>
 
-<!--Retour-->
 
-<div class="btn-nav">
 
-    <br>
+
+    <div class="font">
+        <div class="header">
+            <a href="../../Controleur/Accueil/Accueil.php">
+                <img src="../../View/image/logoIFSI.png" width=120 height=80 alt="leLogo" >
+            </a>
+            <h1>Institut de Formation aux Soins Infirmiers (IFSI)</h1>
+            <div class="deconnexion">
+                <a href="../../Controleur/Accueil/Disconnect.php">
+                    <img src="../../View/image/Deconnexion.png" class="icone" width="50" height="50" alt="Déconnexion">
+                </a>
+            </div>
+        </div>
+        <!--Retour-->
+
+        <div class="btn-nav">
+
     <div class="btn-group">
     <form method="post" class="btn-group">
         <button class="button-57" type="submit" onclick="history.back()" name="verif" ><span class="text">Retour</span><span>Retour</span></button>

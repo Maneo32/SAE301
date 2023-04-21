@@ -35,7 +35,7 @@ $arrayRslt= fetchNote($pdo,$mail);
 
 
 ?>
-<h4>Vos Notes</h4>
+<h2>Vos Notes</h2>
 <table>
     <thead>
     <tr>
