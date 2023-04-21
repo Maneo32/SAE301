@@ -177,16 +177,26 @@ function AvoirLaNoteDunEtu($bdd, $mail){
 
 }
 
-function AvoirRepDunEtu ($bdd, $mail){
-    $sql = $bdd->prepare("Select  nom,prenom, texte from reponseetu join patient using(idpatient) where email=?");
+function AvoirRepDunEtu ($bdd, $mail, $id){
+    $sql = $bdd->prepare("Select  nom,prenom, texte, ordre from reponseetu join patient using(idpatient) where email=? and idpatient=? order by ordre");
     $sql->bindParam(1,$mail);
+    $sql->bindParam(2, $id);
     $sql->execute();
     $rep =$sql->fetchAll();
     return $rep;
 
+}
 
-
-
+function RepEleve($bdd, $mail){
+    $sql = $bdd->prepare("SELECT p.nom, p.prenom, p.idPatient
+FROM ReponseEtu r
+JOIN Patient p ON r.idPatient = p.idPatient
+WHERE r.email = ?
+GROUP BY p.idPatient, p.nom, p.prenom;");
+    $sql->bindParam(1,$mail);
+    $sql->execute();
+    $rep = $sql->fetchAll();
+    return $rep;
 }
 
 
