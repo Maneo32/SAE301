@@ -73,7 +73,7 @@ $bdd = $pdo::getpdo();
 <textarea name="textereponse0" id="textereponse0" ordre="0" rows="20" cols="80" required> </textarea> <br>
 </div>
 
-<input type="submit" name="Valider" onclick="ajoutNouvelEvenement(0)" value="Envoyer">
+<input id="rep0" type="submit" name="Valider" onclick="ajoutNouvelEvenement(0)" value="Envoyer">
 
 <?php
 for ($i=1;$i<count($res2)+1;$i++){
@@ -101,7 +101,7 @@ for ($i=1;$i<count($res2)+1;$i++){
 
 <script>
 function ajoutNouvelEvenement(i){
-    $("#rep"+i).addClass("disabled");
+    $("#rep"+i).prop("disabled", true);
     $("#div"+(i+1)).removeClass("d-none");
     var reponse = document.getElementById("textereponse"+i).value;
     var ordre = document.getElementById("textereponse"+i).getAttribute('ordre');
