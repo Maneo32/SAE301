@@ -23,7 +23,7 @@ class ConnectionBDD {
     }
 
     private function getPassword() {
-        $password_file = __DIR__.'./password.txt';
+        $password_file = __DIR__.'/password.txt';
         if (!file_exists($password_file)) {
             die("Password file not found");
         }
