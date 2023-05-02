@@ -13,7 +13,7 @@ session_start();
 </head>
 <body>
 <?php
-include("../../View/HTML/BarreScenarioAccueil.php");
+include("../../View/BarreHTML/BarreScenarioAccueil.php");
 ?>
 <div class="texte">
     Bienvenue,<br> sur le site de l'IFSI consacré à la création de scénario <br>

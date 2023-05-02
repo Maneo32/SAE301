@@ -19,7 +19,7 @@ session_start();
 
 <body>
 <?php
-include("../../View/HTML/BarreScenario.php");
+include("../../View/BarreHTML/BarreScenario.php");
 ?>
 <h2>Création de Scénario</h2>
 

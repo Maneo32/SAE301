@@ -13,7 +13,7 @@ session_start();
 </head>
 <body>
 <?php
-include("../../View/HTML/BarreScenarioAccueilEtu.php");
+include("../../View/BarreHTML/BarreScenarioAccueilEtu.php");
 ?>
 
 <div class="texte">

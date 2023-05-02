@@ -14,8 +14,8 @@ session_start();
 </head>
 <body>
 <?php
-// On inclut les fichiers HTML de la barre de navigation et de la connexion à la base de données
-include("../../View/HTML/BarreScenario.php");
+// On inclut les fichiers BarreHTML de la barre de navigation et de la connexion à la base de données
+include("../../View/BarreHTML/BarreScenario.php");
 
 require("../../Modele/Fonction/ConnectionBDD.php");
 // On récupère l'instance de la connexion à la base de données

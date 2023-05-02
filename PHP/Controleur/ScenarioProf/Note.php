@@ -18,7 +18,7 @@ $_SESSION['patient']=$_POST['patient'];
 </head>
 <body>
 <?php
-include("../../View/HTML/BarreScenario.php");
+include("../../View/BarreHTML/BarreScenario.php");
 
 require("../../Modele/Fonction/ConnectionBDD.php");
 require('FonctionScenario.php');

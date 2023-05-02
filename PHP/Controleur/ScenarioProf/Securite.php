@@ -18,8 +18,8 @@ session_start();
 <body>
 <!--Le haut de la page avec l'image et le titre-->
 <?php
-include("../../View/HTML/BarreScenario.php");
-include("../../View/HTML/EnteteV2.html");
+include("../../View/BarreHTML/BarreScenario.php");
+include("../../View/BarreHTML/EnteteV2.html");
 ?>
 <h2> Information sur la sécurité </h2>
 <!--formulaire sur la securite qui sera enregistrer dans la base de donnée apres avoir valide toutes les categories-->

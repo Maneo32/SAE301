@@ -14,8 +14,8 @@ session_start();
 </head>
 <body>
 <?php
-include("../../View/HTML/BarreScenario.php");
-include("../../View/HTML/EnteteV2.html");
+include("../../View/BarreHTML/BarreScenario.php");
+include("../../View/BarreHTML/EnteteV2.html");
 ?>
     <h2>Respiration</h2>
 <form method="post" action="Transition2.php">

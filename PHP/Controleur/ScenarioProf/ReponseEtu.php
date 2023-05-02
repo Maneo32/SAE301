@@ -15,7 +15,7 @@ session_start();
 </head>
 <body style="background-color: lightblue">
 <?php
-include("../../View/HTML/BarreScenarioEtu.php");
+include("../../View/BarreHTML/BarreScenarioEtu.php");
 
 require("../../Modele/Fonction/ConnectionBDD.php");
 $pdo = ConnectionBDD::getInstance();

@@ -15,7 +15,7 @@ session_start();
 
 
 <?php
-include("../../View/HTML/BarreScenarioEtu.php");
+include("../../View/BarreHTML/BarreScenarioEtu.php");
 ?>
 <h2>Scénario envoyé</h2>
 

@@ -81,7 +81,7 @@ if (@$_COOKIE['reload']==1){
 
 
 
-include("../../View/HTML/BarreScenario.php");
+include("../../View/BarreHTML/BarreScenario.php");
 
 require("../../Modele/Fonction/ConnectionBDD.php");
 require('FonctionScenario.php');

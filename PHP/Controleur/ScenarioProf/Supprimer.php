@@ -16,7 +16,7 @@ require('FonctionScenario.php');
 </head>
 
 <?php
-include("../../View/HTML/BarreScenario.php");
+include("../../View/BarreHTML/BarreScenario.php");
 
 /* le non permet d'annuler la suppression du patient et de retourner sur la page précédente à l'inverse du oui qui valide la suppression */
 if (isset($_POST['Non'])) {

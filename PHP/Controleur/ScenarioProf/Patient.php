@@ -16,8 +16,8 @@ session_start();
     <body>
     <!--Le haut de la page avec l'image et le titre-->
     <?php
-    include("../../View/HTML/BarreScenario.php");
-    include("../../View/HTML/Entete.html");
+    include("../../View/BarreHTML/BarreScenario.php");
+    include("../../View/BarreHTML/Entete.html");
     require("../../Modele/Fonction/ConnectionBDD.php");
     ?>
     <h2> Information sur la patient </h2>
