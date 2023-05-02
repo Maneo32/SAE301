@@ -38,7 +38,7 @@
   <br><br><br>
   <a class="button-28" href="../../Controleur/Accueil/LoginAnglais.php">create an account</a><br><br>
   <a class="button-28" href="../../Controleur/Accueil/MotDePasseOublieAnglais.php">forgot password</a><br><br>
-  <a class="button-28" href="BesoinAide.php">need help</a>
+  <a class="button-28" href="../../Controleur/Accueil/BesoinAide.php">need help</a>
 </div>
 <!--Le bas de l'image avec le carré rouge-->
 <footer>

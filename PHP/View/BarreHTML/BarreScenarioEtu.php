@@ -23,7 +23,7 @@ require('../../Controleur/ScenarioProf/checkSessionScenarioProf.php');
 
 
 
-    <button class="button-57" onclick="document.location='../Accueil/PageEtu.php'"><span class="text">Accueil</span><span>Accueil</span></button>
+    <button class="button-57" onclick="document.location='../../View/Etudiant/PageEtu.php'"><span class="text">Accueil</span><span>Accueil</span></button>
     <button class="button-57" onclick="document.location='ScenarioEtu.php'"><span class="text">Scénario</span><span>Scénario</span></button>
     <button class="button-57" onclick="document.location='CorrectionEleve.php'"><span class="text">Correction</span><span>Correction</span></button>
     <button class="button-57" onclick="document.location='NoteEtu.php'"><span class="text">Note</span><span>Note</span></button>
