@@ -1,16 +1,18 @@
 
 <?php
 session_start();
-$_SESSION['IdChat']=1;
+
+
+include ("../../View/Accueil/AccueilAnglais.php");
 ?>
 
 
 <?php
-require("../../Modele/Fonction/email.php");
-require("../../Modele/Fonction/MotDePasse.php");
-require("../../Modele/Fonction/ConnectionBDD.php");
-require("../../Modele/Fonction/Connexion.php");
-require("../../Modele/Fonction/username.php");
+require("../../Modele/Accueil/email.php");
+require("../../Modele/Accueil/MotDePasse.php");
+require("../../Modele/BDD/ConnectionBDD.php");
+require("../../Modele/Accueil/Connexion.php");
+require("../../Modele/Accueil/username.php");
 $_SESSION['IdChat']=1;
 /* La partie de la validation de connexion qui renvoie la page correspondante*/
 if (isset($_SESSION['page'])){

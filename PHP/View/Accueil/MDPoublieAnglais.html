@@ -1,0 +1,72 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>MDPoublié</title>
+  <link rel="stylesheet" href="../../View/Style/SiteIFSI.css">
+</head>
+<body>
+<!--Le haut de la page avec l'image et le titre-->
+
+
+<header>
+  <div class="traduction">
+    <form action="../../Controleur/Accueil/MotDePasseOublie.php" method="post">
+      <input type="submit" value="Francais">
+    </form>
+  </div>
+  <a href="Accueil.php">
+    <img src="../../View/image/logoIFSI.png" width=234 height=125 alt="" >
+  </a>
+  <h1>  Institute of Nursing Training</h1>
+  <br><br>
+</header>
+
+
+
+
+
+<!--box milieu-->
+
+<h3>    Enter your Email, <br>
+  you will receive an email to verify your identity
+</h3>
+<br>
+
+<div class ="inscription">
+
+  <form action="../../Controleur/Accueil/MotDePasseOublieAnglais.php" method="post">
+
+    <br>
+    <label>Email :</label>
+    <br><br>
+    <input type="email" name='mail' placeholder="Enter your email" required>
+    <br>
+    <br>
+    <label>Confirm your email :</label>
+    <br><br>
+    <input type="email" name='mailV2' placeholder="Confirm your email" required>
+    <br>
+    <p><input type="submit" value="Validate"></p>
+  </form>
+  <br>
+
+</div>
+
+<!--Le bas de la page-->
+
+<footer>
+  <form action="../../Controleur/Accueil/LoginAnglais.php" method="post">
+    <input type="submit" value="Create an account">
+  </form> <br>
+  <form action="BesoinAide.php" method="post">
+    <input type="submit" value="Need Help ?">
+  </form>
+</footer>
+
+
+</body>
+</html>
+

@@ -14,7 +14,7 @@
 <header>
   <div class="traduction">
     <form action="Accueil.php" method="post">
-      <input type="submit" value="Francais">
+      <input type="submit" value="Francais" name="Francais">
     </form>
   </div>
   <a href="AccueilAnglais.php">
@@ -36,8 +36,8 @@
 
 <div class="href">
   <br><br><br>
-  <a class="button-28" href="LoginAnglais.php">create an account</a><br><br>
-  <a class="button-28" href="MotDePasseOublieAnglais.php">forgot password</a><br><br>
+  <a class="button-28" href="../../Controleur/Accueil/LoginAnglais.php">create an account</a><br><br>
+  <a class="button-28" href="../../Controleur/Accueil/MotDePasseOublieAnglais.php">forgot password</a><br><br>
   <a class="button-28" href="BesoinAide.php">need help</a>
 </div>
 <!--Le bas de l'image avec le carré rouge-->

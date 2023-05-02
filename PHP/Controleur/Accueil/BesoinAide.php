@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("../../Modele/Fonction/ConnectionBDD.php");
+require("../../Modele/BDD/ConnectionBDD.php");
 $conn= ConnectionBDD::getInstance();
 $bdd=$conn::getpdo();
 /* fonction qui permet de récupérer les id de la table BesoinDaide*/
