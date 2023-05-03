@@ -7,7 +7,7 @@ if (isset($_POST['Valider'])) {
     @$_SESSION['AideLever'] = $_POST['AideLever'];
     @$_SESSION['AideCoucher'] = $_POST['AideCoucher'];
     @$_SESSION['AideFauteil'] = $_POST['AideFauteil'];
-    require("../../Modele/Fonction/ConnectionBDD.php");
+    require('../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
     require("../Accueil/FonctionPhp.php");

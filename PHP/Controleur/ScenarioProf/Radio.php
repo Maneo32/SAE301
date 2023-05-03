@@ -56,7 +56,7 @@ include("../../View/BarreHTML/EnteteV2.html");
 </html>
 
 <?php
-require("../../Modele/Fonction/ConnectionBDD.php");
+require('../../Modele/BDD/ConnectionBDD.php');
 
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();

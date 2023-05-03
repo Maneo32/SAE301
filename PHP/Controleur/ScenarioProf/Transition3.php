@@ -2,7 +2,7 @@
 // les pages transitions sont des pages qui permettent l'ajout dans la base de donnée des pages précédente et elles permettent de passer à la page d'apres
 
 session_start();
-require("../../Modele/Fonction/ConnectionBDD.php");
+require('../../Modele/BDD/ConnectionBDD.php');
 require("../Accueil/FonctionPhp.php");
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();

@@ -18,7 +18,7 @@ session_start();
     <?php
     include("../../View/BarreHTML/BarreScenario.php");
     include("../../View/BarreHTML/Entete.html");
-    require("../../Modele/Fonction/ConnectionBDD.php");
+    require('../../Modele/BDD/ConnectionBDD.php');
     ?>
     <h2> Information sur la patient </h2>
         <form method="post">

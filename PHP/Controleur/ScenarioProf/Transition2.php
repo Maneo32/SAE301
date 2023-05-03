@@ -3,7 +3,7 @@
 
 session_start();
 @$_SESSION['Date']=date("Y-m-d H:m:s", strtotime($_POST["date"]));
-require("../../Modele/Fonction/ConnectionBDD.php");
+require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 require("../Accueil/FonctionPhp.php");

@@ -16,7 +16,7 @@ session_start();
 <?php
 include("../../View/BarreHTML/BarreScenario.php");
 include("../../View/BarreHTML/EnteteV2.html");
-require("../../Modele/Fonction/ConnectionBDD.php");
+include('../../Modele/BDD/ConnectionBDD.php');
 
 ?>
     <h2>Date du Diagnostic</h2>

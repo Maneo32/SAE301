@@ -8,7 +8,7 @@ session_start();
 @$_SESSION['EVA'] = $_POST['EVA'];
 @$_SESSION['AlgoPlus'] = $_POST['AlgoPlus'];
 
-require("../../Modele/Fonction/ConnectionBDD.php");
+require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 require("../Accueil/FonctionPhp.php");

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require('../../Modele/Fonction/ConnectionBDD.php');
+require('../../Modele/BDD/ConnectionBDD.php');
 ?>
     <!DOCTYPE html>
     <html lang="en">

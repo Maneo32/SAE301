@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../Modele/Fonction/ConnectionBDD.php');
+require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 require('FonctionScenario.php');

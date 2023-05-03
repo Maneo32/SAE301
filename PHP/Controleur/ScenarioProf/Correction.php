@@ -17,7 +17,7 @@ session_start();
 // On inclut les fichiers BarreHTML de la barre de navigation et de la connexion à la base de données
 include("../../View/BarreHTML/BarreScenario.php");
 
-require("../../Modele/Fonction/ConnectionBDD.php");
+require('../../Modele/BDD/ConnectionBDD.php');
 // On récupère l'instance de la connexion à la base de données
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();

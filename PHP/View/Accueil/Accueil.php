@@ -16,7 +16,6 @@
 <header>
   <div class="traduction">
           <input type="submit" value="English" name="langue" onclick="changerLangue()" >
-      </form>
   </div>
   <a href="Accueil.php">
     <img src="../../View/image/logoIFSI.png" width=234 height=125 alt="" >

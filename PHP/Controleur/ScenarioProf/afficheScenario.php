@@ -18,7 +18,7 @@ session_start();
 <body>
 <?php
 include("../../View/BarreHTML/BarreScenario.php");
-include('../../Modele/Fonction/ConnectionBDD.php');
+require('../../Modele/BDD/ConnectionBDD.php');
 
 ?>
     <h2>Le Scénario</h2>

@@ -12,7 +12,7 @@ if (isset($_POST['Valider'])) {
     @$_SESSION['escare'] = $_POST['escare'];
     @$_SESSION['position'] = $_POST['position'];
     @$_SESSION['matelas'] = $_POST['matelas'];
-    require("../../Modele/Fonction/ConnectionBDD.php");
+    require('../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
     require("../Accueil/FonctionPhp.php");

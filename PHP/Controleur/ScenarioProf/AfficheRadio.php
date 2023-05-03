@@ -3,7 +3,7 @@ session_start();
 $id = $_SESSION['scenario'];
 
 // Connexion à la base de données
-include('../../Modele/Fonction/ConnectionBDD.php');
+require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 

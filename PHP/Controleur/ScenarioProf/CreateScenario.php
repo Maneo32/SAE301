@@ -31,7 +31,7 @@ include("../../View/BarreHTML/BarreScenario.php");
 <!--selection du patient avec ses options de navigation-->
 
     <?php
-    require("../../Modele/Fonction/ConnectionBDD.php");
+    require('../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
 

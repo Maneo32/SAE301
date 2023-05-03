@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("../../Modele/Fonction/ConnectionBDD.php");
+require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 $sql=$bdd->prepare("Insert into categorie (nom) values (?)");

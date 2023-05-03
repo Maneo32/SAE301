@@ -1,4 +1,5 @@
 <script>
+    /* ne fonctionne pas correctement avec Firefox, utliser avec Chrome */
     function changerLangue(){
             console.log('toto');
             var xhr = new XMLHttpRequest();

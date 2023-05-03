@@ -83,7 +83,7 @@ if (@$_COOKIE['reload']==1){
 
 include("../../View/BarreHTML/BarreScenario.php");
 
-require("../../Modele/Fonction/ConnectionBDD.php");
+require('../../Modele/BDD/ConnectionBDD.php');
 require('FonctionScenario.php');
 // affichage des événements existants
 $pdo = ConnectionBDD::getInstance();

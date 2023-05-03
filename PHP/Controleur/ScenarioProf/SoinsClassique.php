@@ -8,7 +8,7 @@ if (isset($_POST['Valider'])) {
     @$_SESSION['regime'] = $_POST['regime'];
     @$_SESSION['jeun'] = $_POST['jeun'];
     @$_SESSION['aideRepas'] = $_POST['aideRepas'];
-    require("../../Modele/Fonction/ConnectionBDD.php");
+    require('../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
     require("../Accueil/FonctionPhp.php");

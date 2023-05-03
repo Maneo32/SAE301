@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("../../Modele/Fonction/ConnectionBDD.php");
+require('../../Modele/BDD/ConnectionBDD.php');
 $mail= $_SESSION['email'];
 $conn = ConnectionBDD::getInstance();
 $pdo = $conn::getpdo();

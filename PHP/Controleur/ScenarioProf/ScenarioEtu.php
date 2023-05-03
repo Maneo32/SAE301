@@ -14,7 +14,7 @@ session_start();
 <?php
 include("../../View/BarreHTML/BarreScenarioEtu.php");
 
-require("../../Modele/Fonction/ConnectionBDD.php");
+require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 

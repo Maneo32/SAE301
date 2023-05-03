@@ -11,7 +11,7 @@ if (isset($_POST['Valider'])) {
     @$_SESSION['sondageurinaire'] = $_POST['sondageurinaire'];
     @$_SESSION['autre'] = $_POST['autre'];
 
-    require("../../Modele/Fonction/ConnectionBDD.php");
+    require('../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
     require("../Accueil/FonctionPhp.php");

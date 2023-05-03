@@ -58,7 +58,7 @@ if (@$ClassMail->email($_POST['id']) && isset($_POST['id'])){
 
 }
 
-include('footer.php');
+include('../../View/Accueil/Langue.php');
 
 ?>
 
