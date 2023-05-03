@@ -9,7 +9,6 @@ if (@$_SESSION['langue']==1 ) {
 }
 else  {
     include("../../View/Accueil/Accueil.php");
-
 }
 
 ?>
