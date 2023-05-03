@@ -9,7 +9,12 @@
                     console.log(this.responseText);
                 }
             }
-            var langue = "<?php echo $_SESSION['langue']; ?>";
+            var langue = "<?php
+                if (isset($_SESSION['langue'])){
+                echo $_SESSION['langue'];}
+                else {
+                    echo 0; };
+                ?>";
             console.log(langue)
             if (langue == 1) {
                 xhr.send("nouvelle_valeur=0");
