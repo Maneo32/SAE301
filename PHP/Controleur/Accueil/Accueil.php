@@ -1,8 +1,16 @@
 <?php
 session_start();
 
-include("../../View/Accueil/Accueil.php");
+// La langue francaise correspond au 0 et l'anglais au 1
+if ($_SESSION['langue']==1 ) {
 
+    include("../../View/Accueil/AccueilAnglais.php");
+
+}
+else  {
+    include("../../View/Accueil/Accueil.php");
+
+}
 
 ?>
 
@@ -49,6 +57,8 @@ if (@$ClassMail->email($_POST['id']) && isset($_POST['id'])){
     }
 
 }
+
+include('footer.php');
 
 ?>
 

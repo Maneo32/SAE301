@@ -6,6 +6,8 @@
   <title>Accueil</title>
   <link rel="stylesheet" href="../../View/Style/SiteIFSI.css" >
   <script src="../../Modele/Fonction/LesFonctionsJS.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
 
 </head>
 <body>
@@ -13,8 +15,7 @@
 <!--Le haut de la page avec l'image et le titre-->
 <header>
   <div class="traduction">
-      <form action="AccueilAnglais.php" method="post">
-          <input type="submit" value="English" name="English" >
+          <input type="submit" value="English" name="langue" onclick="changerLangue()" >
       </form>
   </div>
   <a href="Accueil.php">
