@@ -76,7 +76,7 @@ function affpatient($bdd, $id)
 }
 
 
-require('../Accueil/FonctionPhp.php');
+require('../../Modele/Fonction/FonctionPhp.php');
 
 /**
  * @param $bdd
