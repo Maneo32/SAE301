@@ -1,7 +1,17 @@
 <?php
 session_start();
 
-include ("../../View/Accueil/CreationCompte.html");
+// La langue francaise correspond au 0 et l'anglais au 1
+if (@$_SESSION['langue']==1 ) {
+
+    include ("../../View/Accueil/CreationCompteAnglais.html");
+
+}
+else  {
+    include ("../../View/Accueil/CreationCompte.html");
+
+}
+
 ?>
 
 
@@ -11,5 +21,7 @@ include ("../../View/Accueil/CreationCompte.html");
 require("../../Modele/Accueil/Login.php");
 
 @bdd($_POST['mail'],$_POST['mdp'],$_POST['mdp2']);
+
+include('../../View/Accueil/Langue.php');
 
 ?>

@@ -17,7 +17,7 @@
   <div class="traduction">
       <input type="submit" value="Francais" name="langue" onclick="changerLangue()">
   </div>
-  <a href="AccueilAnglais.php">
+  <a href="Accueil.php">
     <img src="../../View/image/logoIFSI.png" width=234 height=125 alt="" >
   </a>
   <h1> Institute of Nursing Training </h1>
@@ -36,8 +36,8 @@
 
 <div class="href">
   <br><br><br>
-  <a class="button-28" href="../../Controleur/Accueil/LoginAnglais.php">create an account</a><br><br>
-  <a class="button-28" href="../../Controleur/Accueil/MotDePasseOublieAnglais.php">forgot password</a><br><br>
+  <a class="button-28" href="../../Controleur/Accueil/Login.php">create an account</a><br><br>
+  <a class="button-28" href="../../Controleur/Accueil/MotDePasseOublie.php">forgot password</a><br><br>
   <a class="button-28" href="../../Controleur/Accueil/BesoinAide.php">need help</a>
 </div>
 <!--Le bas de l'image avec le carré rouge-->
