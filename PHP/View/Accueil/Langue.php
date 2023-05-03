@@ -1,7 +1,6 @@
 <script>
     /* ne fonctionne pas correctement avec Firefox, utliser avec Chrome */
     function changerLangue(){
-            console.log('toto');
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "changerVariableSession.php", true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
