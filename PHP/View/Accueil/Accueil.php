@@ -41,6 +41,7 @@
   <a class="button-28" href="../../Controleur/Accueil/BesoinAide.php">Besoin d'aide</a><br><br>
 </div>
 <!--Le bas de l'image avec le carré rouge-->
+
 <div class="securite">
   Pour des raisons de sécurité, veuillez vous déconnecter et fermer votre navigateur lorsque vous avez fini d'accéder aux services authentifiés.
   <br>
