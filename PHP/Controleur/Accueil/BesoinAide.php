@@ -20,25 +20,19 @@ if (isset($_POST['message'])) {
 global $grps ;
 $grps=affichergrp();
 include ("../../View/Accueil/viewBesoinAide.php");
-/*cette fonction permet de créer dans la base de donnée un nouveau groupe et de mettre le créateur admin*/
-/**
 
- * @return void
- */
+
+
 function creergrp()
 {
     if (isset($_POST['sujet'])){
         $sujet=$_POST['sujet'];
         creerAide($sujet);
     }}
-/*cette fonction permet d'ajouter une personne dans le groupe ou nous sommes*/
 
 
-/* cette fonction permet d'afficher les différents groupes sous forme de boutons, ce qui nous permet de changer de groupes*/
-/**
- * @param $bdd
- * @return void
- */
+
+
 
 
 /*nous permet d'afficher les différents utilisateurs présents dans le groupe, et de les modifiers/supprimer si nous avons le droit*/
@@ -65,16 +59,6 @@ if (isset($_POST['button'])){
     $_SESSION['sujet']=$b;
     header('Location: BesoinAide.php');
 }
-/*permet de supprimer l'utilisateur du groupe lorsqu'on appuie sur le bouton*/
-
-
-
-/*permet de passer admin l'utilisateur lorsqu'on appuie sur le bouton*/
-
-
-/*permet de supprimer toute la conversation*/
-
-
 
 creergrp();
 
