@@ -1,6 +1,6 @@
 <?php
 
-
+/*cette fonction permet d'ajouter une personne dans le groupe ou nous sommes*/
 function insererMessage($pseudo2,$message){
     $conn= ConnectionBDD::getInstance();
     $bdd=$conn::getpdo();
@@ -8,6 +8,9 @@ function insererMessage($pseudo2,$message){
     $insertMsg->execute(array($pseudo2, $message, $_SESSION['IdChat'], $_SESSION['Pseudo']));
     header('Location: BesoinAide.php');
 }
+
+
+/*cette fonction permet de créer dans la base de donnée un nouveau groupe et de mettre le créateur admin*/
 
 function creerAide($sujet){
     $conn= ConnectionBDD::getInstance();
@@ -19,6 +22,13 @@ function creerAide($sujet){
     $_SESSION['IdChat']=$newgrp;
     header('Location: BesoinAide.php');
 }
+
+
+/* cette fonction permet d'afficher les différents groupes sous forme de boutons, ce qui nous permet de changer de groupes*/
+/**
+ * @param $bdd
+ * @return void
+ */
 
 function affichergrp()
 {
