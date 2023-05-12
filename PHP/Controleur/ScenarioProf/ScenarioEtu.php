@@ -18,7 +18,7 @@ require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 
-require('FonctionScenario.php');
+require('../../Modele/FonctionScenario.php');
 
 $scena = $bdd->prepare("SELECT DISTINCT  nom,prenom,DDN, p.idpatient from groupescenario join groupeetudiant g on groupescenario.idgroupe = g.idgroupe join patient p on groupescenario.idpatient = p.idpatient  where email=?" );
 $scena->bindParam(1,$_SESSION['email']);

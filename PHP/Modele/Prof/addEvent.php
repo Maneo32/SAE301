@@ -1,5 +1,5 @@
 <?php
-require("Fonction/ConnectionBDD.php");
+require("../BDD/ConnectionBDD.php");
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 session_start();
@@ -12,6 +12,6 @@ $stmt->bindParam(1,$id);
 $stmt->bindParam(2,$texte);
 $stmt->bindParam(3,$number);
 $stmt->execute();
-header('Location: ../Controleur/ScenarioProf/evenement.php');
+header('Location: ../../Controleur/ScenarioProf/evenement.php');
 
 

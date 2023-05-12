@@ -1,5 +1,5 @@
 <?php
-require("Fonction/ConnectionBDD.php");
+require("../BDD/ConnectionBDD.php");
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 session_start();

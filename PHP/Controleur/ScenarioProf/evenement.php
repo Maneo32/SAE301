@@ -123,7 +123,7 @@ modifdonnee($bdd, $id);
 <script>console.log(<?php $_SESSION['coo']?>)</script>
 <div class="container">
 	<h2>Ajouter des événements</h2>
-	<form method="post" action="../../Modele/addEvent.php">
+	<form method="post" action="../../Modele/Prof/addEvent.php">
         <label for="texte">Texte :</label>
 
         <div class="form-group">
