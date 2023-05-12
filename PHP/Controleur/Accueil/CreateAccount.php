@@ -5,11 +5,11 @@ session_start();
 if (@$_SESSION['langue']==1 ) {
     /* View Login*/
 
-    include ("../../View/Accueil/CreationCompteAnglais.html");
+    include("../../View/Accueil/CreateAccountViewAnglais.php");
 
 }
 else  {
-    include ("../../View/Accueil/CreationCompte.html");
+    include("../../View/Accueil/CreateAccountView.php");
 
 }
 
@@ -19,7 +19,7 @@ else  {
 <?php
 
 
-require("../../Modele/Accueil/Login.php");
+require("../../Modele/Accueil/CreateAccountModele.php");
 
 @bdd($_POST['mail'],$_POST['mdp'],$_POST['mdp2']);
 
