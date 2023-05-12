@@ -14,7 +14,10 @@
 <body>
 <?php
 include("../../View/BarreHTML/BarreScenario.php");
+$nomgrp=getNomGrp();
+$grp=getGroupe();
 ?>
+
 <h2>Groupe : <?php echo $nomgrp; ?></h2>
 
 <table>

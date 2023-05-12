@@ -19,7 +19,7 @@ require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 
-require('FonctionScenario.php');
+require('../../Modele/FonctionScenario.php');
 
 
 /* permet de créer une liste déroulante avec tous les patients*/

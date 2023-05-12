@@ -21,7 +21,8 @@ $_SESSION['patient']=$_POST['patient'];
 include("../../View/BarreHTML/BarreScenario.php");
 
 include('../../Modele/BDD/ConnectionBDD.php');
-require('FonctionScenario.php');
+require('../../Modele/FonctionScenario.php');
+
 
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();

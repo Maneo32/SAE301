@@ -1,6 +1,7 @@
 <?php
 $pdo = ConnectionBDD::getInstance();
-$bdd = $pdo::getpdo();
+global $bdd;
+$bdd= $pdo::getpdo();
 
 /**
  * @param $bdd
@@ -132,8 +133,9 @@ function Scenario($bdd){
  * @return mixed
  * fonction qui permet d'avoir les nom des groupes d'etudiants afin de les mettre dans une liste deroulante
  */
-function nomgrp($bdd)
+function nomgrp()
 {
+    global $bdd;
     $nomgrp = $bdd->prepare("SELECT nom FROM groupeclasse where idgroupe=?");
     $nomgrp->bindParam(1, $_SESSION['grp']);
     $nomgrp->execute();
@@ -146,8 +148,9 @@ function nomgrp($bdd)
  * @return mixed
  * cette fonction renvoie les etudiants appartenants a un groupe afin de les mettre dans un tableau
  */
-function etugrp($bdd)
+function etugrp()
 {
+    global $bdd;
     $grpetu=$_SESSION['grp'];
     /* permet de créer une liste déroulante avec tous les etudiants des groupes */
     $EtuGroupe = $bdd->prepare("SELECT email FROM groupeetudiant where idgroupe=?");

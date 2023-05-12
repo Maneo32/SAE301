@@ -35,9 +35,10 @@ include("../../View/BarreHTML/BarreScenario.php");
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
 
-    require('FonctionScenario.php');
+    require('../../Modele/FonctionScenario.php');
 
-/* fonction qui nous oblige a selectionner un groupe pour accèder a la page d'affichage de groupe*/
+
+    /* fonction qui nous oblige a selectionner un groupe pour accèder a la page d'affichage de groupe*/
     if (isset($_POST['affgrp']) && $_POST['grp2']!='!') {
         $_SESSION['grp']=$_POST['grp2'];
         header('Location: afficheGroupe.php');

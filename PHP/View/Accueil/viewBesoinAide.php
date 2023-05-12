@@ -85,6 +85,7 @@
         <h3>Sujet :</h3>
         <form method="post">
             <?php
+            $grps=getGrps();
             while ($grp = $grps->fetch()){
             ?>
             <button type="submit" name="button" value="<?php echo $grp[0]."+".$grp[1]?>"><?php echo $grp[1]?></button>

@@ -25,7 +25,7 @@ require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 
-require("FonctionScenario.php");
+require('../../Modele/FonctionScenario.php');
 $mail=$_SESSION['email'];
 
 $res = RepEleve($bdd, $mail);

@@ -3,11 +3,17 @@ session_start();
 require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
-require('FonctionScenario.php');
+require('../../Modele/FonctionScenario.php');
 
-global $nomgrp;
-$nomgrp=nomgrp($bdd);
-global $grp;
-$grp= etugrp($bdd)->fetchAll();
+function getNomGrp(){
+    $nomgrp=nomgrp();
+    return $nomgrp;
+}
+
+function getGroupe(){
+    $grp= etugrp()->fetchAll();
+    return $grp;
+
+}
 include ('../../View/Prof/viewAfficheGroupe.php');
 ?>

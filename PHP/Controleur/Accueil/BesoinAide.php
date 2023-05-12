@@ -12,13 +12,16 @@ $pseudo2 .= " ";
 @$pseudo2 .= $pseudo[1];
 $_SESSION['PseudoChat']=$pseudo2;
 /* ce if permet d'envoyer des messages*/
-require('../../Modele/ModeleBesoinAide.php');
+require('../../Modele/Accueil/ModeleBesoinAide.php');
 if (isset($_POST['message'])) {
     $message = nl2br(htmlspecialchars($_POST['message']));
     insererMessage($pseudo2,$message);
 }
-global $grps ;
-$grps=affichergrp();
+
+function getGrps(){
+    $grps=affichergrp();
+    return $grps;
+}
 include ("../../View/Accueil/viewBesoinAide.php");
 
 
