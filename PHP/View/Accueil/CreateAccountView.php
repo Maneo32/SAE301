@@ -74,11 +74,11 @@
 
 </div>
 
-<br>
+<footer>
 <form action="../../Controleur/Accueil/BesoinAide.php" method="post">
-    <button style="margin-left: 39%" class="button-28"  type="submit">Besoin d'aide</button>
+    <button class="button-28"  type="submit">Besoin d'aide</button>
 </form>
-
+</footer>
 </body>
 </html>
 

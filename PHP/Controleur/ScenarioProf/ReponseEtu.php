@@ -106,7 +106,6 @@ function ajoutNouvelEvenement(i){
     var reponse = document.getElementById("textereponse"+i).value;
     var ordre = document.getElementById("textereponse"+i).getAttribute('ordre');
 
-
     $.ajax({
         url: '../../Modele/addReponseEtu.php',
         data: 'reponse=' +reponse+
@@ -114,11 +113,6 @@ function ajoutNouvelEvenement(i){
 
 
     })
-
-
-
-
-
 }
 
 </script>

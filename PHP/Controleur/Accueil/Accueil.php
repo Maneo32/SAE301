@@ -3,6 +3,7 @@ session_start();
 
 // La langue francaise correspond au 0 et l'anglais au 1
 if (@$_SESSION['langue']==1 ) {
+    /* View Accueil*/
 
     include("../../View/Accueil/AccueilAnglais.php");
 

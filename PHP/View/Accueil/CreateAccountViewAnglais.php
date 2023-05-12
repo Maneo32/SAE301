@@ -73,10 +73,12 @@
 
 </div>
 
-<br>
-<form action="../../Controleur/Accueil/BesoinAide.php" method="post">
-  <button style="margin-left: 39%" class="button-28" type="submit">Need Help</button>
-</form>
+<footer>
+  <form action="../../Controleur/Accueil/BesoinAide.php" method="post">
+    <button class="button-28"  type="submit">Need Help</button>
+  </form>
+</footer>
+
 </body>
 </html>
 
