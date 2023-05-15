@@ -14,8 +14,8 @@ session_start();
 </head>
 <body>
 <?php
-include("../../View/BarreHTML/BarreScenario.php");
-include("../../View/BarreHTML/EnteteV2.html");
+include("../../../View/BarreHTML/BarreScenario.php");
+include("../../../View/BarreHTML/EnteteV2.html");
 include('../../Modele/BDD/ConnectionBDD.php');
 
 ?>
