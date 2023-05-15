@@ -107,7 +107,7 @@ function ajoutNouvelEvenement(i){
     var ordre = document.getElementById("textereponse"+i).getAttribute('ordre');
 
     $.ajax({
-        url: '../../Modele/addReponseEtu.php',
+        url: '../../Modele/Etudiant/addReponseEtu.php',
         data: 'reponse=' +reponse+
             '&ordre='+ordre,
 
