@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require('../../Modele/BDD/ConnectionBDD.php');
+require('../../../Modele/BDD/ConnectionBDD.php');
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -14,8 +14,8 @@ require('../../Modele/BDD/ConnectionBDD.php');
     </head>
     <body>
 <?php
-include("../../View/BarreHTML/BarreScenario.php");
-include("../../View/BarreHTML/EnteteV2.html");
+include("../../../View/BarreHTML/BarreScenario2.php");
+include("../../../View/BarreHTML/EnteteV2.html");
 
 
 ?>
