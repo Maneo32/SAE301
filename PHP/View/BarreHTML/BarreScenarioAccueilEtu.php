@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-require('../../Controleur/ScenarioProf/checkSession.php');
+require('../../Controleur/Accueil/checkSession.php');
 ?>
 <div class="font">
     <div class="header">
@@ -22,9 +22,9 @@ require('../../Controleur/ScenarioProf/checkSession.php');
 
 
   <button class="button-57" onclick="document.location='PageEtu.php'"><span class="text">Accueil</span><span>Accueil</span></button>
-  <button class="button-57" onclick="document.location='../../Controleur/ScenarioProf/ScenarioEtu.php'"><span class="text">Scénario</span><span>Scénario</span></button>
-  <button class="button-57" onclick="document.location='../../Controleur/ScenarioProf/CorrectionEleve.php'"><span class="text">Correction</span><span>Correction</span></button>
-  <button class="button-57" onclick="document.location='../../Controleur/ScenarioProf/NoteEtu.php'"><span class="text">Note</span><span>Note</span></button>
+  <button class="button-57" onclick="document.location='../../Controleur/Etudiant/ScenarioEtu.php'"><span class="text">Scénario</span><span>Scénario</span></button>
+  <button class="button-57" onclick="document.location='../../Controleur/Etudiant/CorrectionEleve.php'"><span class="text">Correction</span><span>Correction</span></button>
+  <button class="button-57" onclick="document.location='../../Controleur/Etudiant/NoteEtu.php'"><span class="text">Note</span><span>Note</span></button>
   <button class="button-57" onclick="document.location='../../Controleur/Accueil/chat.php'"><span class="text">Message</span><span>Message</span></button>
 
   <br>

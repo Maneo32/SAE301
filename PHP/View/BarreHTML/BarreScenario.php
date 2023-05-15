@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-require('../../Controleur/ScenarioProf/checkSessionScenarioProf.php');
+require('../../Controleur/Accueil/checkSessionSessionProf.php');
 ?>
   <!--Le haut de la page avec l'image et le titre-->
 

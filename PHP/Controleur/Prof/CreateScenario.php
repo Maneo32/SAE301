@@ -193,7 +193,7 @@ include("../../View/BarreHTML/BarreScenario.php");
 <br>
 <!--Le bas de page avec le boutton si on a besoin d'aide et de création d'un nouveau patient-->
 <div class="footer-CreateScenario">
-    <form action="Patient.php" method="post">
+    <form action="ContrainteScenario/Patient.php" method="post">
         <button class="button-28" type="submit">Créer un patient</button>
     </form>
     <br>

@@ -13,7 +13,7 @@ function effacer($bdd){
         $patient = $bdd->prepare("Delete FROM patient where idpatient=?");
         $patient->bindParam(1,$_SESSION['patient']);
         $patient->execute();
-        header('Location:CreateScenario.php ');
+        header('Location: /SAE301/PHP/Controleur/Prof/CreateScenario.php ');
 
     }
 
@@ -28,7 +28,7 @@ function contrainte()
     if (isset($_POST['patient']) && $_POST['patient'] != 2) {
         if (isset($_POST['Contrainte'])) {
             $_SESSION['patient'] = $_POST['patient'];
-            header('Location: Radio.php');
+            header('Location: /SAE301/PHP/Controleur/Prof/ContrainteScenario/Radio.php');
         }
     }
 }
@@ -38,7 +38,7 @@ function evenement ()
     if (isset($_POST['patient']) && $_POST['patient'] != 2) {
         if (isset($_POST['Evenement'])) {
             $_SESSION['patient'] = $_POST['patient'];
-            header('Location: evenement.php');
+            header('Location: /SAE301/PHP/Controleur/Prof/evenement.php');
         }
     }
 }
@@ -52,7 +52,7 @@ function affichersce()
     if (isset($_POST['patient']) && $_POST['patient'] != 2) {
         if (isset($_POST['affiche'])) {
             $_SESSION['scenario'] = $_POST['patient'];
-            header('Location: afficheScenario2.php');
+            header('Location: /SAE301/PHP/Controleur/ScenarioAffichage/AfficheScenario2.php');
         }
     }
 }
@@ -66,7 +66,7 @@ function creerGroupe($bdd){
     if (isset($_POST['Creer'])) {
         $creer = $bdd->prepare("INSERT INTO groupeclasse(nom) values (?)");
         $creer->execute(array($_POST['grp']));
-        header('Location: CreateScenario.php');
+        header('Location: /SAE301/PHP/Controleur/Prof/CreateScenario.php');
 
 
 

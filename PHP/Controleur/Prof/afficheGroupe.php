@@ -15,5 +15,5 @@ function getGroupe(){
     return $grp;
 
 }
-include ('../../View/Prof/viewAfficheGroupe.php');
+include('../../View/Prof/viewAfficheGroupe.php');
 ?>

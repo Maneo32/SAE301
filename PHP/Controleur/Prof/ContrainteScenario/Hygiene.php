@@ -24,8 +24,8 @@ if (isset($_POST['Valider'])) {
 <head>
     <meta charset="UTF-8">
     <title>Hygiène</title>
-    <link rel="stylesheet" href="../../View/Style/PageProf.css" >
-    <script src="../../Modele/Fonction/LesFonctionsJS.js"></script>
+    <link rel="stylesheet" href="../../../View/Style/PageProf.css" >
+    <script src="../../../Modele/Fonction/LesFonctionsJS.js"></script>
 
 
 </head>
@@ -83,7 +83,7 @@ include("../../View/BarreHTML/EnteteV2.html");
 
 </form>
 <div class="footer-CreateScenario">
-    <form action="../Accueil/BesoinAide.php" method="post">
+    <form action="../../Accueil/BesoinAide.php" method="post">
         <button class="button-28" type="submit">Besoin d'aide</button>
     </form>
 </div>

@@ -1211,6 +1211,6 @@ affichage($bdd, $id);
 
 ?>
 <br><br>
-<a href="CreateScenario.php">
+<a href="../Prof/CreateScenario.php">
 <button>Retour</button>
 </a>
