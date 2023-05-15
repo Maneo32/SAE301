@@ -12,6 +12,6 @@ $stmt->bindParam(1,$id);
 $stmt->bindParam(2,$texte);
 $stmt->bindParam(3,$number);
 $stmt->execute();
-header('Location: ../../Controleur/ScenarioAffichage/evenement.php');
+header('Location: ../../Controleur/Prof/evenement.php');
 
 
