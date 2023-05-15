@@ -2,7 +2,7 @@
 require('../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
-require('FonctionScenario.php');
+require('../../Modele/FonctionScenario.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
