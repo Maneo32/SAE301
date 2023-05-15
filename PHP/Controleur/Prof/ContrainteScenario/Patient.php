@@ -16,7 +16,7 @@ session_start();
     <body>
     <!--Le haut de la page avec l'image et le titre-->
     <?php
-    include("../../View/BarreHTML/BarreScenario.php");
+    include("../../../View/BarreHTML/BarreScenario2.php");
     include("../../View/BarreHTML/Entete.html");
     require('../../Modele/BDD/ConnectionBDD.php');
     ?>

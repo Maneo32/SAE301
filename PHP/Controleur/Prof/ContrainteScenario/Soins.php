@@ -31,8 +31,9 @@ require("../Accueil/FonctionPhp.php");
 </head>
 <body>
 <?php
-include("../../View/BarreHTML/BarreScenario.php");
-include("../../View/BarreHTML/EnteteV2.html");
+include("../../../View/BarreHTML/BarreScenario2.php");
+include("../../../View/BarreHTML/EnteteV2.html");
+include('../../../Modele/BDD/ConnectionBDD.php');
 ?>
 
     <h2>Soins Relationnel du patient</h2>
