@@ -6,10 +6,10 @@ if (isset($_POST['Valider'])) {
     @$_SESSION['urine'] = $_POST['urine'];
     @$_SESSION['gaz'] = $_POST['gaz'];
     @$_SESSION['selles'] = $_POST['selles'];
-    require('../../Modele/BDD/ConnectionBDD.php');
+    require('../../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
-    require("../Accueil/FonctionPhp.php");
+    require("../../../Modele/Fonction/FonctionPhp.php");
     @ajoutDeDonneeAvecLesBooleans($bdd, "Elimation", 'urine');
     @ajoutDeDonneeAvecLesBooleans($bdd, "Elimation", 'gaz');
     @ajoutDeDonneeAvecLesBooleans($bdd, "Elimation", 'selles');
@@ -31,7 +31,6 @@ if (isset($_POST['Valider'])) {
     <?php
     include("../../../View/BarreHTML/BarreScenario2.php");
     include("../../../View/BarreHTML/EnteteV2.html");
-    include('../../../Modele/BDD/ConnectionBDD.php');
     ?>
     <h2>Cardio</h2>
 <form method="post" action="Mobilite.php">

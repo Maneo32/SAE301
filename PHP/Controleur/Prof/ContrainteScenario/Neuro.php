@@ -11,10 +11,10 @@ if (isset($_POST['Valider'])) {
     @$_SESSION['sondageurinaire'] = $_POST['sondageurinaire'];
     @$_SESSION['autre'] = $_POST['autre'];
 
-    require('../../Modele/BDD/ConnectionBDD.php');
+    require('../../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
-    require("../Accueil/FonctionPhp.php");
+    require("../../../Modele/Fonction/FonctionPhp.php");
     ajoutDeDonneeAvecLesBooleans($bdd, "Soins", 'surveillancePerf');
     ajoutDeDonneeAvecLesBooleans($bdd, "Soins", 'pansements');
     ajoutDeDonneeSansLesBooleans($bdd, "Soins", 'glycemique', $_POST['glycemique']);
@@ -39,7 +39,6 @@ if (isset($_POST['Valider'])) {
 <?php
 include("../../../View/BarreHTML/BarreScenario2.php");
 include("../../../View/BarreHTML/EnteteV2.html");
-include('../../../Modele/BDD/ConnectionBDD.php');
 ?>
     <h2>Neurologie</h2>
 <form method="post" action="Transition.php" >

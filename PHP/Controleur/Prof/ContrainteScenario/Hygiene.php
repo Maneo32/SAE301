@@ -7,10 +7,10 @@ if (isset($_POST['Valider'])) {
     @$_SESSION['AideLever'] = $_POST['AideLever'];
     @$_SESSION['AideCoucher'] = $_POST['AideCoucher'];
     @$_SESSION['AideFauteil'] = $_POST['AideFauteil'];
-    require('../../Modele/BDD/ConnectionBDD.php');
+    require('../../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
-    require("../Accueil/FonctionPhp.php");
+    require("../../../Modele/Fonction/FonctionPhp.php");
     @ajoutDeDonneeAvecLesBooleans($bdd, "Mobilite", 'AideMarche');
     @ajoutDeDonneeAvecLesBooleans($bdd, "Mobilite", 'AideLever');
     @ajoutDeDonneeAvecLesBooleans($bdd, "Mobilite", 'AideCoucher');
@@ -34,7 +34,6 @@ if (isset($_POST['Valider'])) {
 <?php
 include("../../../View/BarreHTML/BarreScenario2.php");
 include("../../../View/BarreHTML/EnteteV2.html");
-include('../../../Modele/BDD/ConnectionBDD.php');
 ?>
     <h2>Hygiène</h2>
 <form action="Alimentation.php" method="post">

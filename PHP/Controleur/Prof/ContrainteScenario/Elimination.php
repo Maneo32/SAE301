@@ -6,10 +6,10 @@ if (isset($_POST['Valider'])) {
     @$_SESSION['massage'] = $_POST['massage'];
     @$_SESSION['entretien'] = $_POST['entretien'];
     @$_SESSION['accueil'] = $_POST['accueil'];
-    require('../../Modele/BDD/ConnectionBDD.php');
+    require('../../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
-    require("../Accueil/FonctionPhp.php");
+    require("../../../Modele/Fonction/FonctionPhp.php");
     @ajoutDeDonneeAvecLesBooleans($bdd, "Soins relationnel", 'massage');
     @ajoutDeDonneeAvecLesBooleans($bdd, "Soins relationnel", 'entretien');
     @ajoutDeDonneeAvecLesBooleans($bdd, "Soins relationnel", 'accueil');
@@ -31,7 +31,6 @@ if (isset($_POST['Valider'])) {
 <?php
 include("../../../View/BarreHTML/BarreScenario2.php");
 include("../../../View/BarreHTML/EnteteV2.html");
-include('../../../Modele/BDD/ConnectionBDD.php');
 ?>
 
     <h2>Elimination du patient</h2>

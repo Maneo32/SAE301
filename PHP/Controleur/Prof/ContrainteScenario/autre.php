@@ -28,7 +28,7 @@ $categorie->execute();
 ?>
 <h2>Création d'une nouvelle catégorie</h2>
 
-<form method="post" action="ContrainteScenario/PageAjoutCategorie.php">
+<form method="post" action="PageAjoutCategorie.php">
 
     <input type="text" placeholder="Nom de la nouvelle catégorie" name="cat" required>
     <input type="submit" name="valider">
@@ -38,7 +38,7 @@ $categorie->execute();
     Nouvelle donnée
 </h4>
 
-<form method="post" action="ContrainteScenario/Transition3.php">
+<form method="post" action="Transition3.php">
     <select name="categorie">
         <option value="2">Sélectionnez une catégorie</option>
         <?php
@@ -58,7 +58,7 @@ $categorie->execute();
     <input type="submit" value="valider">
 </form>
 <div class="footer-CreateScenario">
-    <form action="../Accueil/BesoinAide.php" method="post">
+    <form action="../../Accueil/BesoinAide.php" method="post">
         <button class="button-28" type="submit">Besoin d'aide</button>
     </form>
 </div>

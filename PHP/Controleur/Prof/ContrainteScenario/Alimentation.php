@@ -12,10 +12,10 @@ if (isset($_POST['Valider'])) {
     @$_SESSION['escare'] = $_POST['escare'];
     @$_SESSION['position'] = $_POST['position'];
     @$_SESSION['matelas'] = $_POST['matelas'];
-    require('../../Modele/BDD/ConnectionBDD.php');
+    require('../../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
-    require("../Accueil/FonctionPhp.php");
+    require("../../../Modele/Fonction/FonctionPhp.php");
     @ajoutDeDonneeAvecLesBooleans($bdd, "Hygiene", 'toilette');
     @ajoutDeDonneeAvecLesBooleans($bdd, "Hygiene", 'douche');
     @ajoutDeDonneeAvecLesBooleans($bdd, "Hygiene", 'bain');
@@ -43,7 +43,6 @@ if (isset($_POST['Valider'])) {
 <?php
 include("../../../View/BarreHTML/BarreScenario2.php");
 include("../../../View/BarreHTML/EnteteV2.html");
-include('../../../Modele/BDD/ConnectionBDD.php');
 ?>
 <h2>Alimentation du patient</h2>
 <form method="post" action="SoinsClassique.php">

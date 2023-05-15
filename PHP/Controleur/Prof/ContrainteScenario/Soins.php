@@ -8,10 +8,10 @@ if (isset($_POST['Valider'])){
 @$_SESSION['confort']=$_POST['confort'];
 @$_SESSION['surveillance']=$_POST['surveillance'];
 
-require('../../Modele/BDD/ConnectionBDD.php');
+require('../../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
-require("../Accueil/FonctionPhp.php");
+require("../../../Modele/Fonction/FonctionPhp.php");
 @ajoutDeDonneeAvecLesBooleans($bdd,"Securite",'prescrite');
 @ajoutDeDonneeAvecLesBooleans($bdd,"Securite",'confort');
 @ajoutDeDonneeAvecLesBooleans($bdd,"Securite",'surveillance');
@@ -33,7 +33,6 @@ require("../Accueil/FonctionPhp.php");
 <?php
 include("../../../View/BarreHTML/BarreScenario2.php");
 include("../../../View/BarreHTML/EnteteV2.html");
-include('../../../Modele/BDD/ConnectionBDD.php');
 ?>
 
     <h2>Soins Relationnel du patient</h2>

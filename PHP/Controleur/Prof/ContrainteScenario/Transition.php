@@ -8,10 +8,10 @@ session_start();
 @$_SESSION['EVA'] = $_POST['EVA'];
 @$_SESSION['AlgoPlus'] = $_POST['AlgoPlus'];
 
-require('../../Modele/BDD/ConnectionBDD.php');
+require('../../../Modele/BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
-require("../Accueil/FonctionPhp.php");
+require("../../../Modele/Fonction/FonctionPhp.php");
 @ajoutDeDonneeSansLesBooleans($bdd,"Neuro",'temperature',$_POST['temperature']);
 @ajoutDeDonneeSansLesBooleans($bdd,"Neuro",'glasgow',$_POST['glasgow']);
 @ajoutDeDonneeSansLesBooleans($bdd,"Neuro",'EVA',$_POST['EVA']);
