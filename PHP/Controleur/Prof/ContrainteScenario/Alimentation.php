@@ -41,8 +41,9 @@ if (isset($_POST['Valider'])) {
 
 <body>
 <?php
-include("../../View/BarreHTML/BarreScenario.php");
-include("../../View/BarreHTML/EnteteV2.html");
+include("../../../View/BarreHTML/BarreScenario2.php");
+include("../../../View/BarreHTML/EnteteV2.html");
+include('../../../Modele/BDD/ConnectionBDD.php');
 ?>
 <h2>Alimentation du patient</h2>
 <form method="post" action="SoinsClassique.php">
