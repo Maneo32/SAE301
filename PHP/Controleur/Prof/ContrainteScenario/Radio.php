@@ -31,7 +31,7 @@ if (isset($_POST['Ajouter'])) {
 </head>
 <body>
 <?php
-include("../../../View/BarreHTML/BarreScenario.php");
+include("../../../View/BarreHTML/BarreScenario2.php");
 include("../../../View/BarreHTML/EnteteV2.html");
 ?>
 
@@ -56,7 +56,7 @@ include("../../../View/BarreHTML/EnteteV2.html");
 </html>
 
 <?php
-require('../../Modele/BDD/ConnectionBDD.php');
+require('../../../Modele/BDD/ConnectionBDD.php');
 
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
