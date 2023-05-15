@@ -17,11 +17,11 @@ session_start();
     <!--Le haut de la page avec l'image et le titre-->
     <?php
     include("../../../View/BarreHTML/BarreScenario2.php");
-    include("../../View/BarreHTML/Entete.html");
-    require('../../Modele/BDD/ConnectionBDD.php');
+    include("../../../View/BarreHTML/Entete.html");
+    require('../../../Modele/BDD/ConnectionBDD.php');
     ?>
     <h2> Information sur la patient </h2>
-        <form method="post">
+        <form method="post" action="../CreateScenario.php">
         Nom :<input type="text" name="nom" id="nom" placeholder="Entrez le Nom du patient " required><br>
         Prénom :<input type="text" name="prenom" id="prenom" placeholder="Entrez le Prenom du patient" required><br><br>
         Age :<input type="number" name="age" id="age" placeholder="Entrez l' âge du patient" required><br>
@@ -42,7 +42,7 @@ session_start();
         Code postal :<input type="number" name="CP" id="CP" placeholder="Entrez le code postal" ><br>
         <br>
         <div class="button_Suivant">
-            <input type="submit" value="Valider" name="ValidPatient" onclick="<?php creerPatient($bdd=ConnectionBDD::getInstance()::getpdo());?>">
+            <input type="submit"class="button-90" value="Valider" name="ValidPatient" onclick="<?php creerPatient($bdd=ConnectionBDD::getInstance()::getpdo());?>">
         </div>
     </form>
 

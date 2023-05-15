@@ -24,8 +24,8 @@ function afficherImagesRadio($bdd, $idpatient)
     // Affichage des images
     while ($resultat = $requete->fetch(PDO::FETCH_ASSOC)) {
         echo "Image Radio<br>";
-        $imgData = base64_encode($resultat['content']);
-        $src = 'data:'.$resultat['type'].';base64,'.$imgData;
+        @$imgData = base64_encode($resultat['content']);
+        @$src = 'data:'.$resultat['type'].';base64,'.$imgData;
         echo $src;
         echo "<img src='$src'>";
     }

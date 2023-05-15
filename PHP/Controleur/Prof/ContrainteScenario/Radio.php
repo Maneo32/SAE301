@@ -32,7 +32,7 @@ if (isset($_POST['Ajouter'])) {
 <body>
 <?php
 include("../../../View/BarreHTML/BarreScenario2.php");
-include("../../../View/BarreHTML/Entete2.html");
+include("../../../View/BarreHTML/EnteteV2.html");
 ?>
 
     <h2>Radio</h2>

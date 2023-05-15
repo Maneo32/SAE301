@@ -31,7 +31,7 @@
 <h2>Le Scénario</h2>
 <button class="button-90" onclick="window.history.back()">Retour</button>
 <br><br>
-<form action="AfficheRadio.php">
+<form action="../../Controleur/ScenarioAffichage/AfficheRadio.php">
     <button type="submit" class="button-90" >Radio</button>
 </form>
 <br><br>
