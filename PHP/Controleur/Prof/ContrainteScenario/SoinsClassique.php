@@ -2,16 +2,19 @@
 session_start();
 
 if (isset($_POST['Valider'])) {
+    ?>
+    <script> console.log('BAPTISTE TA MERE');</script>
+    <?php
     @$_SESSION['Date'] = date("Y-m-d H:m:s", strtotime($_POST["date"]));
     @$_SESSION['alimentaire'] = $_POST['alimentaire'];
     @$_SESSION['hydratation'] = $_POST['hydratation'];
     @$_SESSION['regime'] = $_POST['regime'];
     @$_SESSION['jeun'] = $_POST['jeun'];
     @$_SESSION['aideRepas'] = $_POST['aideRepas'];
-    require('../../Modele/BDD/ConnectionBDD.php');
+    require('../../../Modele/BDD/ConnectionBDD.php');
     $pdo = ConnectionBDD::getInstance();
     $bdd = $pdo::getpdo();
-    require("../Accueil/FonctionPhp.php");
+    require("../../../Modele/Fonction/FonctionPhp.php");
     @ajoutDeDonneeAvecLesBooleans($bdd, "Alimentation", 'alimentaire');
     @ajoutDeDonneeAvecLesBooleans($bdd, "Alimentation", 'hydratation');
     @ajoutDeDonneeAvecLesBooleans($bdd, "Alimentation", 'regime');
@@ -33,7 +36,6 @@ if (isset($_POST['Valider'])) {
 <?php
 include("../../../View/BarreHTML/BarreScenario2.php");
 include("../../../View/BarreHTML/EnteteV2.html");
-include('../../../Modele/BDD/ConnectionBDD.php');
 ?>
 
 <h2>Soins du patient</h2>
@@ -77,6 +79,7 @@ include('../../../Modele/BDD/ConnectionBDD.php');
 </div>
 </body>
 </html>
+<script> console.log('BAPTISTE TA MERE 2');</script>
 
 <?php
 ?>
