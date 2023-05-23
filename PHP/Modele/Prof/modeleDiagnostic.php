@@ -1,11 +1,12 @@
 <?php
-
 /**
  * @param $bdd
  * @return void
  */
-function insertDiag($bdd)
+function insertDiag()
 {
+    $bdd = ConnectionBDD::getInstance()::getpdo();
+
     if (isset($_POST['Valider'])) {
         $sql = $bdd->prepare("INSERT INTO diagnostic(date,nom,prenom,compterendu, idpatient ) values (?, ?, ?, ?, ?)");
         $sql->bindParam(1, $_POST['date']);

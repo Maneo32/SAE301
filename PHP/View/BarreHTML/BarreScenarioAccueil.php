@@ -22,7 +22,7 @@ require('../../Controleur/Accueil/checkSession.php');
         </div>
     </div>
 
-    <button class="button-57" onclick="document.location='PageProf.php'"><span class="text">Accueil</span><span>Accueil</span></button>
+    <button class="button-57" onclick="document.location='../Prof/PageProf.php'"><span class="text">Accueil</span><span>Accueil</span></button>
     <button class="button-57" onclick="document.location='../../Controleur/Prof/CreateScenario.php'"><span class="text">Scénario</span><span>Scénario</span></button>
     <button class="button-57" onclick="document.location='../../Controleur/Prof/Correction.php'"><span class="text">Correction</span><span>Correction</span></button>
     <button class="button-57" onclick="document.location='../../Controleur/Prof/AvantLesNotes.php'"><span class="text">Note</span><span>Note</span></button>
