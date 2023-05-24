@@ -1,0 +1,201 @@
+/*GLOBAL*/
+body{
+    margin: 0;
+    text-align: center;
+    background-color: lightblue;
+    color: #0c76d9;
+}
+
+/*BOUTTONS*/
+.boutton{
+    background-color: #007bff;
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+.trad{
+    margin-right: 5%;
+    margin-left: auto;
+    cursor: pointer;
+}
+.submit{
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+}
+.trad, .submit{
+    height: 20px;
+    width: 80px;
+}
+.autre{
+    width: 25px;
+    height: 25px;
+}
+.lien {
+    background-color: transparent;
+    border: 2px solid dodgerblue;
+    border-radius: 15px;
+    color: #0c76d9;
+    cursor: pointer;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    text-decoration: none;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    vertical-align: sub;
+
+}
+.lien:hover {
+    color: #fff;
+    background-color: #0c76d9;
+}
+
+/*Styling pour le bouton "submit" au survol */
+input[type="submit"]:hover, .autre:hover {
+    background-color: #0056b3;
+}
+
+/*HEADER*/
+header{padding: 5% 0;}
+img{
+    width: 117px;
+    height: 62px;
+}
+
+/*TEXTES*/
+h1{font-size: 16px;}
+h2{font-size: 14px;}
+h3{
+    font-size: 12px;
+    color: dodgerblue;
+}
+input, a, p, .autre, .lien{
+    margin-top: 0.6%;
+    margin-bottom: 0.6%;
+    font-size: 10px;
+}
+/* Default styles for the inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 0.5%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/*CONTENU*/
+.contenu{
+    padding: 5% 0;
+}
+.item{margin-bottom: 20%;}
+.liens, form{
+    display: flex;
+    flex-direction: column;
+}
+
+/*INFOBULLE*/
+a.MDP:hover span {
+    display: inline; /* On affiche l'infobulle. */
+    position: absolute;
+    white-space: nowrap; /* On change la valeur de la propriété white-space pour qu'il n'y ait pas de retour à la ligne non désiré. */
+    top: 30px; /* On positionne notre infobulle. */
+    left: 20px;
+    background: white;
+    color: black;
+    border: solid grey;
+}
+a.MDP {
+    position: relative;
+    color: dodgerblue;
+    font-weight: bold;
+}
+a.MDP span {
+    display: none; /* On masque l'infobulle. */
+}
+a.MDP:hover {
+    z-index: 500; /* On définit une valeur pour l'ordre d'affichage. */
+    cursor: help; /* On change le curseur par défaut par un curseur d'aide. */
+}
+
+/*FOOTER*/
+footer{
+    color: white;
+    background-color: #0c76d9;
+    padding: 0.75%;
+}
+
+/*RESPONSIVE*/
+@media only screen and (min-width: 700px) {
+    .submit,.trad{
+        height: 30px;
+        width: 90px;
+    }
+    .autre{
+        width: 30px;
+        height: 30px;
+    }
+    header{padding: 3% 0;}
+    .item{margin-bottom: 12%;}
+    img{
+        width: 177px;
+        height: 93px;
+    }
+    h1{font-size: 20px;}
+    input, a, p, .autre, .lien{font-size: 16px;}
+    h2{font-size: 19px;}
+    h3{font-size: 16px;}
+    .lien{
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    .submit,.trad{
+        height: 40px;
+        width: 100px;
+    }
+    .autre{
+        width: 40px;
+        height: 40px;
+    }
+    header{padding: 1% 0;}
+    .item{margin-bottom: 7%;}
+    img{
+        width: 234px;
+        height: 125px;
+    }
+    h1{font-size: 24px;}
+    input, a, p, .autre, .lien{font-size: 16px;}
+    h2{font-size: 21px;}
+    h3{font-size: 18px;}
+    .lien{
+        padding-bottom: 8px;
+        padding-top: 8px;
+    }
+}
+@media only screen and (min-width: 1500px) {
+    .submit,.trad{
+        height: 50px;
+        width: 130px;
+    }
+    .autre{
+        width: 50px;
+        height: 50px;
+    }
+    header{padding: 1.5% 0;}
+    .contenu{padding: 0.3% 0;}
+    .item{margin-bottom: 5%;}
+    h1{font-size: 35px;}
+    input, a, p, .autre, .lien{
+        font-size: 20px;
+        margin-top: 0.3%;
+        margin-bottom: 0.3%;
+    }
+    h2{font-size: 30px;}
+    h3{font-size: 26px;}
+    .lien{
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+}
