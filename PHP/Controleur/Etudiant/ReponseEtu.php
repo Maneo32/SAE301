@@ -46,9 +46,9 @@ $bdd = $pdo::getpdo();
     $nbRep->execute();
     $dejaRep=$nbRep->fetchAll();
 
-    /* le if est else sont présent pouyr attendre le clique de l'étudiant avant de changer la page*/
-    if(count($dejaRep)>0){
-        echo '<script> if (window.confirm("Vous avez déja répondu pour ce patient ?")) {
+/* le if est else sont présent pouyr attendre le clique de l'étudiant avant de changer la page*/
+if(count($dejaRep)>0){
+    echo '<script> if (window.confirm("Vous avez déja répondu pour ce patient ?")) {
     
     window.location.href = "ScenarioEtu.php";}
     else{
@@ -58,7 +58,9 @@ $bdd = $pdo::getpdo();
 
 
 
-    }
+}
+
+
 
 
 ?>
@@ -66,27 +68,31 @@ $bdd = $pdo::getpdo();
 <form action="ScenarioEtu.php" method="post">
     <button class="button-90" >Retour</button>
 </form>
+<br>
 <h4>Réponse au Scénario : <?php echo $res[0]," ",$res[1]," né le ",$res[2] ?>  </h4>
 
 
 <div class="textarea" >
-<textarea name="textereponse0" id="textereponse0" ordre="0" rows="20" cols="80" required> </textarea> <br>
+<textarea  name="textereponse0" id="textereponse0" ordre="0" rows="20" cols="80" required> </textarea> <br>
 </div>
 
 <input id="rep0" type="submit" name="Valider" onclick="ajoutNouvelEvenement(0)" value="Envoyer">
+<br><br>
+
 
 <?php
 for ($i=1;$i<count($res2)+1;$i++){
     echo '
     <div class="d-none" id="div'.$i.'" > 
-        <div class="mx-auto" style="width: 750px;" >
             <h4> Evenement : '.$res2[$i-1]["texte"].'</h4>
-            <textarea class="mx-auto" name="textereponse'.$i.'" id="textereponse'.$i.'" ordre="'.$res2[$i-1]["ordre"].'" rows="20" cols="80" required> </textarea> <br>
-        </div>
+            <br>
+            <div class="textarea">
+<textarea name="textereponse'.$i.'" id="textereponse'.$i.'" ordre="'.$res2[$i-1]["ordre"].'" rows="20" cols="80" required></textarea><br> 
+</div>      
         <br>
         <input id="rep'.$i.'" type="submit" name="Valider" onclick="ajoutNouvelEvenement('.$i.')" value="Envoyer">
         
-
+<br<br>
     </div>
 ';
 
