@@ -1,66 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NouveauMDP</title>
-  <link rel="stylesheet" href="../../View/Style/SiteIFSI.css">
+  <link rel="stylesheet" href="../../View/Style/SiteIFSI2.css?v=<?php echo time();?">
   <script src="../../Modele/Fonction/LesFonctionsJS.js"></script>
 </head>
-<body>
-<!--Le haut de la page avec l'image et le titre-->
 
+<body>
+<!--Boutton traduction et logo-->
 <header>
-  <div class="traduction">
-    <input type="submit" value="Francais" name="langue" onclick="changerLangue()">
-  </div>
+  <form>
+    <input class="boutton trad" type="submit" value="Français" name="langue" onclick="changerLangue()">
+  </form>
   <a href="Accueil.php">
-    <img src="../../View/image/logoIFSI.png" width=234 height=125 alt="" >
+    <img src="../../View/image/logoIFSI.png" width=468 height=250 alt="">
   </a>
-  <h1>  Institute of Nursing Training</h1>
-  <br><br>
+  <h1>Institute of Nursing Training</h1>
 </header>
 
+<div class ="contenu">
+  <div class="item">
+    <h2>New password</h2>
+    <h3>Enter your new password, then go back to login.</h3>
+    <form method="post">
+      <label for="mdp">
+        <input type="password" name='mdp' id="mdp" placeholder="Enter your new password" required>
+        <button class="boutton autre" type="button" onclick="changer('mdp')">O</button>
+      </label>
+      <label for="mdp2">
+        <input type="password" name='mdp2' id="mdp2" placeholder="Confirm your password" required>
+        <button class="boutton autre" type="button" onclick="changer('mdp2')">O</button>
+      </label>
+      <input class="boutton submit" type="submit" value="Validate"></p>
+    </form>
+  </div>
 
-<!--box de milieu-->
-
-<h3>
-  Enter your new password, <br>
-  Then go back to login.
-</h3>
-<br>
-
-<div class ="inscription">
-
-  <form method="post">
-    <br>
-    <label>New Password :</label>
-    <br><br>
-    <input type="password" name='mdp' id="mdp" placeholder="Enter your new password" required ><button type="button" onclick="changer('mdp')">O</button>
-    <br>
-    <br>
-    <label>Confirm your password  :</label>
-    <br><br>
-    <input type="password" name='mdp2' id="mdp2" placeholder="Confirm your password" required><button type="button" onclick="changer('mdp2')">O</button>
-    <br>
-    <p><input type="submit" value="Validate"></p>
-  </form>
-
+  <!--Liens vers d'autres pages-->
+  <div class="item liens">
+    <a class="lien" href="../../Controleur/Accueil/Accueil.php">Login</a>
+    <a class="lien" href="../../Controleur/Accueil/CreateAccount.php">Create an account</a>
+    <a class="lien" href="../../Controleur/Accueil/BesoinAide.php">Need help</a>
+  </div>
 </div>
-
-
-<!--Le bas de la page-->
-<footer>
-  <form action="../../Controleur/Accueil/CreateAccount.php" method="post">
-    <button type="submit" class="button-28">Create an account</button>
-  </form> <br>
-  <form action="../../Controleur/Accueil/Accueil.php" method="post">
-    <button type="submit" class="button-28">Login</button>
-  </form><br>
-  <form action="../../Controleur/Accueil/BesoinAide.php" method="post">
-    <button type="submit" class="button-28">Need Help</button>
-  </form>
-</footer>
 </body>
-
 </html>
