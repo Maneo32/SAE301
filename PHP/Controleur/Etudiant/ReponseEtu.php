@@ -69,7 +69,7 @@ $bdd = $pdo::getpdo();
 <h4>Réponse au Scénario : <?php echo $res[0]," ",$res[1]," né le ",$res[2] ?>  </h4>
 
 
-<div class="mx-auto" style="width: 750px;" >
+<div class="textarea" >
 <textarea name="textereponse0" id="textereponse0" ordre="0" rows="20" cols="80" required> </textarea> <br>
 </div>
 
@@ -81,9 +81,9 @@ for ($i=1;$i<count($res2)+1;$i++){
     <div class="d-none" id="div'.$i.'" > 
         <div class="mx-auto" style="width: 750px;" >
             <h4> Evenement : '.$res2[$i-1]["texte"].'</h4>
-            <textarea name="textereponse'.$i.'" id="textereponse'.$i.'" ordre="'.$res2[$i-1]["ordre"].'" rows="20" cols="80" required> </textarea> <br>
+            <textarea class="mx-auto" name="textereponse'.$i.'" id="textereponse'.$i.'" ordre="'.$res2[$i-1]["ordre"].'" rows="20" cols="80" required> </textarea> <br>
         </div>
-
+        <br>
         <input id="rep'.$i.'" type="submit" name="Valider" onclick="ajoutNouvelEvenement('.$i.')" value="Envoyer">
         
 

@@ -3,13 +3,16 @@
 
 session_start();
 @$_SESSION['Date']=date("Y-m-d H:m:s", strtotime($_POST["date"]));
-require('../../../Modele/BDD/ConnectionBDD.php');
+require('../BDD/ConnectionBDD.php');
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 require("../../../Modele/Fonction/FonctionPhp.php");
 @ajoutDeDonneeSansLesBooleans($bdd,"Respi",'SaO2',$_POST['Sa02']);
 @ajoutDeDonneeSansLesBooleans($bdd,"Respi",'FR',$_POST['FR']);
 @ajoutDeDonneeSansLesBooleans($bdd,"Respi",'O2',$_POST['O2']);
-header('Location:Autre.php');
+header('Location:autre.php');
+
+
+
 
 ?>
