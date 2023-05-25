@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Neurologie</title>
+    <title>Respiration</title>
     <link rel="stylesheet" href="../../../View/Style/PageProf.css" >
     <script src="../../../Modele/Fonction/LesFonctionsJS.js"></script>
 
@@ -12,24 +12,24 @@
 <?php
 include("../../../View/BarreHTML/BarreScenario2.php");
 include("../../../View/BarreHTML/EnteteV2.html");
+include('../../../Modele/BDD/ConnectionBDD.php');
 ?>
-<h2>Neurologie</h2>
-<form method="post" action="Transition.php" >
+<h2>Respiration</h2>
+
+<form method="post" action="Transition2.php">
 
     Date :
     <input type="datetime-local" name="date" id="date" required>
     <br><br>
-    Temperature : <input type="text" name="temperature">
+    SaO2 : <input type="text" name="Sa02" >
     <br><br>
-    Glasgow : <input type="text" name="glasgow">
+    FR : <input type="text" name="FR">
     <br><br>
-    EVA : <input type="text" name="EVA">
+    O2 : <input type="text" name="O2">
     <br><br>
-    AlgoPlus : <input type="text" name="AlgoPlus">
-    <br><br>
-    <div class="button_Suivant">
-        <input type="submit" value="Valider" name="Valider">
-    </div>
+
+    <input type="submit" value="Valider" name="Valider" >
+
 
 
 </form>
@@ -37,8 +37,6 @@ include("../../../View/BarreHTML/EnteteV2.html");
     <form action="../../Accueil/BesoinAide.php" method="post">
         <button class="button-28" type="submit">Besoin d'aide</button>
     </form>
-</div>
-
 </div>
 </body>
 </html>

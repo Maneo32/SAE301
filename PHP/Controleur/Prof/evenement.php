@@ -127,7 +127,7 @@ modifdonnee($bdd, $id);
         <label for="texte">Texte :</label>
 
         <div class="form-group">
-            <textarea type="text" rows="5" cols="30" class="form-control" id="texte" name="texte" required></textarea>
+            <textarea  rows="5" cols="30" class="form-control" id="texte" name="texte" required></textarea>
 		</div>
         <br>
 		<div class="form-group">
