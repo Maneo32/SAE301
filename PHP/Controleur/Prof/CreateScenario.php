@@ -1,6 +1,28 @@
 <?php
 session_start();
-
+require('../../Modele/BDD/ConnectionBDD.php');
+$pdo = ConnectionBDD::getInstance();
+$bdd = $pdo::getpdo();
+require ('../../Modele/Prof/modeleCreerPatient.php');
+if (isset($_POST['ValidPatient'])){
+    creerPatientControlleur($bdd);
+}
+function creerPatientControlleur($bdd){
+    $nom=@$_POST['nom'];
+    $prenom=@$_POST['prenom'];
+    $age=@$_POST['age'];
+    $ddn=@$_POST['DDN'];
+    $poids=@$_POST['poids'];
+    $taille=@$_POST['taille'];
+    $iep=@$_POST['IEP'];
+    $ipp=@$_POST['IPP'];
+    $sexe=@$_POST['sexe'];
+    $adresse=@$_POST['adresse'];
+    $ville=@$_POST['ville'];
+    $cp=@$_POST['CP'];
+    $email=@$_SESSION['email'];
+    creerPatient($nom,$prenom,$age,$ddn,$poids,$taille,$iep,$ipp,$sexe,$adresse,$ville,$cp,$email,$bdd);
+}
 
 ?>
 
@@ -31,9 +53,7 @@ include("../../View/BarreHTML/BarreScenario.php");
 <!--selection du patient avec ses options de navigation-->
 
     <?php
-    require('../../Modele/BDD/ConnectionBDD.php');
-    $pdo = ConnectionBDD::getInstance();
-    $bdd = $pdo::getpdo();
+
 
     require('../../Modele/FonctionScenario.php');
 

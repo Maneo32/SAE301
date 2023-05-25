@@ -13,12 +13,13 @@
 <?php
 include("../../../View/BarreHTML/BarreScenario2.php");
 include("../../../View/BarreHTML/EnteteV2.html");
+
 $categorie=getCatControl();
 ?>
 
 <h2>Création d'une nouvelle catégorie</h2>
 
-<form method="post" action="PageAjoutCategorie.php">
+<form method="post" action="../../../Modele/Prof/PageAjoutCategorie.php">
 
     <input type="text" placeholder="Nom de la nouvelle catégorie" name="cat" required>
     <input type="submit" name="valider">
