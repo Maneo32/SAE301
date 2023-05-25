@@ -23,7 +23,7 @@
 <div class="contenu">
     <!--Formulaire de connexion-->
     <div class="item">
-        <h2>Connexion</h2>
+        <h2>Connection</h2>
         <h3>Enter your login and password</h3>
         <form method="post">
             <label for="id">
