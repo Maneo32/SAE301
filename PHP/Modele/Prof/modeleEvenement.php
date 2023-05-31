@@ -42,3 +42,16 @@ function modifdonnee(){
         }
     }
 }
+
+
+function ordre($bdd, $id){
+    $sql = $bdd->prepare("SELECT ordre FROM scenario WHERE idpatient = ?");
+    $sql->bindParam(1, $id);
+    $sql->execute();
+
+    while($row = $sql->fetch()){
+        if($row['ordre'] == @$_POST["ordre"]){
+            echo '<script>alert("Il ne faut pas mettre deux fois le même ordre");</script>';
+        }
+    }
+}
