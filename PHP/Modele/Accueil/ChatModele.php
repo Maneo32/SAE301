@@ -84,7 +84,11 @@ function affichergrp($bdd){
             }?>
         </form>
     </div>
+<?php
+}
 
+function loadChat(){
+    ?>
     <section id="messages"></section>
     <script>
         setInterval('load_messages()',500);
@@ -92,8 +96,10 @@ function affichergrp($bdd){
             $('#messages').load('loadChat.php');
         }
     </script>
-    <?php
+<?php
 }
+
+
 /*nous permet d'afficher les différents utilisateurs présents dans le groupe, et de les modifiers/supprimer si nous avons le droit*/
 /**
  * @param $bdd
