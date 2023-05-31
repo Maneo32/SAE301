@@ -121,6 +121,37 @@ modifdonnee();
         </tbody>
     </table>
 </div>
+<br>
+<form>
+    <button  id="btn_supp" class="button-90">Supprimer</button>
+</form>
+<script>
+    function deleteScenario(id) {
+        console.log('aaa')
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '../../Modele/Prof/modeleEvenement.php?action', true);
+
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = xhr.responseText;
+                console.log(response);
+                location.href = location.href;            }
+        };
+
+        xhr.send('action='+id);
+    }
+
+    // Exemple d'appel à la fonction supp depuis le JavaScript
+    const boutonSuppression = document.getElementById('btn_supp');
+    boutonSuppression.addEventListener('click', function(e) {
+        deleteScenario(<?php echo $_SESSION['patient']?>)
+        e.preventDefault()
+
+
+    });
+</script>
 <div class="footer-CreateScenario">
     <br>
     <form action="../Accueil/BesoinAide.php" method="post">

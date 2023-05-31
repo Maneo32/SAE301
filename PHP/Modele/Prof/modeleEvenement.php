@@ -1,5 +1,4 @@
 <?php
-
 if (@$_COOKIE['reload']==1){
     @$_COOKIE['reload']=0;
     header('Refresh:0');
@@ -81,3 +80,30 @@ if (isset($_POST['send'])){
     ajouter($_SESSION['patient'], $bdd, $_POST['texte'], $_POST['ordre']);
 }
 
+
+
+function supp($id){
+    $pdo = ConnectionBDD::getInstance();
+    $bdd = $pdo::getpdo();
+    $sql = $bdd->prepare("SELECT idscenario FROM scenario WHERE idpatient = ? ORDER BY idscenario DESC ");
+    $sql->bindParam(1, $id);
+    $sql->execute();
+
+
+    $premierElement = $sql->fetch();
+    if ($premierElement) {
+
+        // Supprimer le premier élément
+        $sqlDelete = $bdd->prepare("DELETE FROM scenario WHERE idscenario = ?");
+        $sqlDelete->bindParam(1, $premierElement[0]);
+        $sqlDelete->execute();
+
+        echo "Suppression effectuée pour le scenario :". $premierElement[0];
+    } else {
+        echo "Aucun élément trouvé";
+    }
+
+}
+if (isset($_POST['action'])) {
+        supp($_POST['action']);
+}
