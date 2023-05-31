@@ -53,7 +53,7 @@ loadChat();
 </a>
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-        <h5>Gestion des groupes</h5>
+        <h5 class="grp">Gestion des groupes</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
@@ -72,5 +72,6 @@ loadChat();
 include("../../View/Accueil/BesoinAideButton.html");
 
 ?>
+
 
 

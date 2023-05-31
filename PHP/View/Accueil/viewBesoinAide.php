@@ -77,26 +77,30 @@
     </script>
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="Btn_Groupe">
-        <button type="submit" name="creer" id="creer" onclick="afficher()">Créer groupe</button>
-        <form style="visibility: hidden" id="form" method="post">
-            <input type="text" placeholder="Sujet du groupe" id="nomgrp" name="sujet">
-            <input name="valider" id="valider" type="submit">
-        </form>
+        <div class="offcanvas-header">
+            <h5 class="grp">Gestion des groupes</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="Btn_Groupe">
+            <button type="submit" name="creer" id="creer" onclick="afficher()">Créer groupe</button>
+            <form style="visibility: hidden" id="form" method="post">
+                <input type="text" placeholder="Sujet du groupe" id="nomgrp" name="sujet">
+                <input name="valider" id="valider" type="submit">
+            </form>
 
-        <h3>Sujet :</h3>
-        <form method="post">
-            <?php
-            $grps=getGrps();
-            while ($grp = $grps->fetch()){
-            ?>
-            <button type="submit" name="button" value="<?php echo $grp[0]."+".$grp[1]?>"><?php echo $grp[1]?></button>
-            <?php
+            <h3>Sujet :</h3>
+            <form method="post">
+                <?php
+                $grps=getGrps();
+                while ($grp = $grps->fetch()){
+                ?>
+                <button type="submit" name="button" value="<?php echo $grp[0]."+".$grp[1]?>"><?php echo $grp[1]?></button>
+                <?php
+                    echo '<br>';
                 echo '<br>';
-            echo '<br>';
-            }?>
-        </form>
-    </div>
+                }?>
+            </form>
+        </div>
     </div>
 
     <section id="messages"></section>
