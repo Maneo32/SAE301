@@ -14,6 +14,5 @@ session_start();
     $stmt->bindParam(2, $texte);
     $stmt->bindParam(3, $number);
     $stmt->execute();
-    header('Location: ../../Controleur/Prof/evenement.php');
 
 
