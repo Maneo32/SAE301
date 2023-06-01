@@ -34,9 +34,9 @@
         <form method="POST" >
             <textarea name="message" rows="10" cols="80"></textarea>
             <br>
-            <input type="submit" name="valider">
+            <input type="submit" class="button-90" name="valider">
 
-            <button type="submit" name="suppmess">Supprimer</button>
+            <button class="button-90" type="submit" name="suppmess">Supprimer</button>
         </form>
     </div>
     <br>
