@@ -59,6 +59,7 @@ if (!isset($_POST['patient'])){
 <?php }
 appelerLesFonctions();
 ?>
+<br>
 <form method="post">
     <button class="button-90" role="button" type="submit" name="destroy">Changer d'élève</button>
 </form>

@@ -3,6 +3,11 @@ session_start();
 require("../../Modele/BDD/ConnectionBDD.php");
 $conn= ConnectionBDD::getInstance();
 $bdd=$conn::getpdo();
+$pseudo = $_SESSION['username'];
+$pseudo2 = $pseudo[0];
+$pseudo2 .= " ";
+$pseudo2 .= $pseudo[1];
+$_SESSION['PseudoChat'] = $pseudo2;
 ?>
 <?php
 /* View Chat*/
@@ -62,12 +67,12 @@ loadChat();
         afficheruser($bdd);
         supprimer($bdd);
         admin($bdd);
-        suppmess($bdd);
+
         ?>
     </div>
 </div>
 <?php
-
+suppmess($bdd);
 
 include("../../View/Accueil/BesoinAideButton.html");
 

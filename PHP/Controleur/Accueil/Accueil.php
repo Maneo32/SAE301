@@ -25,9 +25,6 @@ require("../../Modele/Accueil/username.php");
 
 $_SESSION['IdChat']=1;
 $_SESSION['sujet'] = "Général";
-/* La partie de la validation de connexion qui renvoie la page correspondante*/
-
-
 
 /* La partie de la validation de connexion qui renvoie la page correspondante*/
 $conn = ConnectionBDD::getInstance();
