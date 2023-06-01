@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Scenario</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="../../View/Style/PageProf.css">
     <script src="../../Modele/Fonction/LesFonctionsJS.js"></script>
 
@@ -37,150 +37,155 @@
 <br><br>
 <p id="idp"></p>
 
-<table>
-    <thead>
-    <tr>
-        <?php $patient = array("Nom", "Prénom", "Age", "Date de naissance", "Poids", "Taille", "IEP", "IPP", "Sexe", "Adresse", "Ville", "Code Postale");
-        for ($i=0; $i<sizeof($patient); $i++){?>
-            <th><?php echo $patient[$i]?></th>
-        <?php }?>
+<div class="table-responsive">
+    <table>
+        <thead>
+        <tr>
+            <?php $patient = array("Nom", "Prénom", "Age", "Date de naissance", "Poids", "Taille", "IEP", "IPP", "Sexe", "Adresse", "Ville", "Code Postale");
+            for ($i=0; $i<sizeof($patient); $i++){?>
+                <th><?php echo $patient[$i]?></th>
+            <?php }?>
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <?php for ( $i=0; $i<12; $i++){?>
-            <td onclick="change(<?php echo $i ?>, 0, 0)"><?php echo getGroupe($_SESSION['scenario'])[$i+1] ?></td>
-        <?php }
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <?php for ( $i=0; $i<12; $i++){?>
+                <td onclick="change(<?php echo $i ?>, 0, 0)"><?php echo getGroupe($_SESSION['scenario'])[$i+1] ?></td>
+            <?php }
 
-        ?>
-
-    </tr>
-    </tbody>
-</table>
-
-<table>
-    <br><br>
-    <thead>
-
-
-    <tr>
-        <th> Date </th>
-
-        <?php
-        $laListeDesDates=getDatePresc($_SESSION['scenario']);
-
-        for ($i=0; $i<count( $laListeDesDates); $i++){
             ?>
-            <th> <?php echo  $laListeDesDates[$i][0]?></th>
-            <?php
-        }
-        ?>
-    </tr>
-    <th><div class="title">Prescription </div></th>
 
-    <tr>
-        <th> Medicament </th>
-        <?php
-        @$Presc=getPresc($_SESSION['scenario']);
-        for ($i=0; $i<count($laListeDesDates); $i++){
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="table-responsive">
+    <table>
+        <br><br>
+        <thead>
+
+        <tr>
+            <th> Date </th>
+
+            <?php
+            $laListeDesDates=getDatePresc($_SESSION['scenario']);
+
+            for ($i=0; $i<count( $laListeDesDates); $i++){
+                ?>
+                <th> <?php echo  $laListeDesDates[$i][0]?></th>
+                <?php
+            }
             ?>
-            <td onclick="change(<?php echo $i+12?>, 0, 0)"> <?php echo $Presc[$i][3]?> </td>
+        </tr>
+        <th><div class="title">Prescription </div></th>
+
+        <tr>
+            <th> Medicament </th>
             <?php
-        }
-        ?>
-
-
-    </tr>
-    <tr>
-        <th> Médecin </th>
-        <?php
-        @$Presc=getPresc($_SESSION['scenario']);
-        for ($i=0; $i<count($laListeDesDates); $i++){
+            @$Presc=getPresc($_SESSION['scenario']);
+            for ($i=0; $i<count($laListeDesDates); $i++){
+                ?>
+                <td onclick="change(<?php echo $i+12?>, 0, 0)"> <?php echo $Presc[$i][3]?> </td>
+                <?php
+            }
             ?>
-            <td onclick="change(<?php echo $i+12+sizeof(getDatePresc($_SESSION['scenario'])) ?>, 0, 0)"> <?php echo $Presc[$i][5]?> </td>
+
+
+        </tr>
+        <tr>
+            <th> Médecin </th>
             <?php
-        }
-        ?>
-    </tr>
-    <tr>
-        <th> Dose (en mg) </th>
-        <?php
-        @$Presc=getPresc($_SESSION['scenario']);
-        for ($i=0; $i<count($laListeDesDates); $i++){
+            @$Presc=getPresc($_SESSION['scenario']);
+            for ($i=0; $i<count($laListeDesDates); $i++){
+                ?>
+                <td onclick="change(<?php echo $i+12+sizeof(getDatePresc($_SESSION['scenario'])) ?>, 0, 0)"> <?php echo $Presc[$i][5]?> </td>
+                <?php
+            }
             ?>
-            <td onclick="change(<?php echo $i+12+(2*sizeof(getDatePresc($_SESSION['scenario']))) ?>, 0, 0)"> <?php echo $Presc[$i][2]?> </td>
+        </tr>
+        <tr>
+            <th> Dose (en mg) </th>
             <?php
-        }
-        ?>
+            @$Presc=getPresc($_SESSION['scenario']);
+            for ($i=0; $i<count($laListeDesDates); $i++){
+                ?>
+                <td onclick="change(<?php echo $i+12+(2*sizeof(getDatePresc($_SESSION['scenario']))) ?>, 0, 0)"> <?php echo $Presc[$i][2]?> </td>
+                <?php
+            }
+            ?>
 
 
-    </tr>
-    </thead>
-</table>
+        </tr>
+        </thead>
+    </table>
+</div>
 <br>
-<table>
-    <br><br>
-    <thead>
+
+<div class="table-responsive">
+    <table>
+        <br><br>
+        <thead>
 
 
-    <tr>
-        <th> Date </th>
+        <tr>
+            <th> Date </th>
 
-        <?php
-        $laListeDesDates=getDateDiag();
-
-        for ($i=0; $i<count( $laListeDesDates); $i++){
-            ?>
-            <th> <?php echo  $laListeDesDates[$i][0]?></th>
             <?php
-        }
-        ?>
-    </tr>
-    <th><div class="title">Intervenant </div></th>
-    <tr>
-        <th> Nom </th>
-        <?php
-        @$Diag=getDiag();
-        for ($i=0; $i<count($laListeDesDates); $i++){
+            $laListeDesDates=getDateDiag();
+
+            for ($i=0; $i<count( $laListeDesDates); $i++){
+                ?>
+                <th> <?php echo  $laListeDesDates[$i][0]?></th>
+                <?php
+            }
             ?>
-            <td onclick="change(<?php echo $i+12+(3*sizeof(getDatePresc($_SESSION['scenario']))) ?>, 0, 0)"> <?php echo $Diag[$i][2]?> </td>
+        </tr>
+        <th><div class="title">Intervenant </div></th>
+        <tr>
+            <th> Nom </th>
             <?php
-        }
-        ?>
-
-
-    </tr>
-    <tr>
-        <th> Prenom </th>
-        <?php
-        @$Diag=getDiag();
-        for ($i=0; $i<count($laListeDesDates); $i++){
+            @$Diag=getDiag();
+            for ($i=0; $i<count($laListeDesDates); $i++){
+                ?>
+                <td onclick="change(<?php echo $i+12+(3*sizeof(getDatePresc($_SESSION['scenario']))) ?>, 0, 0)"> <?php echo $Diag[$i][2]?> </td>
+                <?php
+            }
             ?>
-            <td onclick="change(<?php echo $i+12+(3*sizeof(getDatePresc($_SESSION['scenario'])))+sizeof(getDateDiag())?>, 0, 0)"> <?php echo $Diag[$i][3]?> </td>
+
+
+        </tr>
+        <tr>
+            <th> Prenom </th>
             <?php
-        }
-        ?>
-    </tr>
-    <th><div class="title">Diagnostic </div></th>
-
-    <tr>
-        <th> Compte Rendu </th>
-        <?php
-        @$Diag=getDiag();
-        for ($i=0; $i<count($laListeDesDates); $i++){
-
+            @$Diag=getDiag();
+            for ($i=0; $i<count($laListeDesDates); $i++){
+                ?>
+                <td onclick="change(<?php echo $i+12+(3*sizeof(getDatePresc($_SESSION['scenario'])))+sizeof(getDateDiag())?>, 0, 0)"> <?php echo $Diag[$i][3]?> </td>
+                <?php
+            }
             ?>
-            <td onclick="change(<?php echo $i+12+(3*sizeof(getDatePresc($_SESSION['scenario'])))+2*sizeof(getDateDiag())?>, 0, 0)"> <?php echo $Diag[$i][4]?> </td>
+        </tr>
+        <th><div class="title">Diagnostic </div></th>
+
+        <tr>
+            <th> Compte Rendu </th>
             <?php
-        }
-        ?>
+            @$Diag=getDiag();
+            for ($i=0; $i<count($laListeDesDates); $i++){
+
+                ?>
+                <td onclick="change(<?php echo $i+12+(3*sizeof(getDatePresc($_SESSION['scenario'])))+2*sizeof(getDateDiag())?>, 0, 0)"> <?php echo $Diag[$i][4]?> </td>
+                <?php
+            }
+            ?>
 
 
-    </tr>
-    </thead>
-</table>
-
+        </tr>
+        </thead>
+    </table>
+</div>
 <?php
 
 
@@ -194,81 +199,65 @@ $i = 0;
 $var=0;
 
 // tant qu'on a pas tout affiché on continue
-while ($i<$max){
+while ($i < $max) {
     ?>
     <br>
     <?php
-    if ($categorie==$donnee[$i]['nom'] || $var==0){
-        $var=1;
+    if ($categorie == $donnee[$i]['nom'] || $var == 0) {
+        $var = 1;
         ?>
-        <table>
-        <th><div class="title"><?php echo $donnee[$i]['nom']?> </div></th>
-
-
-        <tr>
-            <?php $nomType=$donnee[$i]['type'];
-            $nbType=getNombreColonneType($categorie,$nomType);
-
-
-            ?>
-        </tr>
-        <tr>
-            <th> <?php echo $donnee[$i]['type']?> </th>
-
-            <?php
-            for ($j=$i; $j<$i+$nbType; $j++){
-
-                ?>
-                <td> <?php echo $donnee[$j]['date']?> </td>
-
-                <?php
-            }
-            ?>
-        </tr>
-        <tr>
-            <th> <?php echo 'donnée'?> </th>
-            <?php
-            for ($j=$i; $j<$i+$nbType; $j++){   ?>
-                <td onclick= "change(<?php echo ($i+12+(3*sizeof(getDatePresc($_SESSION['scenario'])))+3*(sizeof(getDateDiag()))+$j+$nbType)?>, '<?php echo $donnee[$i]['date']?>', '<?php echo $donnee[$i]['type']?>')" > <?php echo $donnee[$j]['donnee']?> </td>
-                <?php
-
-            }
-            ?> </tr> <?php
-        $i = $i+$nbType-1;
-        if ($i>=$max)
+        <div class="table-responsive">
+            <table>
+                <th><div class="title"><?php echo $donnee[$i]['nom'] ?></div></th>
+                <tr>
+                    <?php $nomType = $donnee[$i]['type'];
+                    $nbType = getNombreColonneType($categorie, $nomType);
+                    ?>
+                </tr>
+                <tr>
+                    <th><?php echo $donnee[$i]['type'] ?></th>
+                    <?php
+                    for ($j = $i; $j < $i + $nbType; $j++) {
+                        ?>
+                        <td><?php echo $donnee[$j]['date'] ?></td>
+                        <?php
+                    }
+                    ?>
+                </tr>
+                <tr>
+                    <th><?php echo 'donnée' ?></th>
+                    <?php
+                    for ($j = $i; $j < $i + $nbType; $j++) { ?>
+                        <td onclick="change(<?php echo ($i + 12 + (3 * sizeof(getDatePresc($_SESSION['scenario']))) + 3 * (sizeof(getDateDiag())) + $j + $nbType) ?>, '<?php echo $donnee[$i]['date'] ?>', '<?php echo $donnee[$i]['type'] ?>')"><?php echo $donnee[$j]['donnee'] ?></td>
+                        <?php
+                    }
+                    ?></tr>
+            </table>
+        </div>
+        <?php
+        $i = $i + $nbType - 1;
+        if ($i >= $max)
             break;
-    }
-
-    else
-    {
+    } else {
         ?>
         </table>
         <?php
     }
-
-
-
-
     ?>
     <?php
-    if ($var==1){
-        $i=$i+1;
-        if ($i>=$max)
+    if ($var == 1) {
+        $i = $i + 1;
+        if ($i >= $max)
             break;
-        $categorie=$donnee[$i]['nom'];
-
-
+        $categorie = $donnee[$i]['nom'];
         ?>
         </table>
         <?php
     }
-
-
-
 }
 ?>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
 
