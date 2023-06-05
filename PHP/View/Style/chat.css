@@ -32,13 +32,14 @@ div.information {
     text-align: center;
     color: #0c76d9;
     font-family: Helvetica, sans-serif;
-
 }
 
 div.Aide {
     text-align: center;
     font-size: 1em;
 }
+
+
 footer{
     text-align: center;
     margin:0;
@@ -55,14 +56,23 @@ footer{
 
 
 
-div.message{
+div.message {
     text-align: center;
     font-family: Helvetica, sans-serif;
-
 }
 
+@media screen and (max-width: 768px) {
+    div.message {
+        font-size: 14px;
+    }
+}
 
-/* Default styles for non-responsive layout */
+@media screen and (max-width: 480px) {
+    div.message {
+        font-size: 12px;
+    }
+}
+
 .btn-group .button,
 .button-57 {
     border: none;

@@ -30,7 +30,5 @@ require('../../Controleur/Accueil/checkSessionSessionProf.php');
   <br>
     <br>
 </div>
-  </header>
-
 </body>
 </html>
