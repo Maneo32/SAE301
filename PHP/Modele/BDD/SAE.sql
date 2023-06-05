@@ -290,7 +290,8 @@ CREATE table BesoinDaide
 (
     idBA  serial primary key,
     sujet text not null,
-    email text not null
+    email text not null,
+    admin bool not null
 );
 
 Create table ReponseEtu(

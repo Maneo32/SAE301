@@ -15,8 +15,8 @@ function insererMessage($pseudo2,$message){
 function creerAide($sujet){
     $conn= ConnectionBDD::getInstance();
     $bdd=$conn::getpdo();
-    $creer = $bdd->prepare("INSERT INTO besoindaide(sujet, email) values (?, ?)");
-    $creer->execute(array($sujet, $_SESSION['Pseudo']));
+    $creer = $bdd->prepare("INSERT INTO besoindaide(sujet, email, admin) values (?, ?, ?)");
+    $creer->execute(array($sujet, $_SESSION['Pseudo'], true));
     $newid = $bdd->query("SELECT idba from besoindaide order by idba desc ");
     $newgrp = $newid->fetch()[0];
     $_SESSION['IdChat']=$newgrp;
@@ -38,4 +38,19 @@ function affichergrp()
     $grps->execute();
     return $grps;
 }
+
+function supprimer(){
+    $conn= ConnectionBDD::getInstance();
+    $bdd=$conn::getpdo();
+    if (isset($_POST['suppmess'])) {
+        $admin = $bdd->prepare("SELECT admin FROM besoindaide where email=?");
+        $admin = $admin->execute(array($_SESSION['Pseudo']));
+        if ($admin== 1) {
+            ?><script>console.log(<?php print $_SESSION['IdChat']?>)</script><?php
+            $supp = $bdd->prepare("DELETE FROM messageaide where email=? and idgroupe=?");
+            $supp->execute(array($_SESSION['Pseudo'], $_SESSION['IdChat']));
+        }
+    }
+}
+supprimer();
 ?>
