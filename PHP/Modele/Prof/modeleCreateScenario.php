@@ -54,6 +54,27 @@ function creerGroupe($bdd){
 
     }}
 
+/**
+ * @param $bdd
+ * @param $groupe
+ * @param $mail
+ * @return bool
+ * fonction qui permet de savoir si un étudiant et deja dans un groupe
+ */
+function EstDeJaDansLeGroupe($bdd, $groupe, $mail){
+    $sql = $bdd->prepare("SELECT email FROM groupeetudiant where idgroupe=? ");
+    $sql->bindParam(1,$groupe);
+    $sql->execute();
+    $rep=$sql->fetchAll();
+    foreach ($rep as $i) {
+        if($i['email'] == $mail){
+            return true;
+        }
+
+    }
+    return false;
+}
+
 function ajoutEtu($bdd){
     if (isset($_POST['ajoutEtu']) && $_POST['grp2']!='!'&&$_POST['etud']!='!'){
         $groupe=@$_POST['grp2'];
