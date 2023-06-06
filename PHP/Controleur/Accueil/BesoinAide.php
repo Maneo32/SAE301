@@ -13,7 +13,7 @@ $pseudo2 .= " ";
 $_SESSION['PseudoChat']=$pseudo2;
 /* ce if permet d'envoyer des messages*/
 require('../../Modele/Accueil/ModeleBesoinAide.php');
-if (isset($_POST['message'])) {
+if (isset($_POST['valider'])) {
     $message = nl2br(htmlspecialchars($_POST['message']));
     insererMessage($pseudo2,$message);
 }
