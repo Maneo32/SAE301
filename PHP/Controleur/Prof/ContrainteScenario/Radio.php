@@ -18,71 +18,17 @@ if (isset($_POST['Ajouter'])) {
     }
 
 }
-?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Radio</title>
-    <link rel="stylesheet" href="../../../View/Style/PageProf.css" >
-    <script src="../../../Modele/Fonction/LesFonctionsJS.js"></script>
+include("../../../View/Prof/viewUploadRadio.php");
 
-</head>
-<body>
-<?php
-include("../../../View/BarreHTML/BarreScenario2.php");
-include("../../../View/BarreHTML/EnteteV2.html");
-?>
+require("../../../Modele/Prof/modeleUploadRadio.php");
 
-    <h2>Radio</h2>
-<form method="POST" enctype="multipart/form-data">
-    <label for="image">Choisir une radio :</label>
-    <input type="file" name="userfile">
-    <input type="submit" name="submit" value="Send File">
-</form>
-<br>
-<form action="Diagnostic.php">
-        <input type="button" name="Valider" value="Suivant">
-</form>
-
-<div class="footer-CreateScenario">
-    <form action="../../Accueil/BesoinAide.php" method="post">
-        <button class="button-28" type="submit" >Besoin d'aide</button>
-    </form>
-</div>
-
-</body>
-</html>
-
-<?php
 require('../../../Modele/BDD/ConnectionBDD.php');
 
 $pdo = ConnectionBDD::getInstance();
 $bdd = $pdo::getpdo();
 
-function uploadimg($bdd)
-{
 
-
-    $uploaddirname= $_FILES['userfile']['name'];
-    $uploaddir = "../../PHP/imgRadio/";
-    $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
-
-    echo '<pre>';
-    if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadfile)) {
-        $insertImg= $bdd->prepare('INSERT INTO radio(name, idpatient) VALUES(?,?)');
-        $insertImg->execute(array($uploaddirname,$_SESSION['patient']));
-        echo "File is valid, and was successfully uploaded.\n";
-    } else {
-        echo "Possible file upload attack!\n";
-    }
-
-    echo 'Here is some more debugging info:';
-    print_r($_FILES);
-
-    print "</pre>";
-}
 if(isset($_FILES['userfile'])){
     uploadimg($bdd);
 }
