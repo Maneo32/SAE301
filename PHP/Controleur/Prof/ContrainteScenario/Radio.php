@@ -66,7 +66,7 @@ function uploadimg($bdd)
 
 
     $uploaddirname= $_FILES['userfile']['name'];
-    $uploaddir = "C:/Users/coren/PhpstormProjects/SAE301/PHP/imgRadio/";
+    $uploaddir = "../../PHP/imgRadio/";
     $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
     echo '<pre>';
