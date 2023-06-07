@@ -13,8 +13,6 @@ else  {
 
 }
 
-?>
-<?php
 
 include('../../View/Accueil/Langue.php');
 
