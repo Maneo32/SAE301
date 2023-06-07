@@ -293,18 +293,20 @@ while ($i < $max) {
         if (variableRecuperee==='prof') {
             var $a = prompt("Quelle donnée voulez vous mettre?")
             var l = "";
-            document.getElementsByTagName("td")[$i].innerHTML = $a;
-            l = l + "!";
-            l = l + $a;
-            l = l + "!";
-            l = l + $i;
-            console.log(l);
-            document.cookie = "valid = " + l;
-            document.cookie = "date = " + $date;
-            document.cookie = "do = " + $do;
-            document.cookie = 'reload = ' + 1;
-            location.reload();
-            return l;
+            if ($a != null) {
+                document.getElementsByTagName("td")[$i].innerHTML = $a;
+                l = l + "!";
+                l = l + $a;
+                l = l + "!";
+                l = l + $i;
+                console.log(l);
+                document.cookie = "valid = " + l;
+                document.cookie = "date = " + $date;
+                document.cookie = "do = " + $do;
+                document.cookie = 'reload = ' + 1;
+                location.reload();
+                return l;
+            }
         }
     }
 
