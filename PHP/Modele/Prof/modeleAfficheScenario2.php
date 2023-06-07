@@ -43,50 +43,48 @@ function modifdonnees($bdd, $id){
         $diag = array($nomme, $prenomme, $cpt);
         $sql = array($nom, $prenom, $age, $ddn, $poids, $taille, $iep, $ipp, $sexe, $adresse, $ville, $cp);
         $mots = [$mot, $num] = explode('!', $data);
-        if ($mots[2] < 12) {
-            $actio = $sql[$mots[2]];
-            $actio->bindParam(':donnees', $mots[1]);
-            $actio->bindParam(':idp', $id);
-            $actio->execute();
-            $_SESSION['coo'] = "";
-        } elseif ($mots[2] < 12+sizeof($datespres)) {
-            $action = $presc[0];
-            $date = $datespres[$mots[2] - 12];
-        } elseif ($mots[2] < 12 + 2 * sizeof($datespres)) {
-            $action = $presc[1];
-            $date = $datespres[$mots[2] - 12 - sizeof($datespres)];
-        } elseif ($mots[2] < 12 + 3 * sizeof($datespres)) {
-            $action = $presc[2];
-            $date = $datespres[$mots[2] - 12 - 2 * sizeof($datespres)];
-        }
-        elseif ($mots[2]<12+3 * sizeof($datespres)+sizeof($datesdiag)){
-            $action = $diag[0];
-            $date = $datesdiag[$mots[2] - 12 - 3*sizeof($datespres)];
-        }
-        elseif ($mots[2]<12+(3 * sizeof($datespres))+(2*sizeof($datesdiag))){
-            $action = $diag[1];
-            $date = $datesdiag[$mots[2] - 12 - 3*sizeof($datespres)-sizeof($datesdiag)];
-        }
-        elseif ($mots[2]<12+(3 * sizeof($datespres))+(3*sizeof($datesdiag))){
-            $action = $diag[2];
-            $date = $datesdiag[$mots[2] - 12 - 3*sizeof($datespres)-(2*sizeof($datesdiag))];
-        }
-        elseif (isset($mots[2])){
-            $sql = $tout;
-            $sql->bindParam(':donnees', $mots[1]);
-            $sql->bindParam(':idp', $id);
-            $sql->bindParam(':nom', $_SESSION['do']);
-            $sql->bindParam(':date', $_SESSION['date']);
-            $sql->execute();
-            $_SESSION['do'] = "";
-            $_SESSION['date'] = "";
-        }
-        if (isset($action)) {
-            $action->bindParam(':donnees', $mots[1]);
-            $action->bindParam(':idp', $id);
-            $action->bindParam(':prise', $date[0]);
-            $action->execute();
-            $_SESSION['coo'] = "";
+        if ($mots[1] != null) {
+            if ($mots[2] < 12) {
+                $actio = $sql[$mots[2]];
+                $actio->bindParam(':donnees', $mots[1]);
+                $actio->bindParam(':idp', $id);
+                $actio->execute();
+                $_SESSION['coo'] = "";
+            } elseif ($mots[2] < 12 + sizeof($datespres)) {
+                $action = $presc[0];
+                $date = $datespres[$mots[2] - 12];
+            } elseif ($mots[2] < 12 + 2 * sizeof($datespres)) {
+                $action = $presc[1];
+                $date = $datespres[$mots[2] - 12 - sizeof($datespres)];
+            } elseif ($mots[2] < 12 + 3 * sizeof($datespres)) {
+                $action = $presc[2];
+                $date = $datespres[$mots[2] - 12 - 2 * sizeof($datespres)];
+            } elseif ($mots[2] < 12 + 3 * sizeof($datespres) + sizeof($datesdiag)) {
+                $action = $diag[0];
+                $date = $datesdiag[$mots[2] - 12 - 3 * sizeof($datespres)];
+            } elseif ($mots[2] < 12 + (3 * sizeof($datespres)) + (2 * sizeof($datesdiag))) {
+                $action = $diag[1];
+                $date = $datesdiag[$mots[2] - 12 - 3 * sizeof($datespres) - sizeof($datesdiag)];
+            } elseif ($mots[2] < 12 + (3 * sizeof($datespres)) + (3 * sizeof($datesdiag))) {
+                $action = $diag[2];
+                $date = $datesdiag[$mots[2] - 12 - 3 * sizeof($datespres) - (2 * sizeof($datesdiag))];
+            } elseif (isset($mots[2])) {
+                $sql = $tout;
+                $sql->bindParam(':donnees', $mots[1]);
+                $sql->bindParam(':idp', $id);
+                $sql->bindParam(':nom', $_SESSION['do']);
+                $sql->bindParam(':date', $_SESSION['date']);
+                $sql->execute();
+                $_SESSION['do'] = "";
+                $_SESSION['date'] = "";
+            }
+            if (isset($action)) {
+                $action->bindParam(':donnees', $mots[1]);
+                $action->bindParam(':idp', $id);
+                $action->bindParam(':prise', $date[0]);
+                $action->execute();
+                $_SESSION['coo'] = "";
+            }
         }
     }
 }
