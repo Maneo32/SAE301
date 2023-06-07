@@ -14,6 +14,7 @@
 include("../../View/BarreHTML/BarreScenario.php");
 ?>
 <h2>Correction Scénario</h2>
+
 <?php
 if (!isset($_POST['patient'])){
 // On affiche un formulaire permettant de sélectionner un patient

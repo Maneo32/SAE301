@@ -1,4 +1,4 @@
-<?php
+<?php /* PAS UTLISE */
 session_start();
 ?>
 

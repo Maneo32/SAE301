@@ -85,8 +85,8 @@ function affichage(){
         }
         ?>
         <form method="post">
-            <input type="number" max="20" name="note" value="<?php echo $data3[2]?>" placeholder="Entrez la note">
-            <input type="submit" value="Valider">
+            <input type="number" max="20" name="note" step="0.1" value="<?php echo $data3[2]?>" placeholder="Entrez la note">
+            <input type="submit" class="button-90" value="Valider">
             <input style="display: none" type="text" value="<?php
             $sql = $bdd->prepare("select * from reponseetu where idpatient=?");
             $sql->execute(array($_SESSION['patient']));
