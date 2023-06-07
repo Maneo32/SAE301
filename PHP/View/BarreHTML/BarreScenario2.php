@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php
-require('../../../Controleur/Accueil/checkSessionSessionProf.php');
+require('../../Controleur/Accueil/checkSessionSessionProf.php');
 ?>
   <!--Le haut de la page avec l'image et le titre-->
 
@@ -16,10 +16,11 @@ require('../../../Controleur/Accueil/checkSessionSessionProf.php');
             <img src="../../../View/image/logoIFSI.png" width=120 height=80 alt="leLogo" >
         </a>
         <h1>Institut de Formation aux Soins Infirmiers (IFSI)</h1>
+
+        <br>
+        <br>
         <div class="deconnexion">
-            <a href="../../../Controleur/Accueil/Disconnect.php">
-                <img src="../../../View/image/Deconnexion.png" class="icone" width="50" height="50" alt="Déconnexion">
-            </a>
+
         </div>
     </div>
 
