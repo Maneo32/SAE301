@@ -15,10 +15,11 @@ require('../../Controleur/Accueil/checkSessionSessionProf.php');
             <img src="../../View/image/logoIFSI.png" width=120 height=80 alt="leLogo" >
         </a>
         <h1>Institut de Formation aux Soins Infirmiers (IFSI)</h1>
+
         <div class="deconnexion">
-            <a href="../../../Controleur/Accueil/Disconnect.php">
-                <img src="../../View/image/Deconnexion.png" class="icone" width="50" height="50" alt="Déconnexion">
-            </a>
+            <br>
+            <br>
+
         </div>
     </div>
 

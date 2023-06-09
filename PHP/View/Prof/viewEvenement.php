@@ -45,20 +45,22 @@
         if (variableRecuperee==='prof') {
             var $a = prompt("Quelle donnée voulez vous mettre?")
             var l = "";
-            document.getElementsByTagName("td")[$i].innerHTML = $a;
-            l = l + "!";
-            l = l + $a;
-            l = l + "!";
-            l = l + $i;
-            l = l + "!";
-            l = l + $date
-            console.log(l);
-            document.cookie = "valid = " + l;
-            document.cookie = "date = " + $date;
-            document.cookie = "do = " + $do;
-            document.cookie = 'reload = ' + 1;
-            location.reload();
-            return l;
+            if ($a != null) {
+                document.getElementsByTagName("td")[$i].innerHTML = $a;
+                l = l + "!";
+                l = l + $a;
+                l = l + "!";
+                l = l + $i;
+                l = l + "!";
+                l = l + $date
+                console.log(l);
+                document.cookie = "valid = " + l;
+                document.cookie = "date = " + $date;
+                document.cookie = "do = " + $do;
+                document.cookie = 'reload = ' + 1;
+                location.reload();
+                return l;
+            }
         }
     }
 
@@ -76,6 +78,9 @@ modifdonnee();
 <script>console.log(<?php $_SESSION['coo']?>)</script>
 <div class="container">
     <h2>Ajouter des événements</h2>
+    <button class="button-90" onclick="window.history.back()">Retour</button>
+    <br>    <br>
+
     <form method="post" name="addevt">
         <label for="texte">Texte :</label>
 
@@ -89,7 +94,7 @@ modifdonnee();
             <h6>Il ne faut pas mettre deux fois le même ordre </h6>
         </div>
         <br>
-        <button type="submit" id="send" name="send" class="btn btn-primary">Ajouter</button>
+        <button type="submit" id="send" name="send" class="button-90">Ajouter</button>
     </form>
 </div>
 <br>
