@@ -130,8 +130,8 @@ class PHPMailer
     public $Subject = '';
 
     /**
-     * An HTML or plain text message body.
-     * If HTML then call isHTML(true).
+     * An BarreHTML or plain text message body.
+     * If BarreHTML then call isHTML(true).
      *
      * @var string
      */
@@ -139,9 +139,9 @@ class PHPMailer
 
     /**
      * The plain-text message body.
-     * This body can be read by mail clients that do not have HTML email
+     * This body can be read by mail clients that do not have BarreHTML email
      * capability such as mutt & Eudora.
-     * Clients that can read HTML will view the normal Body.
+     * Clients that can read BarreHTML will view the normal Body.
      *
      * @var string
      */
@@ -917,7 +917,7 @@ class PHPMailer
                 error_log($str);
                 break;
             case 'html':
-                //Cleans up output a bit for a better looking, HTML-safe output
+                //Cleans up output a bit for a better looking, BarreHTML-safe output
                 echo htmlentities(
                     preg_replace('/[\r\n]+/', '', $str),
                     ENT_QUOTES,
@@ -944,9 +944,9 @@ class PHPMailer
     }
 
     /**
-     * Sets message type to HTML or plain.
+     * Sets message type to BarreHTML or plain.
      *
-     * @param bool $isHtml True for HTML mode
+     * @param bool $isHtml True for BarreHTML mode
      */
     public function isHTML($isHtml = true)
     {
@@ -2553,7 +2553,7 @@ class PHPMailer
     /**
      * Apply word wrapping to the message body.
      * Wraps the message body to the number of chars set in the WordWrap property.
-     * You should only do this to plain-text bodies as wrapping HTML tags may break them.
+     * You should only do this to plain-text bodies as wrapping BarreHTML tags may break them.
      * This is called automatically by createBody(), so you don't need to call it yourself.
      */
     public function setWordWrap()
@@ -3708,13 +3708,13 @@ class PHPMailer
      * This can include images, sounds, and just about any other document type.
      * These differ from 'regular' attachments in that they are intended to be
      * displayed inline with the message, not just attached for download.
-     * This is used in HTML messages that embed the images
-     * the HTML refers to using the $cid value.
+     * This is used in BarreHTML messages that embed the images
+     * the BarreHTML refers to using the $cid value.
      * Never use a user-supplied path to a file!
      *
      * @param string $path        Path to the attachment
      * @param string $cid         Content ID of the attachment; Use this to reference
-     *                            the content when using an embedded image in HTML
+     *                            the content when using an embedded image in BarreHTML
      * @param string $name        Overrides the attachment name
      * @param string $encoding    File encoding (see $Encoding)
      * @param string $type        File MIME type
@@ -3782,7 +3782,7 @@ class PHPMailer
      *
      * @param string $string      The attachment binary data
      * @param string $cid         Content ID of the attachment; Use this to reference
-     *                            the content when using an embedded image in HTML
+     *                            the content when using an embedded image in BarreHTML
      * @param string $name        A filename for the attachment. If this contains an extension,
      *                            PHPMailer will attempt to set a MIME type for the attachment.
      *                            For example 'file.jpg' would get an 'image/jpeg' MIME type.
@@ -4208,19 +4208,19 @@ class PHPMailer
     }
 
     /**
-     * Create a message body from an HTML string.
-     * Automatically inlines images and creates a plain-text version by converting the HTML,
+     * Create a message body from an BarreHTML string.
+     * Automatically inlines images and creates a plain-text version by converting the BarreHTML,
      * overwriting any existing values in Body and AltBody.
      * Do not source $message content from user input!
      * $basedir is prepended when handling relative URLs, e.g. <img src="/images/a.png"> and must not be empty
      * will look for an image file in $basedir/images/a.png and convert it to inline.
      * If you don't provide a $basedir, relative paths will be left untouched (and thus probably break in email)
      * Converts data-uri images into embedded attachments.
-     * If you don't want to apply these transformations to your HTML, just set Body and AltBody directly.
+     * If you don't want to apply these transformations to your BarreHTML, just set Body and AltBody directly.
      *
-     * @param string        $message  HTML message string
+     * @param string        $message  BarreHTML message string
      * @param string        $basedir  Absolute path to a base directory to prepend to relative paths to images
-     * @param bool|callable $advanced Whether to use the internal HTML to text converter
+     * @param bool|callable $advanced Whether to use the internal BarreHTML to text converter
      *                                or your own custom converter
      * @return string The transformed message body
      *
@@ -4315,7 +4315,7 @@ class PHPMailer
         $this->Body = static::normalizeBreaks($message);
         $this->AltBody = static::normalizeBreaks($this->html2text($message, $advanced));
         if (!$this->alternativeExists()) {
-            $this->AltBody = 'This is an HTML-only message. To view it, activate HTML in your email application.'
+            $this->AltBody = 'This is an BarreHTML-only message. To view it, activate BarreHTML in your email application.'
                 . static::$LE;
         }
 
@@ -4323,7 +4323,7 @@ class PHPMailer
     }
 
     /**
-     * Convert an HTML string into plain text.
+     * Convert an BarreHTML string into plain text.
      * This is used by msgHTML().
      * Note - older versions of this function used a bundled advanced converter
      * which was removed for license reasons in #232.
@@ -4339,7 +4339,7 @@ class PHPMailer
      * });
      * ```
      *
-     * @param string        $html     The HTML text to convert
+     * @param string        $html     The BarreHTML text to convert
      * @param bool|callable $advanced Any boolean value to use the internal converter,
      *                                or provide your own callable for custom conversion.
      *                                *Never* pass user-supplied data into this parameter

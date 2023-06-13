@@ -1,0 +1,13 @@
+suites:
+  integration:
+    paths:
+      - %paths.base%/features/bootstrap
+    contexts:
+      - Acme\Tests\Behat\Context\Registration\IntegrationRegisterContext:
+          - "@acme.registration.registerer"
+  interface:
+    paths:
+      - %paths.base%/features
+    contexts:
+      - Behat\MinkExtension\Context\MinkContext: []
+      - Acme\Tests\Behat\Context\Registration\MinkRegisterContext: []

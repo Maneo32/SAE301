@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MDPoublié</title>
+  <link rel="stylesheet" href="../../View/Style/SiteIFSI2.css">
+</head>
+
+<body>
+<!--Boutton traduction et logo-->
+<header>
+  <form>
+    <input class="boutton trad" type="submit" value="Français" name="langue" onclick="changerLangue()">
+  </form>
+  <a href="Accueil.php">
+    <img src="../../View/image/logoIFSI.png" width=468 height=250 alt="">
+  </a>
+  <h1>Institute of Nursing Training</h1>
+</header>
+
+<div class="contenu">
+  <div class="item">
+    <h2>Forgot password</h2>
+    <h3>Enter your Email, you will receive an email to verify your identity</h3>
+
+    <form action="../../Controleur/Accueil/MotDePasseOublie.php" method="post">
+      <label>
+        <input type="email" name='mail' placeholder="Enter your Email" required>
+      </label>
+      <label>
+        <input type="email" name='mailV2' placeholder="Confirm your Email" required>
+      </label>
+      <input class="boutton submit" type="submit" value="Validate">
+    </form>
+  </div>
+
+  <!--Liens vers d'autres pages-->
+  <div class="item liens">
+    <a class="lien" href="../../Controleur/Accueil/Accueil.php">Login</a>
+    <a class="lien" href="../../Controleur/Accueil/CreateAccount.php">Create an account</a>
+    <a class="lien" href="../../Controleur/Accueil/BesoinAide.php">Need help</a>
+  </div>
+</div>
+
+</body>
+</html>
