@@ -2,10 +2,26 @@
 <html lang="en">
 <head>
   <meta title="BarreScenarioAccueil" charset="UTF-8">
+    <script>
+        window.onload = init;
+        function menu_f() {
+            if(menu.classList.contains('test')) {
+                menu.classList.remove('test');
+            } else {
+                menu.classList.add('test');
+            }
+        }
+        function init() {
+            let boutton = document.getElementById("boutton");
+            let menu = document.getElementsByClassName("menu");
+            boutton.addEventListener("click", menu_f);
+        }
+    </script>
+    <title></title>
 </head>
 <body>
 <?php
-require('../../Controleur/Accueil/checkSession.php');
+//require('../../Controleur/Accueil/checkSession.php');
 ?>
 <div class="font">
     <div class="header">
@@ -19,14 +35,20 @@ require('../../Controleur/Accueil/checkSession.php');
             </a>
         </div>
     </div>
-
-
-  <button class="button-57" onclick="document.location='PageEtu.php'"><span class="text">Accueil</span><span>Accueil</span></button>
-  <button class="button-57" onclick="document.location='../../Controleur/Etudiant/ScenarioEtu.php'"><span class="text">Scénario</span><span>Scénario</span></button>
-  <button class="button-57" onclick="document.location='../../Controleur/Etudiant/CorrectionEleve.php'"><span class="text">Correction</span><span>Correction</span></button>
-  <button class="button-57" onclick="document.location='../../Controleur/Etudiant/NoteEtu.php'"><span class="text">Note</span><span>Note</span></button>
-  <button class="button-57" onclick="document.location='../../Controleur/Accueil/chat.php'"><span class="text">Message</span><span>Message</span></button>
-
+    <button type="button" id="boutton" class="menu">
+        <span class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+    </button>
+    <div id="menu" class="test">
+        <button class="button-57" onclick="document.location='PageEtu.php'"><span class="text">Accueil</span><span>Accueil</span></button>
+        <button class="button-57" onclick="document.location='../../Controleur/Etudiant/ScenarioEtu.php'"><span class="text">Scénario</span><span>Scénario</span></button>
+        <button class="button-57" onclick="document.location='../../Controleur/Etudiant/CorrectionEleve.php'"><span class="text">Correction</span><span>Correction</span></button>
+        <button class="button-57" onclick="document.location='../../Controleur/Etudiant/NoteEtu.php'"><span class="text">Note</span><span>Note</span></button>
+        <button class="button-57" onclick="document.location='../../Controleur/Accueil/chat.php'"><span class="text">Message</span><span>Message</span></button>
+    </div>
   <br>
     <br>
 
