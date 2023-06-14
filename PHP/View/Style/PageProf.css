@@ -1,6 +1,4 @@
 /* Haut de la page*/
-
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -11,11 +9,8 @@
     text-align: center;
     top:0;
     color: white;
-
-
-
-
 }
+
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -31,22 +26,14 @@
     }
 }
 
+.header h1 {margin: 0;}
 
-
-.header h1 {
-    margin: 0;
-}
-
-.deconnexion {
-    margin-left: 10px;
-}
+.deconnexion {margin-left: 10px;}
 
 .icone {
     width: 50px;
     height: 50px;
 }
-
-
 
 .btn-group .button {
     background-color: white;
@@ -56,14 +43,13 @@
     cursor: pointer;
     width: 19.5%;
     transition-duration: 0.4s;
-
 }
-
 
 .btn-group .button:hover {
     background-color:dodgerblue;
     color: white;
 }
+
 /* CSS */
 .button-57 {
     background-color: white;
@@ -80,10 +66,6 @@
     padding: 18px 18px 17px;
 }
 
-
-
-
-
 /* Styles pour les écrans de taille moyenne et plus petits */
 @media (max-width: 768px) {
     .button-57 {
@@ -93,11 +75,9 @@
     .button-57 span:last-child {
         transform: translateY(125%) translateX(-50%);
     }
-
     .button-57:after {
         bottom: -25%;
     }
-
     .button-57:hover:after {
         transform: skewY(9.3deg) scaleY(2);
     }
@@ -109,21 +89,16 @@
         font-size: 20px;
         padding: 15px;
     }
-
     .button-57 span:last-child {
         transform: translateY(75%) translateX(-50%);
     }
-
     .button-57:after {
         bottom: -12.5%;
-
     }
-
     .button-57:hover:after {
         transform: skewY(9.3deg) scaleY(2);
     }
 }
-
 
 .button-57 span:last-child {
     color: white;
@@ -165,8 +140,6 @@
     transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
 }
 
-
-
 .btn-scenario .button {
     border: none;
     background-color: #0c76d9;
@@ -193,9 +166,7 @@
     border-top-left-radius: 10px;
 }
 
-.btn-scenario {
-    margin-left: 10%;
-}
+.btn-scenario {margin-left: 10%;}
 
 .btn-scenario .button:hover {
     background-color: #0c76d9;
@@ -209,25 +180,16 @@ div.texte{
     font-size: 25px;
     color:#0c76d9;
     font-family: Helvetica, sans-serif;
-
-
 }
 
 @media only screen and (max-width: 768px) {
-    div.texte {
-        font-size: 20px;
-    }
+    div.texte {font-size: 20px;}
 }
 
 @media only screen and (max-width: 480px) {
-    div.texte {
-        font-size: 16px;
-    }
+    div.texte {font-size: 16px;}
 }
-div.font{
-
-    background-color: #0c76d9;
-}
+div.font{background-color: #0c76d9;}
 
 /*page en global*/
 body{
@@ -249,39 +211,29 @@ div.footer-CreateScenario {
 
 div.contrainte{
     margin-left: 14%;
-
 }
-
 
 h2{
     text-align: center;
     color:#0c76d9;
     font-family: Helvetica, sans-serif;
-
-
 }
+
 @media only screen and (max-width: 768px) {
-    h2 {
-        font-size: 24px;
-    }
+    h2 {font-size: 24px;}
 }
 
 @media only screen and (max-width: 480px) {
-    h2 {
-        font-size: 20px;
-    }
+    h2 {font-size: 20px;}
 }
 
-div.button_Suivant{
-    display: flex;
-
-}
+div.button_Suivant{display: flex;}
 
 div.Diagnostic{
     text-align: center;
 }
-footer{
 
+footer{
     text-align: center;
     margin:0;
     padding:3%;
@@ -296,18 +248,12 @@ footer{
     z-index:9999;
 }
 
-table,
-td {
-    border: 1px solid #0c76d9;
-}
+table, td {border: 1px solid #0c76d9;}
 
-
-table,
-tfoot {
+table, tfoot {
     background-color: white;
     color: black;
     font-weight: bold;
-
 }
 
 th{
@@ -318,7 +264,6 @@ th{
 div.title{
     color:dodgerblue;
     background-color: white;
-
 }
 
 button{
@@ -331,30 +276,21 @@ div.supprimer{
     color:red;
     text-align: center;
     font-weight: bold;
-
 }
 
 h4{
     color:dodgerblue;
     text-align: center;
     font-family: Helvetica, sans-serif;
-
 }
 
 @media only screen and (max-width: 768px) {
-    h4 {
-        font-size: 18px;
-    }
+    h4 {font-size: 18px;}
 }
 
 @media only screen and (max-width: 480px) {
-    h4 {
-        font-size: 16px;
-    }
+    h4 {font-size: 16px;}
 }
-
-
-
 
 /*https://getcssscan.com/css-buttons-examples*/
 /* CSS */
@@ -384,27 +320,16 @@ h4{
     background-color: #0c76d9;
 }
 
-
-
-
-
-
-
-
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #0c76d9;
-
 }
 
 li {
     float: left;
-
-
-
 }
 
 li a {
@@ -420,10 +345,7 @@ li a:hover {
     background-color: dodgerblue;
 }
 
-h6{
-    color: red;
-}
-
+h6{color: red;}
 
 .textarea {
     width: 100%;
@@ -436,6 +358,21 @@ h6{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.menu {
+    visibility: hidden;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+}
+.burger-icon span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    background-color: #0056b3;
+    margin: 6px 0;
+    border-radius: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -477,17 +414,13 @@ h6{
     outline: none;
 }
 
-@media only screen and (max-width: 768px) {
-    .button-90 {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-
 @media only screen and (max-width: 480px) {
     .button-90 {
         font-size: 12px;
         padding: 6px 12px;
+    }
+    .form-group textarea {
+        padding: 6px;
     }
 }
 
@@ -508,11 +441,22 @@ h6{
     .form-group textarea {
         padding: 8px;
     }
-}
-
-@media screen and (max-width: 480px) {
-    .form-group textarea {
-        padding: 6px;
+    li a {
+        padding: 5px 8px;
+        font-size: 14px;
+    }
+    .button-90 {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    .menu{
+        visibility: visible;
+    }
+    .invisible{
+        visibility: hidden;
+    }
+    .test{
+        display: none;
     }
 }
 
