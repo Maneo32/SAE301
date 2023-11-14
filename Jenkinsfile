@@ -13,7 +13,7 @@ pipeline {
             steps {
                 // Exécuter le script Python
                 script {
-                    sh 'python test_login.py'
+                    bat 'C:\Users\mdang\AppData\Local\Programs\Python\Python310\python.exe test_login.py'
                 }
             }
         }
