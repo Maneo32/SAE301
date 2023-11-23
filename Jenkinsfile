@@ -1,4 +1,8 @@
 pipeline {
+    triggers {
+        upstream(upstreamProjects: "freestyle", threshold: hudson.model.Result.SUCCESS)
+    }
+    // Autres étapes de pipeline ici
     agent any
 
     stages {
