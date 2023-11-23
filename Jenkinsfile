@@ -1,7 +1,4 @@
 pipeline {
-    triggers {
-        upstream(upstreamProjects: "freestyle", threshold: hudson.model.Result.SUCCESS)
-    }
     
     agent any
 
