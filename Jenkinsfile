@@ -25,7 +25,7 @@ pipeline {
                     sh 'mvn test'
                 }
                 script{
-                    bat 'C:\\Users\\mdang\\AppData\\Local\\Programs\\Python\\Python310\\python.exe 
+                    bat 'C:\\Users\\mdang\\AppData\\Local\\Programs\\Python\\Python310\\python.exe'
                 }
             }
         }
